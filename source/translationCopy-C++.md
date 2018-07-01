@@ -1,26 +1,10 @@
-> 3RD EDITION
->
-> COMPUTING
->
-> FUNDAMENTALS
->
-> WITH C++
->
+# COMPUTING FUNDAMENTALS WITH C++ (3RD EDITION)
+
 > Rick Mercer
 >
 > University of Arizona
-
-![](media/image1.png){width="0.5298611111111111in"
-height="0.5201388888888889in"}Franklin, Beedle & Associates Inc.
-
-Portland, Oregon
-
-> 1/800-322-2665 https://fbeedle.com
->
-> ©
->
-> *Th is textbook is dedicated to my publisher and my friend, Jim Leisy
-> (1950–2014).*
+> 
+> *This textbook is dedicated to my publisher and my friend, Jim Leisy (1950–2014).*
 
 *—R.M.*
 
