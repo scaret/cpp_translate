@@ -1,10 +1,10 @@
 #! /bin/bash
 # fileName : markdown_to_docx.sh
 # author   : lingjie
-# time     : 2018-08-29
+# date     : 2018-08-29
 
 if [ $# != 1 ] || [ ${1##*.} != "md" ] ; then
-    echo "Usage: markdown_to_docx.sh <filename>.md"
+    echo "使用方法： markdown_to_docx.sh <filename>.md"
     exit
 fi
 
