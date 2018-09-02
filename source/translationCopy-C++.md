@@ -593,14 +593,14 @@ SELF-CHECK
 >
 > // Input
 >
-> cout &lt;&lt; "Enter three numbers: "; cin &gt;&gt; n1 &gt;&gt; n2
-> &gt;&gt; n3;
+> cout << "Enter three numbers: "; cin >> n1 >> n2
+> >> n3;
 >
 > // Process
 >
 > average = (n1 + n2 + n3) / 3.0;
 >
-> // Output cout &lt;&lt; "Average = " &lt;&lt; average;
+> // Output cout << "Average = " << average;
 >
 > Th is algorithmic pattern is the fi rst of several. In subsequent
 > chapters, you’ll see other algorithmic patterns such as Guarded
@@ -732,30 +732,30 @@ In summary, here is what has been accomplished so far:
 
 > \*/
 >
-> \#include &lt;iostream&gt; // for cin and cout
+> \#include <iostream> // for cin and cout
 >
-> \#include &lt;string&gt; // for string
+> \#include <string> // for string
 >
 > using namespace std; // avoid writing std::cin std::cout std::string
 >
 > int main() {
 >
-> // Explain what this program does. cout &lt;&lt; "This program
-> computes a weighted course grade." &lt;&lt; endl;
+> // Explain what this program does. cout << "This program
+> computes a weighted course grade." << endl;
 >
 > // Read in a string
 >
-> cout &lt;&lt; "Enter the student's name: "; string name; cin &gt;&gt;
+> cout << "Enter the student's name: "; string name; cin >>
 > name;
 >
 > // I)nput projects, midterm, and nalExam double projects, midterm,
 > nalExam;
 >
-> cout &lt;&lt; "Enter project score: "; cin &gt;&gt; projects;
+> cout << "Enter project score: "; cin >> projects;
 >
-> cout &lt;&lt; "Enter midterm: "; cin &gt;&gt; midterm;
+> cout << "Enter midterm: "; cin >> midterm;
 >
-> cout &lt;&lt; "Enter nal exam: "; cin &gt;&gt; nalExam;
+> cout << "Enter nal exam: "; cin >> nalExam;
 >
 > // P)rocess
 >
@@ -764,8 +764,8 @@ In summary, here is what has been accomplished so far:
 >
 > // O)utput the results
 >
-> cout &lt;&lt; name &lt;&lt; "'s grade: " &lt;&lt; courseGrade &lt;&lt;
-> "%" &lt;&lt; endl; }
+> cout << name << "'s grade: " << courseGrade <<
+> "%" << endl; }
 >
 > Dialogue
 
@@ -882,7 +882,7 @@ SELF-CHECK
 > along with available operations such as input, multiplication, and
 > addition, computed the courseGrade. An assignment operation was used
 > to store it as a numeric object. An output operation with cout
-> &lt;&lt; was used so the user could see the results of the processing.
+> << was used so the user could see the results of the processing.
 >
 > Characteristics of Objects in the First Program
 >
@@ -891,7 +891,7 @@ SELF-CHECK
 > stored as the variable named projects.
 >
 > State: Th e value of projects was set with an input operation using
-> cin &gt;&gt;. Th e state of courseGrade was defi ned with an
+> cin >>. Th e state of courseGrade was defi ned with an
 > assignment operation using the = operator.
 >
 > Th e state of courseGrade was retrieved during output with cout.
@@ -927,9 +927,9 @@ SELF-CHECK
 > ending indexes (there are many more operations that will be explored
 > in a later chapter):
 >
-> string aString = "A sequence of characters"; // Output: cout &lt;&lt;
-> aString.length() &lt;&lt; endl; // 24 cout &lt;&lt; aString.substr(2,
-> 8) &lt;&lt; endl; // sequence Chapter Summary
+> string aString = "A sequence of characters"; // Output: cout <<
+> aString.length() << endl; // 24 cout << aString.substr(2,
+> 8) << endl; // sequence Chapter Summary
 
 In addition to the string type, two other reference types are used
 immediately. Th e istream type object named cin has operations to read
@@ -1163,7 +1163,7 @@ COMING UP
 
 1.  Elements written in *monospace* are used exactly as shown. Th is
     > includes certain words such as int main*,* cout*,* cin*,* and
-    > symbols such as &lt;&lt; &gt;&gt; ;.
+    > symbols such as << >> ;.
 
 2.  Th e portions of a general form written in *italic* must be supplied
     > by the programmer—for example, *expression* means you must supply
@@ -1193,18 +1193,18 @@ COMING UP
 >
 > // This program prompts for a name and prints a friendly message
 >
-> \#include &lt;iostream&gt; // For cout, cin, and endl
+> \#include <iostream> // For cout, cin, and endl
 >
-> \#include &lt;string&gt; // for the string type
+> \#include <string> // for the string type
 >
 > using namespace std; // Allow programmers to write cin and cout
 >
 > // rather than std::cin and std::cout int main() { string name;
 >
-> cout &lt;&lt; "What is your name: "; cin &gt;&gt; name; cout &lt;&lt;
-> "Hello " &lt;&lt; name;
+> cout << "What is your name: "; cin >> name; cout <<
+> "Hello " << name;
 >
-> cout&lt;&lt; ", I hope you're feeling well." &lt;&lt; endl;
+> cout<< ", I hope you're feeling well." << endl;
 >
 > return 0; }
 >
@@ -1231,35 +1231,35 @@ Hello Casey, I hope you’re feeling well.
 
 General Form 2.2 *Include Directive*
 
-> \#include &lt; *include- le* &gt;
+> \#include < *include- le* >
 
 - or -
 
 > \#include " *include- le* "
 >
-> Th e \#include and angle brackets &lt; &gt; or double quote marks " "
+> Th e \#include and angle brackets < > or double quote marks " "
 > must be written exactly as shown. Th e include-fi le is the name of an
 > existing fi le. For example, the previous program contains the
 > following \#include directive in order to furnish cout, cin, and endl:
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
 > However, this \#include directive actually provides std::cout,
 > std::cin, and std::endl. Th e C++ standard library, of which iostream
 > is a part, is defi ned in a namespace called std. So to avoid
 > repetitiously writing std::, this line should accompany \#include
-> &lt;iostream&gt; and other \#includes seen later:
+> <iostream> and other \#includes seen later:
 >
 > using namespace std; // Can now write cout instead of std::cout
 >
-> Care should be taken to avoid any blank spaces between the &lt; &gt;
+> Care should be taken to avoid any blank spaces between the < >
 > or " ".
 >
-> \#include &lt;iostream &gt; // ERROR, space at end
+> \#include <iostream > // ERROR, space at end
 >
 > \#include " BankAccount.h" // ERROR, space up front
 >
-> Any included fi le with angle brackets &lt; &gt; must be part of the
+> Any included fi le with angle brackets < > must be part of the
 > system. Your system should be able to fi nd those fi les
 > automatically. However, the fi le names included within double quote
 > marks " " may need to be stored in the same directory as the program
@@ -1283,7 +1283,7 @@ General Form 2.2 *Include Directive*
 
   **Category **     **Examples**
   ----------------- -----------------------------------
-  Special symbols   ; ( ) &lt;&lt; &gt;&gt;
+  Special symbols   ; ( ) << >>
   Keywords          return double int
   Identifi ers      main test2 rstName
   Literals          "Hello" 507 -2.1 true 'c' nullptr
@@ -1293,11 +1293,11 @@ General Form 2.2 *Include Directive*
 > A *special symbol* is a sequence of one or two characters with one or
 > possibly many specifi c meanings. Some special symbols such as {, ;,
 > and , separate other tokens. Other special symbols such as +, -, and
-> &lt;&lt; represent operators in expressions. Here is a partial list of
+> << represent operators in expressions. Here is a partial list of
 > single-character and double-character special symbols frequently seen
 > in C++ programs:
 >
-> ( ) . + - / \* =&lt; &gt;= // { } == ; &lt;&lt; &gt;&gt;
+> ( ) . + - / \* =< >= // { } == ; << >>
 
 2.1.3 IDENTIFIERS
 
@@ -1439,14 +1439,14 @@ General Form 2.2 *Include Directive*
 
 > // Print a few C++ literals
 >
-> \#include &lt;iostream&gt; // For cout and endl using namespace std;
+> \#include <iostream> // For cout and endl using namespace std;
 >
-> int main() { cout &lt;&lt; 123 &lt;&lt; endl; cout &lt;&lt; 'a'
-> &lt;&lt; '\\t' &lt;&lt; 'm' &lt;&lt; endl; cout &lt;&lt; 1.23 &lt;&lt;
+> int main() { cout << 123 << endl; cout << 'a'
+> << '\\t' << 'm' << endl; cout << 1.23 <<
 > endl;
 >
-> // true prints as 1 and false as 0 cout &lt;&lt; true &lt;&lt; " and "
-> &lt;&lt; false &lt;&lt; endl; cout &lt;&lt; "Hello \\n world" &lt;&lt;
+> // true prints as 1 and false as 0 cout << true << " and "
+> << false << endl; cout << "Hello \\n world" <<
 > endl;
 >
 > return 0; }
@@ -1586,23 +1586,23 @@ boolTwo true (would print as 1)
 
 General Form 2.5 *Th e* cout *statement*
 
-> cout &lt;&lt; *expression-1* **&lt;&lt;** *expression-2* , . . . ,
-> &lt;&lt; *expression-n* &lt;&lt; endl;
+> cout << *expression-1* **<<** *expression-2* , . . . ,
+> << *expression-n* << endl;
 >
 > Th e object named cout (pronounced “see-out” and short for **c**ommon
 > **out**put) represents where the output will go: the console.
 > *expression-1* through *expression-n* may take the form of object
 > names such as GPA and rstName or constants such as "Credits: " and
-> 99.5. Th e output operator &lt;&lt; indicates the direction in which
+> 99.5. Th e output operator << indicates the direction in which
 > data are fl owing. Finally, a semicolon (;) terminates each statement.
 > Here are some legal output statements that use the endl identifi er
 > (pronounced “end-ell”) to generate a new line:
 >
-> cout &lt;&lt; 99.5 &lt;&lt; endl;
+> cout << 99.5 << endl;
 >
-> cout &lt;&lt; "Show me literally too" &lt;&lt; endl; cout &lt;&lt;
-> "First Name: " &lt;&lt; rstName &lt;&lt; endl; cout &lt;&lt; "Credits:
-> " &lt;&lt; credits &lt;&lt; endl;
+> cout << "Show me literally too" << endl; cout <<
+> "First Name: " << rstName << endl; cout << "Credits:
+> " << credits << endl;
 >
 > When a cout statement is encountered, the expressions are inserted
 > into a data stream going toward the computer screen. Th e expressions
@@ -1611,8 +1611,8 @@ General Form 2.5 *Th e* cout *statement*
 > encountered, a new line is generated, so any subsequent output starts
 > at the beginning of a new line.
 >
-> cout &lt;&lt; 'A' &lt;&lt; " line " &lt;&lt; true &lt;&lt; " "
-> &lt;&lt; 123 &lt;&lt; 4.56 &lt;&lt; endl;
+> cout << 'A' << " line " << true << " "
+> << 123 << 4.56 << endl;
 >
 > Output
 >
@@ -1713,19 +1713,19 @@ SELF-CHECK
 > any student—the state of objects is often set through keyboard input.
 > Th is allows the user to enter any data desired. Input happens with
 > the input stream object named cin (pronounced “see-in” and short for
-> **c**ommon **in**put) and the stream extraction operator &gt;&gt;. For
+> **c**ommon **in**put) and the stream extraction operator >>. For
 > example, the following statements modify the state of two objects with
 > data supplied by the user:
 
-cin &gt;&gt; rstName; // User must input a string cin &gt;&gt; credits;
+cin >> rstName; // User must input a string cin >> credits;
 // User must input a number Here is the general form of the input
 statement with cin:
 
 General Form 2.7 *Th e* cin *statement*
 
-> cin &gt;&gt; *object-name* ;
+> cin >> *object-name* ;
 
-- or cin &gt;&gt; *object-name-1* &gt;&gt; *object-name-2* &gt;&gt;
+- or cin >> *object-name-1* >> *object-name-2* >>
 *object-name-n*;
 
 > Th e object-name must be an instance of a class whose value can be
@@ -1745,7 +1745,7 @@ General Form 2.7 *Th e* cin *statement*
 >
 > string name;
 >
-> cout &lt;&lt; "Enter your name: "; cin &gt;&gt; name;
+> cout << "Enter your name: "; cin >> name;
 >
 > and this dialogue:
 >
@@ -1764,16 +1764,16 @@ General Form 2.7 *Th e* cin *statement*
 > following program was run several times to show the various ways input
 > is separated.
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() { int a, b, c, d;
 >
-> cout &lt;&lt; "Enter four integers: ";
+> cout << "Enter four integers: ";
 >
 > // Just need to separate input by a space, tab, or new line. cin
-> &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d; cout &lt;&lt; a &lt;&lt;
-> endl; cout &lt;&lt; b &lt;&lt; endl; cout &lt;&lt; c &lt;&lt; endl;
-> cout &lt;&lt; d &lt;&lt; endl; return 0;
+> >> a >> b >> c >> d; cout << a <<
+> endl; cout << b << endl; cout << c << endl;
+> cout << d << endl; return 0;
 >
 > }
 
@@ -1902,7 +1902,7 @@ SELF-CHECK
 > often used are double and int. An int object represents a limited
 > range of whole numbers. Th ere are times when int is the correct
 > choice over double. An int object has operations similar to double (+,
-> \*, -, =, &lt;&lt;, &gt;&gt;), but some diff erences do exist. For
+> \*, -, =, <<, >>), but some diff erences do exist. For
 > example, a fractional part cannot be stored in an int object. Th e
 > fractional part is lost during an assignment statement.
 >
@@ -1932,7 +1932,7 @@ Whereas the result of
 >
 > // the quotient and '%' for the remainder
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() {
 >
@@ -1941,7 +1941,7 @@ Whereas the result of
 >
 > // Input
 >
-> cout &lt;&lt; "Enter total minutes: "; cin &gt;&gt; totalMinutes;
+> cout << "Enter total minutes: "; cin >> totalMinutes;
 >
 > // Process
 >
@@ -1950,11 +1950,11 @@ Whereas the result of
 >
 > // Output
 >
-> cout &lt;&lt; totalMinutes &lt;&lt; " minutes can be rewritten as "
+> cout << totalMinutes << " minutes can be rewritten as "
 >
-> &lt;&lt; fractionalHour &lt;&lt; " hours " &lt;&lt; endl; cout
-> &lt;&lt; "or as " &lt;&lt; hours &lt;&lt; " hours and " &lt;&lt;
-> minutes &lt;&lt; " minutes" &lt;&lt; endl;
+> << fractionalHour << " hours " << endl; cout
+> << "or as " << hours << " hours and " <<
+> minutes << " minutes" << endl;
 >
 > return 0; }
 >
@@ -1998,12 +1998,12 @@ SELF-CHECK
 >
 > // Display the value of an expression with a mix of operands
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() { int n = 10; double sum = 567.9;
 >
 > // n will be promoted to a double and use the oating point / cout
-> &lt;&lt; (sum / n) &lt;&lt; endl;
+> << (sum / n) << endl;
 >
 > return 0; }
 >
@@ -2049,7 +2049,7 @@ SELF-CHECK
 > Th ese constant objects represent values that cannot be changed while
 > the program is executing; therefore a statement such as PI = PI \* r
 > \* r; generates an error because PI is declared as constant. Th e
-> value cannot be destroyed with an input statement such as cin &gt;&gt;
+> value cannot be destroyed with an input statement such as cin >>
 > PI;.
 
 2.4 PROMPT THEN INPUT
@@ -2078,7 +2078,7 @@ SELF-CHECK
                               
                               
 
-  **Code Example:**           > cout &lt;&lt; "Enter your rst name: "; cin &gt;&gt; rstName;
+  **Code Example:**           > cout << "Enter your rst name: "; cin >> rstName;
   --------------------------------------------------------------------------------------------
 
 > Strange things can happen if the prompt is left out. Th e user will
@@ -2089,15 +2089,15 @@ SELF-CHECK
 >
 > Here is one instance of the Prompt then Input pattern:
 >
-> cout &lt;&lt; "Enter test \#1: "; cin &gt;&gt; test1;
+> cout << "Enter test \#1: "; cin >> test1;
 >
 > and another:
 >
-> cout &lt;&lt; "Enter credits: "; cin &gt;&gt; credits;
+> cout << "Enter credits: "; cin >> credits;
 >
 > In general, tell the user the value needed, then read it in with cin.
 >
-> cout &lt;&lt; "*the prompt for the\_object:* "; cin &gt;&gt;
+> cout << "*the prompt for the\_object:* "; cin >>
 > *the\_object*;
 >
 > Th e following program uses the Prompt then Input pattern four times.
@@ -2112,8 +2112,8 @@ SELF-CHECK
 >
 > // result that can be used in a variety of examples
 >
-> \#include &lt;iostream&gt; // For input and output \#include
-> &lt;string&gt; // For the string class using namespace std;
+> \#include <iostream> // For input and output \#include
+> <string> // For the string class using namespace std;
 >
 > int main() {
 >
@@ -2122,19 +2122,19 @@ SELF-CHECK
 >
 > // 1. Input
 >
-> cout &lt;&lt; "Enter rst name: "; cin &gt;&gt; rstName; cout &lt;&lt;
-> "Enter last name: "; cin &gt;&gt; lastName; cout &lt;&lt; "Enter
-> credits: "; cin &gt;&gt; credits; cout &lt;&lt; "Enter points: "; cin
-> &gt;&gt; points;
+> cout << "Enter rst name: "; cin >> rstName; cout <<
+> "Enter last name: "; cin >> lastName; cout << "Enter
+> credits: "; cin >> credits; cout << "Enter points: "; cin
+> >> points;
 >
 > // 2. Process
 >
 > GPA = points / credits;
 >
-> // 3. Output cout &lt;&lt; "Name : " &lt;&lt; rstName &lt;&lt; " "
-> &lt;&lt; lastName &lt;&lt; endl; cout &lt;&lt; "Credits : " &lt;&lt;
-> credits &lt;&lt; endl; cout &lt;&lt; "Points : " &lt;&lt; points
-> &lt;&lt; endl; cout &lt;&lt; "GPA : " &lt;&lt; GPA &lt;&lt; endl;
+> // 3. Output cout << "Name : " << rstName << " "
+> << lastName << endl; cout << "Credits : " <<
+> credits << endl; cout << "Points : " << points
+> << endl; cout << "GPA : " << GPA << endl;
 
 2.4: Prompt Then Input
 
@@ -2171,9 +2171,9 @@ SELF-CHECK
 >
 > // meaningful result that can be used for a variety of examples
 >
-> \#include &lt;iostream&gt; // For cin, cout, and endl
+> \#include <iostream> // For cin, cout, and endl
 >
-> \#include &lt;string&gt; // For the string class using namespace std;
+> \#include <string> // For the string class using namespace std;
 >
 > int main() {
 >
@@ -2182,18 +2182,18 @@ SELF-CHECK
 >
 > // 1. Input
 >
-> cout &lt;&lt; "Credits for course 1: "; cin &gt;&gt; c1;
+> cout << "Credits for course 1: "; cin >> c1;
 >
-> cout &lt;&lt; " Grade for course 1: "; cin &gt;&gt; g1;
+> cout << " Grade for course 1: "; cin >> g1;
 >
-> cout &lt;&lt; "Credits for course 2: "; cin &gt;&gt; c2;
+> cout << "Credits for course 2: "; cin >> c2;
 >
-> cout &lt;&lt; " Grade for course 2: "; cin &gt;&gt; g2; // 2. Process
+> cout << " Grade for course 2: "; cin >> g2; // 2. Process
 > GPA = ( (g1\*c1) + (g2\*c2) ) / (c1 + c2);
 >
 > // 3. Output
 >
-> cout &lt;&lt; "GPA: " &lt;&lt; GPA &lt;&lt; endl; return 0;
+> cout << "GPA: " << GPA << endl; return 0;
 >
 > }
 
@@ -2279,13 +2279,13 @@ a.  \_\_\_\_\_\_\_\_ GPA
   Splitting a variable name                            int Total Weight;
   Misspelling a name                                   integer sum = 0 ;
   Omitting a semicolon                                 double x
-  Not closing a string                                 cout &lt;&lt; "Hello;
-  > Failing to declare the variable                    cin &gt;&gt; testScore;
+  Not closing a string                                 cout << "Hello;
+  > Failing to declare the variable                    cin >> testScore;
   Ignoring case sensitivity                            double X;
                                                        X = 5.0;
-  Forgetting an argument                               cout &lt;&lt; sqrt;
-  Using wrong type                                     cout &lt;&lt; sqrt("12"); cout &lt;&lt; sqrt(12.0);
-  > Using too many arguments                           cout &lt;&lt; sqrt(1.2, 3); cout &lt;&lt; sqrt(1.2);
+  Forgetting an argument                               cout << sqrt;
+  Using wrong type                                     cout << sqrt("12"); cout << sqrt(12.0);
+  > Using too many arguments                           cout << sqrt(1.2, 3); cout << sqrt(1.2);
   > Forgetting namespace std;                          // cout is unknown using namespace std;
 
 > Compilers generate many error messages. However, it is your source
@@ -2301,22 +2301,22 @@ a.  \_\_\_\_\_\_\_\_ GPA
 >
 > // This attempt at a program contains many errors--over a
 >
-> // dozen. Add \#include &lt;iostream&gt;, and there are only eight.
+> // dozen. Add \#include <iostream>, and there are only eight.
 > using namespace std;
 >
 > int main { // 1. No () after main. // 2. Every cin and cout will
 > generate an error
 >
-> // because \#include &lt;iostream&gt; is missing. int pounds;
+> // because \#include <iostream> is missing. int pounds;
 >
-> cout &lt;&lt; "Begin execution" &lt;&lt; endl // Missing ; after endl
-> cout &gt;&gt; "Enter weight in pounds: "; // &gt;&gt; should be
-> &lt;&lt; cin &lt;&lt; pounds; // &lt;&lt; should be &gt;&gt; cout
-> &lt;&lt; "In the U.K., you"; // Extra ;
+> cout << "Begin execution" << endl // Missing ; after endl
+> cout >> "Enter weight in pounds: "; // >> should be
+> << cin << pounds; // << should be >> cout
+> << "In the U.K., you"; // Extra ;
 >
-> &lt;&lt; " weigh " &lt;&lt; (Pounds / 14) // Pounds is not declared
+> << " weigh " << (Pounds / 14) // Pounds is not declared
 >
-> &lt;&lt; " stone. " &lt;&lt; endl // Missing ; return 0; // Missing
+> << " stone. " << endl // Missing ; return 0; // Missing
 > right brace }
 >
 > Compilers can generate some rather cryptic messages. When the program
@@ -2336,14 +2336,14 @@ interactive dialogue:
 
 > // There are no compile time errors in this program
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() { int pounds;
 >
-> cout &lt;&lt; "Begin execution" &lt;&lt; endl; cout &lt;&lt; "Enter
-> your weight in pounds: "; cin &gt;&gt; pounds; cout &lt;&lt; "In the
-> U.K., " &lt;&lt; "you weigh " &lt;&lt; (pounds/14.0) &lt;&lt; "
-> stone." &lt;&lt; endl;
+> cout << "Begin execution" << endl; cout << "Enter
+> your weight in pounds: "; cin >> pounds; cout << "In the
+> U.K., " << "you weigh " << (pounds/14.0) << "
+> stone." << endl;
 >
 > return 0; }
 >
@@ -2359,18 +2359,18 @@ interactive dialogue:
 > otherwise error-free program caused the Clang C++ compiler to generate
 > 11 compile time errors!
 >
-> \#include &lt;iostream&gt; // For cin and cout
+> \#include <iostream> // For cin and cout
 >
-> \#include &lt;string&gt; // For the string class using namespace std;
+> \#include <string> // For the string class using namespace std;
 >
-> int main() // &lt;- Without the left curly brace, there were 11
+> int main() // <- Without the left curly brace, there were 11
 > errors!
 >
 > double x; string str;
 >
-> cout &lt;&lt; "Enter a double: "; cin &gt;&gt; x;
+> cout << "Enter a double: "; cin >> x;
 >
-> cout &lt;&lt; "Enter a string: "; cin &gt;&gt; str; return 0; }
+> cout << "Enter a string: "; cin >> str; return 0; }
 >
 > Compile time error messages from one compiler
 >
@@ -2404,9 +2404,9 @@ Th e SunOS C++ compiler reported one error, which is more decipherable:
 > Compilers also generate warnings, which are messages intended to help
 > programmers avoid errors later on. Consider the following code:
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
-> int main() { double x, y; y = 2 \* x; cout &lt;&lt; y &lt;&lt; endl; }
+> int main() { double x, y; y = 2 \* x; cout << y << endl; }
 
 SELF-CHECK
 
@@ -2484,19 +2484,19 @@ SELF-CHECK
 > good input and once with “bad” input; a fl oating-point number such as
 > 1.2 instead of an integer.
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() {
 >
 > int anInt, anotherInt;
 >
-> cout &lt;&lt; "Enter anInt: "; cin &gt;&gt; anInt;
+> cout << "Enter anInt: "; cin >> anInt;
 >
-> cout &lt;&lt; "anInt: " &lt;&lt; anInt &lt;&lt; endl;
+> cout << "anInt: " << anInt << endl;
 >
-> cout &lt;&lt; "Enter anotherInt: "; cin &gt;&gt; anotherInt;
+> cout << "Enter anotherInt: "; cin >> anotherInt;
 >
-> cout &lt;&lt; "anotherInt: " &lt;&lt; anotherInt &lt;&lt; endl; return
+> cout << "anotherInt: " << anotherInt << endl; return
 > 0; }
 >
 > With good input, the user can enter two integers:
@@ -2518,7 +2518,7 @@ SELF-CHECK
 > and terminate normally, but it may not be correct. Let’s make one
 > small change to an earlier program to get an incorrect program.
 >
-> cout &lt;&lt; "Average: " &lt;&lt; (n / sum); Th e interactive
+> cout << "Average: " << (n / sum); Th e interactive
 > dialogue may now look like this:
 >
 > Enter sum: ***291***
@@ -2552,10 +2552,10 @@ SELF-CHECK
 2-20 Assuming the following code was used to generate the dialogue
 above, how is the intent error to be corrected?
 
-> cout &lt;&lt; "Enter sum: "; cin &gt;&gt; n; cout &lt;&lt; "Number :
-> "; cin &gt;&gt; sum; average = sum / n;
+> cout << "Enter sum: "; cin >> n; cout << "Number :
+> "; cin >> sum; average = sum / n;
 >
-> cout &lt;&lt; "Average : " &lt;&lt; average &lt;&lt; endl;
+> cout << "Average : " << average << endl;
 >
 > 2-21 List the type of error (compile time, runtime, linktime, or
 > intent) or warning that exists when the last statement in the
@@ -2563,11 +2563,11 @@ above, how is the intent error to be corrected?
 
 Chapter Summary
 
-a.  cout &lt;&lt; "Average: " &lt;&lt; "sum / n";
+a.  cout << "Average: " << "sum / n";
 
-b.  cout &lt;&lt; "Average: ", sum / n;
+b.  cout << "Average: ", sum / n;
 
-c.  cout &lt;&lt; "Average: " &lt;&lt; sum / n
+c.  cout << "Average: " << sum / n
 
 2.5.6 WHEN THE SOFTWARE DOESN’T MATCH THE SPECIFICATION
 
@@ -2599,14 +2599,14 @@ CHAPTER SUMMARY
     > understand general forms and fi x errors.
 
 -   Objects are entities that have a name, state (value),
-    > and operations. Output (cout &lt;&lt;) and input (cin &gt;&gt;)
+    > and operations. Output (cout <<) and input (cin >>)
     > operations are used in concert with double and string objects to
     > set their states. Th ere are at least three techniques for
     > modifying the state of an object:
 
 -   initialization with double x = 0.0;
 
--   input with cin &gt;&gt;
+-   input with cin >>
 
 -   assignment with =
 
@@ -2621,7 +2621,7 @@ CHAPTER SUMMARY
     > that they are automati-
 
 > cally made available for easy screen output and keyboard input with
-> \#include &lt;iostream&gt;. If you add using namespace std; you do not
+> \#include <iostream>. If you add using namespace std; you do not
 > have to precede cout, cin, and endl with std:: .
 
 -   Arithmetic expressions are made up of operators +, -, \*, /, and
@@ -2695,12 +2695,12 @@ Exercises
     > user-supplied input as well as all program output including
     > the prompt.
 
-> \#include &lt;iostream&gt; using namespace std; int main() { double x
-> = 0.0; double y = 0.0; double answer = 0.0; cout &lt;&lt; "Enter a
-> number: "; cin &gt;&gt; x;
+> \#include <iostream> using namespace std; int main() { double x
+> = 0.0; double y = 0.0; double answer = 0.0; cout << "Enter a
+> number: "; cin >> x;
 >
-> cout &lt;&lt; "Enter another number: "; cin &gt;&gt; y; answer = x \*
-> (1.0 + y); cout &lt;&lt; "Answer: " &lt;&lt; answer &lt;&lt; endl;
+> cout << "Enter another number: "; cin >> y; answer = x \*
+> (1.0 + y); cout << "Answer: " << answer << endl;
 > return 0; }
 
 1.  Write C++ code that declares tolerance as a numeric object set to
@@ -2738,17 +2738,17 @@ Exercises
 
 a\. b.
 
-> \#include &lt;iostream&gt; using namespace std; int main() { double x
-> = 1.2; double y = 3.4; cout &lt;&lt; (x + y) &lt;&lt; endl; cout
-> &lt;&lt; (x - y) &lt;&lt; endl; cout &lt;&lt; (x \* y) &lt;&lt; endl;
-> cout &lt;&lt; (x / y) &lt;&lt; endl; return 0;
+> \#include <iostream> using namespace std; int main() { double x
+> = 1.2; double y = 3.4; cout << (x + y) << endl; cout
+> << (x - y) << endl; cout << (x \* y) << endl;
+> cout << (x / y) << endl; return 0;
 >
 > }
 
-\#include &lt;iostream&gt; using namespace std; int main() { double x =
+\#include <iostream> using namespace std; int main() { double x =
 0.5; double y = 2.3; double answer = 0.0; answer = x \* (1 + y); cout
-&lt;&lt; answer &lt;&lt; endl; answer = x / (1 + y); cout &lt;&lt;
-answer &lt;&lt; endl; return 0; }
+<< answer << endl; answer = x / (1 + y); cout <<
+answer << endl; return 0; }
 
 15. What is the value of quarter when change is initialized as follows:
 
@@ -2768,18 +2768,18 @@ answer &lt;&lt; endl; return 0; }
 
 16. At what time will the error in this code be detected?
 
-> \#include &lt;iostream&gt; using namespace std; int Main() { cout
-> &lt;&lt; "Hello world"; return 0; }
+> \#include <iostream> using namespace std; int Main() { cout
+> << "Hello world"; return 0; }
 
 15. Explain how to fi x the error in each of these lines:
 
-    a.  cout &lt;&lt; "Hello world" c. cout "Hello World";
+    a.  cout << "Hello world" c. cout "Hello World";
 
-    b.  cout &gt;&gt; "Hello world"; d. cout &lt;&lt; "Hello World;
+    b.  cout >> "Hello world"; d. cout << "Hello World;
 
 16. Explain the error in this attempt at a program:
 
-> int main() { cout &lt;&lt; "Hello world";
+> int main() { cout << "Hello world";
 
 Exercises
 
@@ -2803,27 +2803,27 @@ Exercises
 18. Write the output generated by the following programs:
 
   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  a.   \#include &lt;iostream&gt; using namespace std; int main() { const int MAX = 5; cout &lt;&lt; (MAX / 2.0) &lt;&lt; endl; cout &lt;&lt; (2.0 / MAX) &lt;&lt; endl; cout &lt;&lt; (2 / MAX) &lt;&lt; endl; cout &lt;&lt; (MAX / 2) &lt;&lt; endl; return 0;   c.
+  a.   \#include <iostream> using namespace std; int main() { const int MAX = 5; cout << (MAX / 2.0) << endl; cout << (2.0 / MAX) << endl; cout << (2 / MAX) << endl; cout << (MAX / 2) << endl; return 0;   c.
                                                                                                                                                                                                                                                                    
-       }                                                                                                                                                                                                                                                           > \#include &lt;iostream&gt; using namespace std;
+       }                                                                                                                                                                                                                                                           > \#include <iostream> using namespace std;
                                                                                                                                                                                                                                                                    >
-                                                                                                                                                                                                                                                                   > \#include &lt;string&gt; int main() {
+                                                                                                                                                                                                                                                                   > \#include <string> int main() {
                                                                                                                                                                                                                                                                    >
-                                                                                                                                                                                                                                                                   > const string pipe = " ¦ "; cout &lt;&lt; pipe &lt;&lt; (1 + 5.5) &lt;&lt; pipe &lt;&lt; (3 + 3 / 3)
+                                                                                                                                                                                                                                                                   > const string pipe = " ¦ "; cout << pipe << (1 + 5.5) << pipe << (3 + 3 / 3)
                                                                                                                                                                                                                                                                    >
-                                                                                                                                                                                                                                                                   > &lt;&lt; pipe &lt;&lt; (1 + 2) / (3 + 4)
+                                                                                                                                                                                                                                                                   > << pipe << (1 + 2) / (3 + 4)
                                                                                                                                                                                                                                                                    >
-                                                                                                                                                                                                                                                                   > &lt;&lt; pipe &lt;&lt; (1 + 2 \* 3 / 4); return 0;
+                                                                                                                                                                                                                                                                   > << pipe << (1 + 2 \* 3 / 4); return 0;
                                                                                                                                                                                                                                                                    >
                                                                                                                                                                                                                                                                    > }
   ---- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------
-  b.   \#include &lt;iostream&gt; using namespace std; int main() { int j = 14; int k = 3;                                                                                                                                                                         d.
+  b.   \#include <iostream> using namespace std; int main() { int j = 14; int k = 3;                                                                                                                                                                         d.
                                                                                                                                                                                                                                                                    
-       cout &lt;&lt; "Quotient: "                                                                                                                                                                                                                                  > \#include &lt;iostream&gt; using namespace std; int main() { int j = 11;
+       cout << "Quotient: "                                                                                                                                                                                                                                  > \#include <iostream> using namespace std; int main() { int j = 11;
                                                                                                                                                                                                                                                                    >
-       &lt;&lt; (j / k) &lt;&lt; endl; cout &lt;&lt; "Remainder: " &lt;&lt; (j % k) &lt;&lt; endl; return 0;                                                                                                                                                       > cout &lt;&lt; " " &lt;&lt; (j % 2) &lt;&lt; " " &lt;&lt; (j / 2)
+       << (j / k) << endl; cout << "Remainder: " << (j % k) << endl; return 0;                                                                                                                                                       > cout << " " << (j % 2) << " " << (j / 2)
                                                                                                                                                                                                                                                                    >
-       }                                                                                                                                                                                                                                                           > &lt;&lt; " " &lt;&lt; ((j - j) / 2); return 0;
+       }                                                                                                                                                                                                                                                           > << " " << ((j - j) / 2); return 0;
                                                                                                                                                                                                                                                                    >
                                                                                                                                                                                                                                                                    > }
   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2834,7 +2834,7 @@ PROGRAMMING TIPS
     > with ;. However, do not place semicolons after \#includes and
     > int main().
 
-> \#include &lt;iostream&gt; ; // Error found on this line int main() ;
+> \#include <iostream> ; // Error found on this line int main() ;
 > // Error found on this line {
 
 1.  Fix the fi rst error fi rst. When you compile, you may get dozens
@@ -2860,14 +2860,14 @@ PROGRAMMING TIPS
 1.  If you do not have the line using namespace std; you will have to
     > prepend std:: before every occurrence of the cin, cout, and endl.
 
-> \#include &lt;iostream&gt; // For cout, cin, and endl
+> \#include <iostream> // For cout, cin, and endl
 >
 > // using namespace std; Without this, prepend with std::
 >
-> int main() { std::string name; std::cin &gt;&gt; name;
+> int main() { std::string name; std::cin >> name;
 >
-> std::cout &lt;&lt; "Hello" &lt;&lt; std::endl; std::cout &lt;&lt; name
-> &lt;&lt; std::endl; }
+> std::cout << "Hello" << std::endl; std::cout << name
+> << std::endl; }
 
 **PROGRAMMING PROJECTS**
 
@@ -2885,13 +2885,13 @@ Programming Projects
 > // Programmer: Firstname Lastname // This programs displays a simple
 > message.
 >
-> \#include &lt;iostream&gt; // For cout
+> \#include <iostream> // For cout
 >
 > using namespace std; // Allow cout instead of std::cout
 >
 > int main() {
 >
-> cout &lt;&lt; "Hello World!" &lt;&lt; endl; return 0; }
+> cout << "Hello World!" << endl; return 0; }
 
 2B EXPERIENCE ERRORS GENERATED BY THE COMPILER
 
@@ -2905,22 +2905,22 @@ Programming Projects
 >
 > // Observe how many errors occur when { is missing
 >
-> \#include &lt;iostream&gt; // For cout using namespace std; // To make
+> \#include <iostream> // For cout using namespace std; // To make
 > cout known
 >
-> int main() // &lt;- Leave off { double x = 2.4; double y = 4.5; cout
-> &lt;&lt; "x: " &lt;&lt; x &lt;&lt; endl; cout &lt;&lt; "y: " &lt;&lt;
-> y &lt;&lt; endl; return 0; }
+> int main() // <- Leave off { double x = 2.4; double y = 4.5; cout
+> << "x: " << x << endl; cout << "y: " <<
+> y << endl; return 0; }
 
 1.  Compile your source code and write the number of errors that occur.
 
 2.  Add { after int main() and compile again. Make corrections until you
     > have no errors.
 
-3.  Now remove the \#include directive \#include &lt;iostream&gt; and
+3.  Now remove the \#include directive \#include <iostream> and
     > compile the program. How many errors do you get?
 
-4.  Replace \#include &lt;iostream&gt; and remove the () after main. How
+4.  Replace \#include <iostream> and remove the () after main. How
     > many errors do you get?
 
 5.  Comment out using namespace std;. How many errors do you get now?
@@ -3057,18 +3057,18 @@ Programming Projects
 > the same. 101, 252, or 989 are not expected to generate 1089. (*Hint:*
 > To fi nd the diff erence between two numbers, use the absolute value
 > function abs. Th e argument is an expression that subtracts two
-> numbers. You may need to \#include &lt;cstdlib&gt;.)
+> numbers. You may need to \#include <cstdlib>.)
 >
-> \#include &lt;cstdlib&gt; // A new include
+> \#include <cstdlib> // A new include
 >
-> \#include &lt;iostream&gt; using namespace std; int main() {
+> \#include <iostream> using namespace std; int main() {
 >
 > // abs is a new function that can return the difference
 >
 > // between two numbers by subtracting one from the other.
 >
-> cout &lt;&lt; abs(541 - 145) &lt;&lt; endl; // 396 cout &lt;&lt;
-> abs(145 - 541) &lt;&lt; endl; // 396 return 0; }
+> cout << abs(541 - 145) << endl; // 396 cout <<
+> abs(145 - 541) << endl; // 396 return 0; }
 
 2I TIME DIFFERENCE
 
@@ -3154,7 +3154,7 @@ General Form 3.1 *Function call*
 > name is pow (for power), the arguments are base and power, and the
 > function call pow(base, power) is replaced with base^power^:
 >
-> double base = 2.0; double power = 3.0; cout &lt;&lt; pow(base, power);
+> double base = 2.0; double power = 3.0; cout << pow(base, power);
 > // Output: 8.0
 >
 > Any argument used in a function call must be an expression from an
@@ -3186,24 +3186,24 @@ General Form 3.1 *Function call*
 
 3.2: Problem Solving with cmath Functions
 
-> With \#include &lt;cmath&gt; at the “top” of the program near
-> \#include &lt;iostream&gt;, the programmer can successfully compile a
+> With \#include <cmath> at the “top” of the program near
+> \#include <iostream>, the programmer can successfully compile a
 > program with calls to the functions declared in cmath. Th is means
 > that the following program compiles successfully:
 >
 > // Show some mathematical functions available from cmath
 >
-> \#include &lt;cmath&gt; // For fabs, ceil, oor, and pow
+> \#include <cmath> // For fabs, ceil, oor, and pow
 >
-> \#include &lt;iostream&gt; // For cout using namespace std;
+> \#include <iostream> // For cout using namespace std;
 >
 > int main() { double x = -2.1;
 >
-> cout &lt;&lt; "fabs(-2.1): " &lt;&lt; fabs(x) &lt;&lt; endl &lt;&lt;
-> "ceil(-2.1): " &lt;&lt; ceil(x) &lt;&lt; endl
+> cout << "fabs(-2.1): " << fabs(x) << endl <<
+> "ceil(-2.1): " << ceil(x) << endl
 >
-> &lt;&lt; " oor(-2.1): " &lt;&lt; oor(x) &lt;&lt; endl &lt;&lt;
-> "pow(-2.1, 2.0): " &lt;&lt; pow(x, 2.0) &lt;&lt; endl; return 0; }
+> << " oor(-2.1): " << oor(x) << endl <<
+> "pow(-2.1, 2.0): " << pow(x, 2.0) << endl; return 0; }
 >
 > Output
 >
@@ -3371,7 +3371,7 @@ SELF-CHECK
 >
 > // Round a given number to a speci c number of decimal places
 >
-> \#include &lt;iostream&gt; // For cin and cout \#include &lt;cmath&gt;
+> \#include <iostream> // For cin and cout \#include <cmath>
 > // For pow(10, n) and oor(x) using namespace std;
 >
 > int main() {
@@ -3381,15 +3381,15 @@ SELF-CHECK
 
 // Algorithm step number:
 
-> // Input cout &lt;&lt; "Enter number to round : "; // 1. cin &gt;&gt;
-> x; // 2. cout &lt;&lt; "Enter number of decimal places : " ; // 3. cin
-> &gt;&gt; n; // 4.
+> // Input cout << "Enter number to round : "; // 1. cin >>
+> x; // 2. cout << "Enter number of decimal places : " ; // 3. cin
+> >> n; // 4.
 >
 > // Process (Round x to n decimals) x = x \* pow(10, n); // 5a. x = x +
 > 0.5; // b. x = oor(x); // c. x = x / pow(10, n); // d.
 >
-> // Output (Display the modi ed state of x) cout &lt;&lt; "Rounded
-> number : " &lt;&lt; x &lt;&lt; endl; // 6.
+> // Output (Display the modi ed state of x) cout << "Rounded
+> number : " << x << endl; // 6.
 >
 > return 0; }
 >
@@ -3451,7 +3451,7 @@ for n?
 >
 > double sqrt(double x)
 >
-> // precondition: x is not negative (x &gt;= 0)
+> // precondition: x is not negative (x >= 0)
 >
 > // postcondition: Square root of x replaces the function call
 >
@@ -3478,7 +3478,7 @@ for n?
 >
 > // precondition: Argument must be convertible to a double
 >
-> // postcondition: Return the smallest integer &gt;= x
+> // postcondition: Return the smallest integer >= x
 >
 > However, this information is implied in the parameter declaration. Th
 > e compiler detects improper argument. From now on, such function
@@ -3487,13 +3487,13 @@ for n?
 > Th e compiler does not detect preconditions. For example, it is
 > syntactically correct to have a program with this:
 >
-> cout &lt;&lt; sqrt(-1.0); // Return depends on the system in use
+> cout << sqrt(-1.0); // Return depends on the system in use
 >
 > From now on, the label for preconditions will be abbreviated as pre:
 > and for postconditions as post:. Th e same function (ceil) may now be
 > documented as follows:
 >
-> double ceil(double x) // post: Return the smallest integer &gt;= x
+> double ceil(double x) // post: Return the smallest integer >= x
 >
 > It should be noted that the use of pre: and post: after the function
 > headings is not required. Diff erent people document functions in
@@ -3577,7 +3577,7 @@ General Form 3.3 *Value Parameter*
 >
 > double oor(double x)
 >
-> // post: Returns the largest integer &lt;= x
+> // post: Returns the largest integer <= x
 >
 > Th e return type is double. Th is means that a double replaces any
 > valid call to oor. Th erefore, the function call can be used wherever
@@ -3593,8 +3593,8 @@ double x; x = oor(5.55555); // This assignment is okay However, these
 function calls are invalid:
 
 > string s; s = oor(5.5555); // Error: oor doesn't return a string cout
-> &lt;&lt; oor(1.0, 2.0); // Error: too many arguments cout &lt;&lt;
-> oor("wrong type"); // Error: wrong type argument cout &lt;&lt; oor();
+> << oor(1.0, 2.0); // Error: too many arguments cout <<
+> oor("wrong type"); // Error: wrong type argument cout << oor();
 > // Error: too few arguments
 
 SELF-CHECK
@@ -3776,15 +3776,15 @@ c.  number of arguments f. class of third argument
 > the standard C++ library has free functions that can be used in an
 > end-of-chapter programming project: min, max, and abs.
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() {
 >
-> cout &lt;&lt; min(5, 7) &lt;&lt; endl; cout &lt;&lt; min(5.5, 7.7)
-> &lt;&lt; endl;
+> cout << min(5, 7) << endl; cout << min(5.5, 7.7)
+> << endl;
 >
-> cout &lt;&lt; max(5, 7) &lt;&lt; endl; cout &lt;&lt; max(5.5, 7.7)
-> &lt;&lt; endl; cout &lt;&lt; abs(5 - 7) &lt;&lt; endl;
+> cout << max(5, 7) << endl; cout << max(5.5, 7.7)
+> << endl; cout << abs(5 - 7) << endl;
 >
 > return 0;
 >
@@ -3809,7 +3809,7 @@ c.  number of arguments f. class of third argument
 > should have char parameters and return types because they convert
 > characters to their upper or lower case equivalents. Consider the
 > function heading for the free function islower when you
-> \#include&lt;cctype&gt; to have access to its set of functions to
+> \#include<cctype> to have access to its set of functions to
 > classify and transform individual characters.
 >
 > int islower(int c);
@@ -3823,18 +3823,18 @@ c.  number of arguments f. class of third argument
 > Arithmetic operations can have a mix of integers and character
 > operands.
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() {
 >
 > int anInt = 'A'; // 'A' equals 65 char aChar = 67; // 67 equals 'C'
 >
-> cout &lt;&lt; "anInt: " &lt;&lt; anInt &lt;&lt; endl; cout &lt;&lt;
-> "aChar: " &lt;&lt; aChar &lt;&lt; endl;
+> cout << "anInt: " << anInt << endl; cout <<
+> "aChar: " << aChar << endl;
 >
-> cout &lt;&lt; "aChar + anInt: " &lt;&lt; (aChar + anInt) &lt;&lt;
-> endl; cout &lt;&lt; "anInt % aChar: " &lt;&lt; (anInt % aChar - 2)
-> &lt;&lt; endl;
+> cout << "aChar + anInt: " << (aChar + anInt) <<
+> endl; cout << "anInt % aChar: " << (anInt % aChar - 2)
+> << endl;
 >
 > return 0; }
 >
@@ -3845,13 +3845,13 @@ c.  number of arguments f. class of third argument
 More confusion may occur because C++ considers true to be 1 and false to
 be 0.
 
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() {
 >
 > bool aBool = 1; // C++ allows assignment of int to bool int
-> anotherBool = false; // and a bool literal to an int cout &lt;&lt;
-> aBool &lt;&lt; " " &lt;&lt; anotherBool &lt;&lt; endl;
+> anotherBool = false; // and a bool literal to an int cout <<
+> aBool << " " << anotherBool << endl;
 >
 > return 0; }
 >
@@ -3863,37 +3863,37 @@ be 0.
 >
 > If you need to classify if a char is an alphabetic letter like “A” or
 > “a”, or a digit such as “9” or “3”, you can use one of the free
-> functions from &lt;cctype&gt;. Th is program shows three more cctype
+> functions from <cctype>. Th is program shows three more cctype
 > functions:
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;cctype&gt; // For isalpha isblank isdigit using
+> \#include <cctype> // For isalpha isblank isdigit using
 > namespace std;
 >
 > int main() { char ch = 'a';
 >
-> cout &lt;&lt; "isalpha('" &lt;&lt; ch &lt;&lt; "')? " &lt;&lt;
-> isalpha(ch) &lt;&lt; endl; ch = '?';
+> cout << "isalpha('" << ch << "')? " <<
+> isalpha(ch) << endl; ch = '?';
 >
-> cout &lt;&lt; "isalpha('" &lt;&lt; ch &lt;&lt; "')? " &lt;&lt;
-> isalpha(ch) &lt;&lt; endl;
+> cout << "isalpha('" << ch << "')? " <<
+> isalpha(ch) << endl;
 >
 > ch = ' ';
 >
-> cout &lt;&lt; "isblank('" &lt;&lt; ch &lt;&lt; "')? " &lt;&lt;
-> isblank(ch) &lt;&lt; endl; ch = 'N';
+> cout << "isblank('" << ch << "')? " <<
+> isblank(ch) << endl; ch = 'N';
 >
-> cout &lt;&lt; "isblank('" &lt;&lt; ch &lt;&lt; "')? " &lt;&lt;
-> isblank(ch) &lt;&lt; endl;
+> cout << "isblank('" << ch << "')? " <<
+> isblank(ch) << endl;
 >
 > ch = 'P'; // Oh, not zero
 >
-> cout &lt;&lt; "isdigit('" &lt;&lt; ch &lt;&lt; "')? " &lt;&lt;
-> isdigit(ch) &lt;&lt; endl; ch = '5';
+> cout << "isdigit('" << ch << "')? " <<
+> isdigit(ch) << endl; ch = '5';
 >
-> cout &lt;&lt; "isdigit('" &lt;&lt; ch &lt;&lt; "')? " &lt;&lt;
-> isdigit(ch) &lt;&lt; endl;
+> cout << "isdigit('" << ch << "')? " <<
+> isdigit(ch) << endl;
 >
 > return 0;
 >
@@ -3909,16 +3909,16 @@ isdigit('P')? 0 isdigit('5')? 1
 > int instead of char, the functions are cast to char with the code
 > (char). Otherwise the output from this program would have been 88 97.
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;cctype&gt; // For toupper and tolower using namespace
+> \#include <cctype> // For toupper and tolower using namespace
 > std;
 >
 > int main() { char lower = 't'; char upper = 'A';
 >
-> // (char) makes sure we the character, not the int cout &lt;&lt;
-> (char)toupper(lower) &lt;&lt; endl; // Cast required cout &lt;&lt;
-> (char)tolower(upper) &lt;&lt; endl; // to see chars
+> // (char) makes sure we the character, not the int cout <<
+> (char)toupper(lower) << endl; // Cast required cout <<
+> (char)tolower(upper) << endl; // to see chars
 >
 > return 0; }
 >
@@ -3936,8 +3936,8 @@ CHAPTER SUMMARY
     > these details are necessary for implementation of even the
     > simplest program.
 
--   \#include&lt;cmath&gt; provides access to many mathematical and
-    > trigonometric functions. \#include&lt;cctype&gt; provides access
+-   \#include<cmath> provides access to many mathematical and
+    > trigonometric functions. \#include<cctype> provides access
     > to a set of functions that classify and transform
     > individual characters.
 
@@ -4030,7 +4030,7 @@ EXERCISES
 >
 > // If the value of y is 0.0, fmod returns Not a Number.
 >
-> // Header required: &lt;cmath&gt;
+> // Header required: <cmath>
 
 1.  Write the values returned from each of the six function calls in
     > your answer to the preceding question.
@@ -4057,23 +4057,23 @@ Programming Projects
 
 > char aChar = true; // assign 1
 >
-> cout &lt;&lt; "&gt;" &lt;&lt; aChar &lt;&lt; "&lt;" &lt;&lt; endl; //
-> Output: &gt;&lt;
+> cout << ">" << aChar << "<" << endl; //
+> Output: ><
 
 1.  If you do not have the line using namespace std; you will have to
     > prepend std:: before every occurrence of the cmath function
     > you use.
 
-> \#include &lt;iostream&gt; // For cout
+> \#include <iostream> // For cout
 >
-> \#include &lt;cmath&gt; // for ceil and oor
+> \#include <cmath> // for ceil and oor
 >
 > // using namespace std; Without this, prepend with std::
 >
 > int main() {
 >
-> std::cout &lt;&lt; std::ceil(5.99) &lt;&lt; std::endl; // 6 std::cout
-> &lt;&lt; std:: oor(5.99) &lt;&lt; std::endl; // 5 }
+> std::cout << std::ceil(5.99) << std::endl; // 6 std::cout
+> << std:: oor(5.99) << std::endl; // 5 }
 
 **PROGRAMMING PROJECTS**
 
@@ -4302,20 +4302,20 @@ Example of returning a value back to the calling code:
 > called—the entire function f is located before the call to it from
 > main.
 >
-> \#include &lt;iostream&gt; // For cout
+> \#include <iostream> // For cout
 >
-> \#include &lt;cmath&gt; // For pow using namespace std;
+> \#include <cmath> // For pow using namespace std;
 >
 > double f(double x) { // post: Return 2 \* x \* x - 1 double result;
 > result = 2 \* pow(x, 2) - 1.0; return result; }
 >
-> int main() { double x, y; cout &lt;&lt; "Input x: "; cin &gt;&gt; x;
+> int main() { double x, y; cout << "Input x: "; cin >> x;
 >
 > // Call function f:
 >
 > y = f(x);
 >
-> cout &lt;&lt; "f(" &lt;&lt; x &lt;&lt; ") = " &lt;&lt; y &lt;&lt;
+> cout << "f(" << x << ") = " << y <<
 > endl; return 0;
 >
 > }
@@ -4343,12 +4343,12 @@ SELF-CHECK
 >
 > // Call serviceCharge to determine a bank debit
 >
-> \#include &lt;iostream&gt; using namespace std; const double
+> \#include <iostream> using namespace std; const double
 > MONTHLY\_FEE = 5.00;
 >
 > double serviceCharge(int checks, int ATMs) {
 >
-> // pre: checks &gt;= 0 and ATM &gt;= 0
+> // pre: checks >= 0 and ATM >= 0
 >
 > // post: Return a banking fee based on local rules double result;
 >
@@ -4362,9 +4362,9 @@ SELF-CHECK
 >
 > // 1. Input
 >
-> cout &lt;&lt; "Checks this month? "; cin &gt;&gt; checks;
+> cout << "Checks this month? "; cin >> checks;
 >
-> cout &lt;&lt; "ATMs this month? "; cin &gt;&gt; ATMs;
+> cout << "ATMs this month? "; cin >> ATMs;
 >
 > // 2. Process
 >
@@ -4372,7 +4372,7 @@ SELF-CHECK
 >
 > // 3. Output
 >
-> cout &lt;&lt; "Fee: " &lt;&lt; fee &lt;&lt; endl;
+> cout << "Fee: " << fee << endl;
 >
 > return 0; }
 >
@@ -4428,12 +4428,12 @@ SELF-CHECK
 
 > // The main function makes several calls to test a new function
 >
-> \#include &lt;iostream&gt; using namespace std; const double
+> \#include <iostream> using namespace std; const double
 > MONTHLY\_FEE = 5.00;
 >
 > double serviceCharge(int checks, int ATMs) {
 >
-> // pre: checks &gt;= 0 and ATM &gt;= 0
+> // pre: checks >= 0 and ATM >= 0
 >
 > // post: Return a banking fee based on local rules double result;
 >
@@ -4444,10 +4444,10 @@ SELF-CHECK
 >
 > // Test drive serviceCharge // Sample problems:
 >
-> cout &lt;&lt; serviceCharge(0, 0) &lt;&lt; endl; // 5.0 cout &lt;&lt;
-> serviceCharge(1, 0) &lt;&lt; endl; // 5.25 cout &lt;&lt;
-> serviceCharge(0, 1) &lt;&lt; endl; // 5.1 cout &lt;&lt;
-> serviceCharge(1, 1) &lt;&lt; endl; // 5.35 return 0; }
+> cout << serviceCharge(0, 0) << endl; // 5.0 cout <<
+> serviceCharge(1, 0) << endl; // 5.25 cout <<
+> serviceCharge(0, 1) << endl; // 5.1 cout <<
+> serviceCharge(1, 1) << endl; // 5.35 return 0; }
 >
 > Output
 >
@@ -4472,7 +4472,7 @@ SELF-CHECK
 >
 > double serviceCharge(int checks, int ATMs) {
 >
-> // pre: checks &gt;= 0 and ATM &gt;= 0
+> // pre: checks >= 0 and ATM >= 0
 >
 > // post: Return a banking fee based on local rules return 0.25 \*
 > checks + 0.10 \* ATMs + MONTHLY\_FEE; }
@@ -4636,9 +4636,9 @@ Output: Return the result
 >
 > // Call distance four times
 >
-> \#include &lt;iostream&gt; // For cout
+> \#include <iostream> // For cout
 >
-> \#include &lt;cmath&gt; // For sqrt and pow using namespace std;
+> \#include <cmath> // For sqrt and pow using namespace std;
 >
 > double distance(double x1, double y1, double x2, double y2) {
 >
@@ -4650,19 +4650,19 @@ Output: Return the result
 >
 > int main() {
 >
-> // Test drive the distance function cout &lt;&lt; "(1.0, 1.0) (2.0,
+> // Test drive the distance function cout << "(1.0, 1.0) (2.0,
 > 2.0): "
 >
-> &lt;&lt; distance(1.0, 1.0, 2.0, 2.0) &lt;&lt; endl; cout &lt;&lt;
+> << distance(1.0, 1.0, 2.0, 2.0) << endl; cout <<
 > "(0.0, 0.0) (3.0, 4.0): "
 >
-> &lt;&lt; distance(0.0, 0.0, 3.0, 4.0) &lt;&lt; endl; cout &lt;&lt;
+> << distance(0.0, 0.0, 3.0, 4.0) << endl; cout <<
 > "(-5.7,2.5) (3.3,-4.7): "
 >
-> &lt;&lt; distance(-5.7,2.5, 3.3,-4.7) &lt;&lt; endl; cout &lt;&lt;
+> << distance(-5.7,2.5, 3.3,-4.7) << endl; cout <<
 > "(0.0, 0.0) (0.0, 0.0): "
 >
-> &lt;&lt; distance(0.0, 0.0, 0.0, 0.0) &lt;&lt; endl; return 0; }
+> << distance(0.0, 0.0, 0.0, 0.0) << endl; return 0; }
 >
 > Output
 >
@@ -4724,16 +4724,16 @@ It is recommended that you test new functions with a test driver.
 >
 > // Illustrate the scope of an object
 >
-> \#include &lt;iostream&gt; using namespace std; const int maxValue =
+> \#include <iostream> using namespace std; const int maxValue =
 > 9999;
 >
 > void one() { int local = -1;
 >
-> // The scope of local is this function cout &lt;&lt; local &lt;&lt;
+> // The scope of local is this function cout << local <<
 > endl;
 >
 > // maxValue is known after its declaration including here: cout
-> &lt;&lt; maxValue &lt;&lt; endl; }
+> << maxValue << endl; }
 >
 > int main() {
 >
@@ -4742,8 +4742,8 @@ It is recommended that you test new functions with a test driver.
 >
 > // Function one() is known everywhere after its declaration one();
 >
-> // maxValue is known everywhere after its declaration cout &lt;&lt;
-> maxValue &lt;&lt; endl; return 0; }
+> // maxValue is known everywhere after its declaration cout <<
+> maxValue << endl; return 0; }
 >
 > When a variable is declared outside of a block—as in the case of
 > maxValue—its scope begins at the point of declaration and extends to
@@ -4765,13 +4765,13 @@ It is recommended that you test new functions with a test driver.
 > // determine which of the three int variables named // identi er are
 > being referenced at any given point.
 >
-> \#include &lt;iostream&gt; using namespace std; const int identi er =
+> \#include <iostream> using namespace std; const int identi er =
 > 1; // Global variable
 >
 > void one() {
 >
-> // This is a reference to the global identi er cout &lt;&lt; "identi
-> er in one(): " &lt;&lt; identi er &lt;&lt; endl;
+> // This is a reference to the global identi er cout << "identi
+> er in one(): " << identi er << endl;
 >
 > }
 >
@@ -4779,12 +4779,12 @@ It is recommended that you test new functions with a test driver.
 >
 > int identi er = 2; // local to two()
 >
-> cout &lt;&lt; "identi er in two(): " &lt;&lt; identi er &lt;&lt; endl;
+> cout << "identi er in two(): " << identi er << endl;
 >
 > }
 >
 > int main() { int identi er = 3; // local to main() one(); two(); cout
-> &lt;&lt; "identi er in main(): " &lt;&lt; identi er &lt;&lt; endl;
+> << "identi er in main(): " << identi er << endl;
 > return 0; }
 >
 > Output
@@ -4830,11 +4830,11 @@ SELF-CHECK
 > 4-6 Use the partial program shown below to determine the functions
 > from which each of the following identifi ers may be referenced. cin
 > and cout are initialized in iostream so they are known after \#include
-> &lt;iostream&gt;.
+> <iostream>.
 >
 > // cout b cin MAX c f1 a d f2 main e
 >
-> \#include &lt;iostream&gt; using namespace std; const int MAX = 999;
+> \#include <iostream> using namespace std; const int MAX = 999;
 >
 > void f1(int a) {
 >
@@ -4864,7 +4864,7 @@ be referenced?
 > Now what about function names? After all, they too are identifi ers.
 > What is their scope? Like cin and cout, the scope of functions in an
 > included fi le like cmath also extends to the end of their own fi le
-> and any fi le with \#include&lt;cmath&gt;. So functions such as sqrt,
+> and any fi le with \#include<cmath>. So functions such as sqrt,
 > pow, ceil, and fabs may be called from within any block unless the
 > function name is re-declared to be something else.
 
@@ -4902,32 +4902,32 @@ be referenced?
 > If you need a value in many places throughout a program, make it
 > const.
 >
-> \#include &lt;iostream&gt; using namespace std; const int
+> \#include <iostream> using namespace std; const int
 > MAXIMUM\_ENTRIES = 100; // ... a large program with many functions may
 > follow
 
 On the other hand, C++ often uses global identifi ers. Consider the fact
 that after including
 
-> &lt;iostream&gt;, cout is known everywhere, assuming using namespace
+> <iostream>, cout is known everywhere, assuming using namespace
 > std; is written before cout is referenced (left column following) or
 > cout is qualifi ed with std:: (right column).
 
-\#include &lt;iostream&gt; using namespace std;
+\#include <iostream> using namespace std;
 
-void f() { cout &lt;&lt; "In f\\n"; }
+void f() { cout << "In f\\n"; }
 
-void g() { cout &lt;&lt; "In g\\n"; }
+void g() { cout << "In g\\n"; }
 
-int main() { f(); g(); cout &lt;&lt; "In main\\n"; return 0; }
+int main() { f(); g(); cout << "In main\\n"; return 0; }
 
-\#include &lt;iostream&gt;
+\#include <iostream>
 
-// Equivalent code with std:: void f() { std::cout &lt;&lt; "In f\\n"; }
+// Equivalent code with std:: void f() { std::cout << "In f\\n"; }
 
-void g() { std::cout &lt;&lt; "In g\\n"; }
+void g() { std::cout << "In g\\n"; }
 
-int main() { f(); g(); std::cout &lt;&lt; "In main\\n"; return 0;
+int main() { f(); g(); std::cout << "In main\\n"; return 0;
 
 }
 
@@ -4986,7 +4986,7 @@ int main() { f(); g(); std::cout &lt;&lt; "In main\\n"; return 0;
 > // and parmTwo. Now a change to parmOne or parmTwo alters // the
 > associated object that is the argument's value.
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > // Swap the values of any two int arguments.
 >
@@ -5000,9 +5000,9 @@ int main() { f(); g(); std::cout &lt;&lt; "In main\\n"; return 0;
 >
 > int argOne = 89; // argOne argTwo int argTwo = 76;
 >
-> cout &lt;&lt; argOne &lt;&lt; " " &lt;&lt; argTwo &lt;&lt; endl; // 89
-> 76 swap(argOne, argTwo); cout &lt;&lt; argOne &lt;&lt; " " &lt;&lt;
-> argTwo &lt;&lt; endl; // 76 89
+> cout << argOne << " " << argTwo << endl; // 89
+> 76 swap(argOne, argTwo); cout << argOne << " " <<
+> argTwo << endl; // 76 89
 >
 > return 0; }
 
@@ -5078,7 +5078,7 @@ SELF-CHECK
 > 4-9 Write the values of arg1 and arg2 at the moment when return 0;
 > executes.
 
-a.  \#include &lt;iostream&gt; using namespace std; void changeOr(int a,
+a.  \#include <iostream> using namespace std; void changeOr(int a,
     int b) { a = a \* 2 + 1;
 
     b.  = 123;
@@ -5094,7 +5094,7 @@ a.  \#include &lt;iostream&gt; using namespace std; void changeOr(int a,
 
 }
 
-a.  \#include &lt;iostream&gt; using namespace std; void changeOr(int &
+a.  \#include <iostream> using namespace std; void changeOr(int &
     a, int & b) { a = a \* 2 + 1;
 
     b.  = 123;
@@ -5187,8 +5187,8 @@ a.  \#include &lt;iostream&gt; using namespace std; void changeOr(int &
 
 Chapter Summary
 
-> void addSomeStuff(**const** string **&** str) { cout &lt;&lt;
-> str.length() &lt;&lt; endl; // Okay
+> void addSomeStuff(**const** string **&** str) { cout <<
+> str.length() << endl; // Okay
 >
 > str.insert(5, "xtra"); // ERROR: can not modify a const parameter str
 > = "new string"; // ERROR: Can not assign to a const parameter }
@@ -5199,7 +5199,7 @@ Chapter Summary
   ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   **Changing** **x** **in** **f** **does not change** **y** **in the main function**                                         **Th is code results in a compile time error such as** **“cannot modify a const object”**
   -------------------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------
-  > \#include &lt;iostream&gt; using namespace std;                                                                          \#include &lt;iostream&gt; using namespace std;
+  > \#include <iostream> using namespace std;                                                                          \#include <iostream> using namespace std;
   >                                                                                                                          
   > double f(double x) { double result;                                                                                      double f(const double & x) { double result;
   >                                                                                                                          
@@ -5207,7 +5207,7 @@ Chapter Summary
   >                                                                                                                          
   > int main() { // Output:                                                                                                  x = x – 1.5; result = 2 \* x; return result; }
   >                                                                                                                          
-  > // 8 double y = 5.0; // y: 5 cout &lt;&lt; f(y) &lt;&lt; endl; cout &lt;&lt; "y: " &lt;&lt; y &lt;&lt; endl; return 0;   int main() { double y = 5.0; cout &lt;&lt; f(y) &lt;&lt; endl; cout &lt;&lt; "y: " &lt;&lt; y &lt;&lt; endl; return 0;
+  > // 8 double y = 5.0; // y: 5 cout << f(y) << endl; cout << "y: " << y << endl; return 0;   int main() { double y = 5.0; cout << f(y) << endl; cout << "y: " << y << endl; return 0;
   >                                                                                                                          
   > }                                                                                                                        }
   ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -5235,8 +5235,8 @@ CHAPTER SUMMARY
 
 -   Some identifi ers are not declared within a block. In this case,
     > they are global identifi -ers. Examples of global identifi ers
-    > include function sqrt after \#include &lt;cmath&gt;, and the
-    > global object std::cout after \#include &lt;iostream&gt;.
+    > include function sqrt after \#include <cmath>, and the
+    > global object std::cout after \#include <iostream>.
 
 -   Th e scope of a parameter is limited to its function.
 
@@ -5292,7 +5292,7 @@ EXERCISES
 
 4.  Write the output generated by the following program:
 
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 
 4.1: Implementing Your Own Functions
 
@@ -5300,20 +5300,20 @@ EXERCISES
 >
 > int main() {
 >
-> cout &lt;&lt; f2(1, 2.5) &lt;&lt; endl; cout &lt;&lt; f2(-4.5, -3)
-> &lt;&lt; endl; cout &lt;&lt; f2(5, -2) &lt;&lt; endl; return 0; }
+> cout << f2(1, 2.5) << endl; cout << f2(-4.5, -3)
+> << endl; cout << f2(5, -2) << endl; return 0; }
 >
 > 5\. Write the output generated by the following function:
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;cmath&gt; using namespace std;
+> \#include <cmath> using namespace std;
 >
 > double mystery(double p) { return pow(p, 3) - 1; }
 >
-> int main() { double a = 3.0; cout &lt;&lt; mystery( a) &lt;&lt; endl;
-> cout &lt;&lt; mystery(4.0) &lt;&lt; endl; cout &lt;&lt; mystery( -2)
-> &lt;&lt; endl; return 0; }
+> int main() { double a = 3.0; cout << mystery( a) << endl;
+> cout << mystery(4.0) << endl; cout << mystery( -2)
+> << endl; return 0; }
 
 6.  Write a function double sumOf3 that returns the sum of any
     > three doubles. For example, sumOf3(1.5, 2.2, 3.7) should
@@ -5334,14 +5334,14 @@ EXERCISES
 
 > e\. string
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;cmath&gt; using namespace std; const double MAX = 2.0;
+> \#include <cmath> using namespace std; const double MAX = 2.0;
 >
 > double f(double aaa) { double result; result = pow(3.0, aaa); return
 > result; }
 >
-> int main() { string s = "a string"; cout &lt;&lt; f(MAX); return 0; }
+> int main() { string s = "a string"; cout << f(MAX); return 0; }
 
 9.  Will a change to a value parameter modify the associated argument?
 
@@ -5350,15 +5350,15 @@ EXERCISES
 
 11. Write the output generated by this program:
 
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > void changeArgs(double & x, double & y) { x = x - 1.1; y = y + 2.2; }
 >
 > int main() { double a = 3.3; double b = 4.4;
 >
-> cout &lt;&lt; a &lt;&lt; " " &lt;&lt; b &lt;&lt; endl; changeArgs(a,
-> b); cout &lt;&lt; a &lt;&lt; " " &lt;&lt; b &lt;&lt; endl;
-> changeArgs(a, b); cout &lt;&lt; a &lt;&lt; " " &lt;&lt; b &lt;&lt;
+> cout << a << " " << b << endl; changeArgs(a,
+> b); cout << a << " " << b << endl;
+> changeArgs(a, b); cout << a << " " << b <<
 > endl; return 0; }
 
 PROGRAMMING TIPS
@@ -5434,8 +5434,8 @@ Programming Tips
 >
 > // Test drive sumThree int main() {
 >
-> cout &lt;&lt; sumThree(1.1, 2.2, 3.3) &lt;&lt; endl; // 6.6 cout
-> &lt;&lt; sumThree(-1, -2, 3) &lt;&lt; endl; // 0 return 0; }
+> cout << sumThree(1.1, 2.2, 3.3) << endl; // 6.6 cout
+> << sumThree(-1, -2, 3) << endl; // 0 return 0; }
 
 4B ROUNDING TO ~n~ DECIMAL PLACES
 
@@ -5445,11 +5445,11 @@ Programming Tips
 >
 > // Test drive round int main() {
 >
-> // Arguments: number to round (-2.9), decimal places (0) cout &lt;&lt;
-> round(-2.9, 0) &lt;&lt; endl; // -3 cout &lt;&lt; round(-2.59, 1)
-> &lt;&lt; endl; // -2.6 cout &lt;&lt; round(0.0059, 2) &lt;&lt; endl;
-> // 0.01 cout &lt;&lt; round(1.23467, 3) &lt;&lt; endl; // 1.235 cout
-> &lt;&lt; round(9.999999, 4) &lt;&lt; endl; // 10 return 0; }
+> // Arguments: number to round (-2.9), decimal places (0) cout <<
+> round(-2.9, 0) << endl; // -3 cout << round(-2.59, 1)
+> << endl; // -2.6 cout << round(0.0059, 2) << endl;
+> // 0.01 cout << round(1.23467, 3) << endl; // 1.235 cout
+> << round(9.999999, 4) << endl; // 10 return 0; }
 
 4C PAYMENT
 
@@ -5460,9 +5460,9 @@ Programming Tips
 > driver. Round your answer to two decimal places (see Section 3.2). See
 > if your answers match an online mortgage calculator.
 >
-> \#include &lt;iostream&gt; // For the cout object
+> \#include <iostream> // For the cout object
 >
-> \#include &lt;cmath&gt; // For pow, which you de nitely need here
+> \#include <cmath> // For pow, which you de nitely need here
 > using namespace std;
 >
 > double payment(double amtBorrowed, double interestRate, int
@@ -5480,9 +5480,9 @@ Programming Projects
 
 > // by 12. The following test cases represent a monthly payment.
 >
-> cout &lt;&lt; payment(185000.00, 6.0/100.0/12, 30\*12) &lt;&lt; endl;
-> cout &lt;&lt; payment(185000.00, 5.0/100.0/12, 30\*12) &lt;&lt; endl;
-> cout &lt;&lt; payment(185000.00, 4.0/100.0/12, 30\*12) &lt;&lt; endl;
+> cout << payment(185000.00, 6.0/100.0/12, 30\*12) << endl;
+> cout << payment(185000.00, 5.0/100.0/12, 30\*12) << endl;
+> cout << payment(185000.00, 4.0/100.0/12, 30\*12) << endl;
 >
 > return 0; }
 >
@@ -5515,20 +5515,20 @@ One international migrant (net) every *40 seconds*
 >
 > int main() {
 >
-> cout &lt;&lt; populationPrediction (320000000, 0) &lt;&lt; endl; //
+> cout << populationPrediction (320000000, 0) << endl; //
 > 320000000
 >
 > // One and two day growth:
 >
-> cout &lt;&lt; populationPrediction(320000000, 1) &lt;&lt; endl; //
-> 320006314 cout &lt;&lt; populationPrediction(320000000, 2) &lt;&lt;
+> cout << populationPrediction(320000000, 1) << endl; //
+> 320006314 cout << populationPrediction(320000000, 2) <<
 > endl; // 320012628
 >
 > // One and two year growth
 >
-> cout &lt;&lt; populationPrediction(320000000, 365) &lt;&lt; endl; //
-> 322304554 cout &lt;&lt; populationPrediction(320000000, 2\*365)
-> &lt;&lt; endl; // 324609108
+> cout << populationPrediction(320000000, 365) << endl; //
+> 322304554 cout << populationPrediction(320000000, 2\*365)
+> << endl; // 324609108
 >
 > return 0; }
 >
@@ -5585,7 +5585,7 @@ One international migrant (net) every *40 seconds*
 > // and the root in question. This function should return 0.0, // but
 > something close to 0.0 like -6.66134e-16 is okay.
 >
-> // This function could return nan if b\^2 – 4ac &lt; 0 or a is 0.
+> // This function could return nan if b\^2 – 4ac < 0 or a is 0.
 > double evaluate(double a, double b, double c, double root)
 >
 > // Generate the requested dialog using the two functions above. int
@@ -5734,7 +5734,7 @@ is a defi nition for the
 > e details for implementing new types as C++ classes will be presented
 > in the next chapter.
 >
-> \#include &lt;string&gt;
+> \#include <string>
 >
 > class BankAccount { public: BankAccount(std::string initName, double
 > initBalance); // post: Construct call with two arguments:
@@ -5909,7 +5909,7 @@ Th e following are incorrect:
 
 > // Initialize two BankAccount objects and send some messages
 >
-> \#include &lt;iostream&gt; // for cout using namespace std; \#include
+> \#include <iostream> // for cout using namespace std; \#include
 > "BankAccount.h" // for class BankAccount
 >
 > int main() {
@@ -5918,9 +5918,9 @@ Th e following are incorrect:
 >
 > ba1.deposit(133.33); ba2.withdraw(250.00);
 >
-> cout &lt;&lt; ba1.getName() &lt;&lt; ": " &lt;&lt; ba1.getBalance()
-> &lt;&lt; endl; cout &lt;&lt; ba2.getName() &lt;&lt; ": " &lt;&lt;
-> ba2.getBalance() &lt;&lt; endl;
+> cout << ba1.getName() << ": " << ba1.getBalance()
+> << endl; cout << ba2.getName() << ": " <<
+> ba2.getBalance() << endl;
 >
 > return 0;
 >
@@ -5948,7 +5948,7 @@ SELF-CHECK
 
 5-1 Each of the lettered lines has an error. Explain why.
 
-> \#include &lt;iostream&gt; // For cout
+> \#include <iostream> // For cout
 >
 > \#include "BankAccount.h" // For class BankAccount using namespace
 > std;
@@ -5960,13 +5960,13 @@ BankAccount b1("Sam"); // -a
 > BankAccount b2(500.00); // -b BankAccount b3("Jo", 200.00); // -c
 > b1.deposit(); // -d b1.deposit; // -e b1.deposit("100.00"); // -f
 > B1.deposit(100.00); // -g b1.Deposit(100.00); // -h withdraw(100); //
-> -i cout &lt;&lt; b4.getName() &lt;&lt; endl; // -j cout &lt;&lt;
-> b1.getName &lt;&lt; endl; // -k cout &lt;&lt; b1.getName(100.00)
-> &lt;&lt; endl; // -l return 0; }
+> -i cout << b4.getName() << endl; // -j cout <<
+> b1.getName << endl; // -k cout << b1.getName(100.00)
+> << endl; // -l return 0; }
 
 5-2 Write the output generated by the following program:
 
-> \#include &lt;iostream&gt; // For cout using namespace std;
+> \#include <iostream> // For cout using namespace std;
 >
 > \#include "BankAccount.h" // For the BankAccount class int main() {
 >
@@ -5974,9 +5974,9 @@ BankAccount b1("Sam"); // -a
 > b1.deposit(222.22); b1.withdraw(20.00); b2.deposit(55.55);
 > b2.withdraw(10.00);
 >
-> cout &lt;&lt; b1.getName() &lt;&lt; ": " &lt;&lt; b1.getBalance()
-> &lt;&lt; endl; cout &lt;&lt; b2.getName() &lt;&lt; ": " &lt;&lt;
-> b2.getBalance() &lt;&lt; endl; return 0; }
+> cout << b1.getName() << ": " << b1.getBalance()
+> << endl; cout << b2.getName() << ": " <<
+> b2.getBalance() << endl; return 0; }
 
 5.3 string OBJECTS
 
@@ -6012,7 +6012,7 @@ BankAccount b1("Sam"); // -a
 > string class has operations that allow access to the elements, or
 > individual characters at, \[\], front, and back. Th ere are also a
 > number of operators that can be applied to string objects such as +,
-> \[\], &lt;&lt;, and &gt;&gt;.
+> \[\], <<, and >>.
 
 5.3.1 ACCESSING METHODS
 
@@ -6048,8 +6048,8 @@ and string::rnd**
 > argument.
 
 string str("there is the other the"); str. nd("the"); // returns 0, the
-rst "the" cout &lt;&lt; str.r nd("the"); // returns 19, the last "the"
-cout &lt;&lt; str. nd(" is "); // returns 5 cout &lt;&lt; str. nd("not
+rst "the" cout << str.r nd("the"); // returns 19, the last "the"
+cout << str. nd(" is "); // returns 5 cout << str. nd("not
 here"); // returns string::npos which // may be 18446744073709551615
 **string::substr**
 
@@ -6085,7 +6085,7 @@ str.substr(9, 55); // returns "Lot" **str::front and str::back **
 > string quick("quick"); string all("the brown jumped dog");
 
 all.insert(4, quick); // all.length() increased all.insert(23, "over the
-lazy"); cout &lt;&lt; all; // prints: the quick brown jumped over the
+lazy"); cout << all; // prints: the quick brown jumped over the
 lazy dog **str::replace**
 
 > Th e replace member function changes the portion of the string that
@@ -6093,7 +6093,7 @@ lazy dog **str::replace**
 > characters specifi ed as the second argument.
 
 string quick("quick"); string all("the brown jumped dog");
-all.replace(4, 14, quick); cout &lt;&lt; all; // prints: the quick dog
+all.replace(4, 14, quick); cout << all; // prints: the quick dog
 **str::erase**
 
 > An erase message erases the part of the string indicated by the
@@ -6101,7 +6101,7 @@ all.replace(4, 14, quick); cout &lt;&lt; all; // prints: the quick dog
 >
 > string all("the quick brown fox"); all.erase(4, 12);
 >
-> cout &lt;&lt; all &lt;&lt; endl; // prints: the fox cout &lt;&lt;
+> cout << all << endl; // prints: the fox cout <<
 > all.length(); // prints 7
 
 5.3.3 OPERATORS DEFINED FOR string OBJECTS
@@ -6114,21 +6114,21 @@ all.replace(4, 14, quick); cout &lt;&lt; all; // prints: the quick dog
 >
 > string rstName("Kim"); string lastName("Potter");
 
-string fullName = lastName + ", " + rstName; cout &lt;&lt; fullName; //
+string fullName = lastName + ", " + rstName; cout << fullName; //
 prints Potter, Kim Characters can also be concatenated with strings.
 
 5.3: string Objects
 
-> fullName = '&gt;' + fullName + '&lt;'; cout &lt;&lt; fullName; //
-> prints &gt;Potter, Kim&lt;
+> fullName = '>' + fullName + '<'; cout << fullName; //
+> prints >Potter, Kim<
 
-&lt;&lt; AND &gt;&gt; OPERATORS
+<< AND >> OPERATORS
 
-> Th e &lt;&lt; and &gt;&gt; operators are overloaded for the string
+> Th e << and >> operators are overloaded for the string
 > class to allow input and output of strings, just like numbers.
 >
-> string rstName; cout &lt;&lt; "Enter rst name: "; cin &gt;&gt;
-> rstName; // If the user enters Kim cout &lt;&lt; "Hello " + rstName;
+> string rstName; cout << "Enter rst name: "; cin >>
+> rstName; // If the user enters Kim cout << "Hello " + rstName;
 > // output would be: Hello Kim
 
 \[\] OPERATOR
@@ -6141,30 +6141,30 @@ prints Potter, Kim Characters can also be concatenated with strings.
 > str\[0\]; // returns 'a' str\[1\]; // returns 'b' str\[4\]; // returns
 > 'e'
 >
-> str\[2\] = 'X'; str\[3\] = 'O'; cout &lt;&lt; str; // prints abXOe
+> str\[2\] = 'X'; str\[3\] = 'O'; cout << str; // prints abXOe
 >
-> Other operators for comparing strings, such as &lt;= and ==, will be
+> Other operators for comparing strings, such as <= and ==, will be
 > presented in a later chapter.
 
 SELF-CHECK
 
 > 5-3 What is the output from the following program?
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;string&gt;
+> \#include <string>
 >
 > using namespace std; // Allows string instead of std::string
 >
 > int main() {
 >
-> string str("Social Network"); cout &lt;&lt; str.length() &lt;&lt;
-> endl; cout &lt;&lt; str.at(0) &lt;&lt; endl; cout &lt;&lt;
-> str.at(str.length() - 1) &lt;&lt; endl; cout &lt;&lt; str. nd("Net")
-> &lt;&lt; endl; cout &lt;&lt; str. nd("net") &lt;&lt; endl; cout
-> &lt;&lt; str.substr(7, 3) &lt;&lt; endl; cout &lt;&lt; str.substr(7,
-> 1) &lt;&lt; endl; cout &lt;&lt; str.substr(7, 99) &lt;&lt; endl; cout
-> &lt;&lt; str\[1\] &lt;&lt; endl return 0;
+> string str("Social Network"); cout << str.length() <<
+> endl; cout << str.at(0) << endl; cout <<
+> str.at(str.length() - 1) << endl; cout << str. nd("Net")
+> << endl; cout << str. nd("net") << endl; cout
+> << str.substr(7, 3) << endl; cout << str.substr(7,
+> 1) << endl; cout << str.substr(7, 99) << endl; cout
+> << str\[1\] << endl return 0;
 >
 > }
 >
@@ -6200,8 +6200,8 @@ string str("Any String");
 > Th e member function width modifi es the state of the ostream object
 > named cout.
 >
-> \#include &lt;iostream&gt; using namespace std; int main() { cout
-> &lt;&lt; 1; cout.width(5); cout &lt;&lt; 2; cout &lt;&lt; 3; return 0;
+> \#include <iostream> using namespace std; int main() { cout
+> << 1; cout.width(5); cout << 2; cout << 3; return 0;
 > }
 >
 > Output
@@ -6227,15 +6227,15 @@ string str("Any String");
 >
 > // Send two precision messages to the ostream object named cout
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() { double x = 1.23456;
 >
-> cout &lt;&lt; x &lt;&lt; endl; // Default (1.23456) cout.precision(1);
-> // Modify the state of cout cout &lt;&lt; x &lt;&lt; endl; // Show
+> cout << x << endl; // Default (1.23456) cout.precision(1);
+> // Modify the state of cout cout << x << endl; // Show
 > only one signi cant digit (1) cout.precision(4); // Modify the state
-> of cout cout &lt;&lt; x &lt;&lt; endl; // Show four digits rounded
-> (1.235) cout &lt;&lt; x &lt;&lt; endl; // Precision of 4 still in
+> of cout cout << x << endl; // Show four digits rounded
+> (1.235) cout << x << endl; // Precision of 4 still in
 > effect
 >
 > return 0; }
@@ -6256,7 +6256,7 @@ string str("Any String");
 > enters an improper value, such as input of BAD instead of a number as
 > shown below, the good message returns 0, which means “false.”
 
-cout &lt;&lt; cin.good(); // Returns 1 for good, 0 for bad
+cout << cin.good(); // Returns 1 for good, 0 for bad
 
 > Whenever cin.good() is false, no more input is allowed from cin unless
 > other steps are taken. So if you enter an invalid number—an easy input
@@ -6264,15 +6264,15 @@ cout &lt;&lt; cin.good(); // Returns 1 for good, 0 for bad
 >
 > // Demonstrate what happens with bad input
 >
-> \#include &lt;iostream&gt; // For the cout and cin objects using
+> \#include <iostream> // For the cout and cin objects using
 > namespace std;
 >
 > int main() { int x = 0.0;
 >
-> cout &lt;&lt; "Is cin good? " &lt;&lt; cin.good() &lt;&lt; endl; cout
-> &lt;&lt; "Enter an int: "; cin &gt;&gt; x;
+> cout << "Is cin good? " << cin.good() << endl; cout
+> << "Enter an int: "; cin >> x;
 >
-> cout &lt;&lt; "Is cin still good? " &lt;&lt; cin.good() &lt;&lt; endl;
+> cout << "Is cin still good? " << cin.good() << endl;
 >
 > return 0; }
 
@@ -6342,12 +6342,12 @@ string string::substr(int pos, int n) const;
 
 void BankAccount::deposit(double amount);
 
-// pre: amount &gt;= 0
+// pre: amount >= 0
 
 // post: amount is credited to this object's balance
 
-> void BankAccount::withdraw(double amount); // pre: amount &gt;= 0 and
-> &lt;= this object's balance // post: amount is debited from this
+> void BankAccount::withdraw(double amount); // pre: amount >= 0 and
+> <= this object's balance // post: amount is debited from this
 > object's balance
 >
 > double BankAccount::getBalance() const; // post: Return this object's
@@ -6382,18 +6382,18 @@ SELF-CHECK
 > 5-7 Write the output generated by the following program. Make sure you
 > line up all output in the correct column.
 >
-> \#include &lt;iostream&gt; using namespace std; int main() {
+> \#include <iostream> using namespace std; int main() {
 >
-> cout &lt;&lt; "123456789012345" &lt;&lt; endl; cout.width(3); cout
-> &lt;&lt; 1; cout.width(5); cout &lt;&lt; 2.3; cout.width(6); cout
-> &lt;&lt; "who" &lt;&lt; endl; return 0; }
+> cout << "123456789012345" << endl; cout.width(3); cout
+> << 1; cout.width(5); cout << 2.3; cout.width(6); cout
+> << "who" << endl; return 0; }
 >
 > 5-8 Write the exact output generated by the following program:
 >
-> \#include &lt;iostream&gt; using namespace std; int main() {
-> cout.precision(3); cout &lt;&lt; 9.876543 &lt;&lt; endl;
-> cout.precision(1); cout &lt;&lt; 1.2 &lt;&lt; endl; cout.precision(8);
-> cout &lt;&lt; 1.2 &lt;&lt; endl; return 0; }
+> \#include <iostream> using namespace std; int main() {
+> cout.precision(3); cout << 9.876543 << endl;
+> cout.precision(1); cout << 1.2 << endl; cout.precision(8);
+> cout << 1.2 << endl; return 0; }
 >
 > 5-9 Write the complete dialogue generated by the following program
 > when:
@@ -6402,12 +6402,12 @@ a.  the user enters ***123***
 
 b.  the user enters ***XYZ***
 
-> \#include &lt;iostream&gt; using namespace std; int main() { int
+> \#include <iostream> using namespace std; int main() { int
 > anInt(0);
 >
-> cout &lt;&lt; "Enter an integer: "; cin &gt;&gt; anInt;
+> cout << "Enter an integer: "; cin >> anInt;
 >
-> cout &lt;&lt; "Good? " &lt;&lt; cin.good() &lt;&lt; endl; return 0; }
+> cout << "Good? " << cin.good() << endl; return 0; }
 >
 > 5-10 What class does each member function belong to?
 
@@ -6481,7 +6481,7 @@ b.  the user enters ***XYZ***
 >
 > . . . . . . . . . . . . . . . .
 >
-> . . . . . . . . &gt; . . . . . . .
+> . . . . . . . . > . . . . . . .
 >
 > . . . . . . . . . . . . . . . .
 >
@@ -6508,18 +6508,18 @@ these:
 >
 > // Access the state of a Grid object with messages
 >
-> \#include &lt;iostream&gt; // For the cout object using namespace std;
+> \#include <iostream> // For the cout object using namespace std;
 > \#include "Grid.h" // For class Grid
 >
 > int main() {
 >
 > Grid aGrid(7, 14, 5, 8, east); // Column 8 is the ninth column cout
-> &lt;&lt; "Current row : " &lt;&lt; aGrid.row() &lt;&lt; endl; cout
-> &lt;&lt; "Current column : " &lt;&lt; aGrid.column() &lt;&lt; endl;
-> cout &lt;&lt; "Number of rows : " &lt;&lt; aGrid.nRows() &lt;&lt;
-> endl; cout &lt;&lt; "Number of columns: " &lt;&lt; aGrid.nColumns()
-> &lt;&lt; endl; cout &lt;&lt; "Front is clear? : " &lt;&lt;
-> aGrid.frontIsClear() &lt;&lt; endl; return 0; }
+> << "Current row : " << aGrid.row() << endl; cout
+> << "Current column : " << aGrid.column() << endl;
+> cout << "Number of rows : " << aGrid.nRows() <<
+> endl; cout << "Number of columns: " << aGrid.nColumns()
+> << endl; cout << "Front is clear? : " <<
+> aGrid.frontIsClear() << endl; return 0; }
 >
 > Output
 >
@@ -6567,7 +6567,7 @@ SELF-CHECK
 
 > 5-11 Write the output of the following program:
 >
-> \#include &lt;iostream&gt; // For cout using namespace std; \#include
+> \#include <iostream> // For cout using namespace std; \#include
 > "Grid.h" // For the Grid class
 >
 > int main() {
@@ -6575,8 +6575,8 @@ SELF-CHECK
 > Grid aGrid(6, 6, 4, 2, east); aGrid.move(2); aGrid.turnLeft();
 > aGrid.move(3); aGrid.turnLeft(); aGrid.move(2); aGrid.display();
 >
-> cout &lt;&lt; "row: " &lt;&lt; aGrid.row() &lt;&lt; endl; cout
-> &lt;&lt; "col: " &lt;&lt; aGrid.column() &lt;&lt; endl; return 0; }
+> cout << "row: " << aGrid.row() << endl; cout
+> << "col: " << aGrid.column() << endl; return 0; }
 
 5.5.1 OTHER Grid OPERATIONS
 
@@ -6665,7 +6665,7 @@ SUBSET OF Grid MEMBER FUNCTIONS
 > proper messages to move the kid to eat the cookies using the Grid
 > member functions such as Grid::move. If the kid is facing south you
 > will see a v, if the kid is facing north you will see \^, if the kid
-> is facing east you will see &gt; and facing west &lt;. To "eat" the
+> is facing east you will see > and facing west <. To "eat" the
 > cookies send messages to Grid::pickUp. Here is the program:
 >
 > // This program sets two cookies on the table and instructs a kid
@@ -6707,7 +6707,7 @@ SUBSET OF Grid MEMBER FUNCTIONS
 >
 > . . . . . . . . . . . .
 >
-> The Grid &lt; . . . . . . . .
+> The Grid < . . . . . . . .
 >
 > . . . . . . . . . .
 >
@@ -6771,8 +6771,8 @@ SELF-CHECK
 > function has no parameters, it requires no arguments. Here are two
 > examples:
 >
-> cout &lt;&lt; aString.length() &lt;&lt; endl; cout &lt;&lt;
-> aGrid.row() &lt;&lt; endl;
+> cout << aString.length() << endl; cout <<
+> aGrid.row() << endl;
 >
 > It should be noted, before you do any of this chapter’s programming
 > projects, that even though no values need to be passed as arguments to
@@ -6780,8 +6780,8 @@ SELF-CHECK
 > included in the message. Th e following code will not do what you
 > might expect:
 >
-> cout &lt;&lt; aString.length &lt;&lt; endl; // ERROR: Missing () after
-> length cout &lt;&lt; aGrid.row &lt;&lt; endl; // ERROR: Missing ()
+> cout << aString.length << endl; // ERROR: Missing () after
+> length cout << aGrid.row << endl; // ERROR: Missing ()
 > after row
 >
 > Th e parentheses represent the function call operator. Without ( and
@@ -6979,44 +6979,44 @@ EXERCISES
 
 1.  Write the output generated by the following program:
 
-> \#include &lt;iostream&gt; using namespace std; \#include
+> \#include <iostream> using namespace std; \#include
 > "BankAccount.h" // For class Grid
 >
 > int main() {
 >
 > BankAccount b1("One", 100.00); BankAccount b2("Two", 200.00);
 > b1.deposit(50.00); b2.deposit(30.00); b1.withdraw(20.00); cout
-> &lt;&lt; b1.getBalance() &lt;&lt; endl; cout &lt;&lt; b2.getBalance()
-> &lt;&lt; endl; return 0; }
+> << b1.getBalance() << endl; cout << b2.getBalance()
+> << endl; return 0; }
 
 1.  Write the complete dialogue of this program when the user enters
     > this input in the order requested: MyName 100 22.22 44.44
 
-> \#include &lt;iostream&gt; // For cout and endl using namespace std;
+> \#include <iostream> // For cout and endl using namespace std;
 >
 > \#include "BankAccount.h" // For the BankAccount class int main() {
 > string name; double start, amount;
 >
-> // Input: cout &lt;&lt; "name: "; // MyName cin &gt;&gt; name;
+> // Input: cout << "name: "; // MyName cin >> name;
 >
-> cout &lt;&lt; "initial balance: "; // 100 cin &gt;&gt; start;
+> cout << "initial balance: "; // 100 cin >> start;
 >
 > // Construct a BankAccount
 >
 > BankAccount one(name, start);
 >
-> cout &lt;&lt; "deposit? "; // 22.22 cin &gt;&gt; amount;
+> cout << "deposit? "; // 22.22 cin >> amount;
 > one.deposit(amount);
 >
-> cout &lt;&lt; "withdraw? "; // 44.44 cin &gt;&gt; amount;
+> cout << "withdraw? "; // 44.44 cin >> amount;
 > one.withdraw(amount);
 >
-> cout &lt;&lt; "balance for " &lt;&lt; one.getName() &lt;&lt; " is "
-> &lt;&lt; one.getBalance() &lt;&lt; endl; return 0; }
+> cout << "balance for " << one.getName() << " is "
+> << one.getBalance() << endl; return 0; }
 >
 > 3\. Write the output generated by the following program:
 >
-> \#include &lt;iostream&gt; // For the object cout using namespace std;
+> \#include <iostream> // For the object cout using namespace std;
 
 Exercises
 
@@ -7033,10 +7033,10 @@ Exercises
 > aGrid.putDown(); // Place object where the mover is located
 > aGrid.move(1); aGrid.turnLeft(); aGrid.move(1); aGrid.display();
 >
-> cout &lt;&lt; "Mover: row\#" &lt;&lt; aGrid.row() &lt;&lt; " col\#"
-> &lt;&lt; aGrid.column()
+> cout << "Mover: row\#" << aGrid.row() << " col\#"
+> << aGrid.column()
 >
-> &lt;&lt; endl; return 0; }
+> << endl; return 0; }
 
 4.  What is the value of position?
 
@@ -7112,7 +7112,7 @@ PROGRAMMING TIPS
 
 1.  You will need author-supplied fi les to complete some
     > programming projects. Th ese are the fi les included with " and "
-    > rather than &lt; and &gt; ("Grid.h" and "BankAccount.h",
+    > rather than < and > ("Grid.h" and "BankAccount.h",
     > for example). Both fi les need to be located in the same
     > directory (folder) as the .cpp fi le with the main function that
     > you are writing. You can download the proper fi les from this
@@ -7120,12 +7120,12 @@ PROGRAMMING TIPS
 
 2.  Distinguish standard \#include fi les from nonstandard (user
     > defi ned) fi les. \#include standard libraries (classes
-    > and objects) with &lt; &gt; and nonstandard classes with " ". Here
+    > and objects) with < > and nonstandard classes with " ". Here
     > are some examples:
 
-> \#include &lt;string&gt; // For the standard string class
+> \#include <string> // For the standard string class
 >
-> \#include &lt;iostream&gt; // For cout and cin
+> \#include <iostream> // For cout and cin
 >
 > using namespace std; // Required to avoid writing std::cout
 >
@@ -7136,15 +7136,15 @@ PROGRAMMING TIPS
 1.  Even if no arguments are required, end messages with (). Do not
     > forget parentheses in messages that do not require arguments.
 
-> cout &lt;&lt; myAcct.balance; // Error: This references a memory
-> location cout &lt;&lt; myAcct.balance(); // Good
+> cout << myAcct.balance; // Error: This references a memory
+> location cout << myAcct.balance(); // Good
 
 Programming Tips
 
 1.  C++ begins counting at 0, not 1. Th e fi rst character in a string
     > is referenced with subscript 0, not 1.
 
-> cout &lt;&lt; aString\[0\]; // Return the rst character cout &lt;&lt;
+> cout << aString\[0\]; // Return the rst character cout <<
 > aString\[1\]; // Return the second character
 
 1.  Don’t reference aString\[aString.length()\]. Th is is an attempt to
@@ -7156,8 +7156,8 @@ Programming Tips
 >
 > aString = "This string has 29 characters";
 >
-> cout &lt;&lt; aString\[-1\]; // ERROR: -1 is out of range, only use
-> 0..28 cout &lt;&lt; aString\[aString.length()\]; // ERROR: 29 is also
+> cout << aString\[-1\]; // ERROR: -1 is out of range, only use
+> 0..28 cout << aString\[aString.length()\]; // ERROR: 29 is also
 > out of range
 
 1.  Two diff erent kinds of constructions are allowed when only one
@@ -7191,7 +7191,7 @@ Programming Tips
 > BankAccount anAcct("Milan", 345.67);
 >
 > // Need 'object-name.functionName' not 'class-name::functionName' cout
-> &lt;&lt; BankAccount::balance(); // Invalid cout &lt;&lt;
+> << BankAccount::balance(); // Invalid cout <<
 > anAcct.balance(); // A valid message
 
 **PROGRAMMING PROJECTS**
@@ -7239,7 +7239,7 @@ Programming Tips
 >
 > . . . . . .
 >
-> . . &gt; .
+> . . > .
 >
 > . . . . . . .
 >
@@ -7267,7 +7267,7 @@ Programming Projects
 >
 > . . . . . . . . . . . . . . . . . . . . . . .
 >
-> &gt; . . \# . . . \# . . . \# . . . \# . . . \# . . .
+> > . . \# . . . \# . . . \# . . . \# . . . \# . . .
 >
 > . . . . . . . . . . . . . . . . . . . . . . .
 
@@ -7280,7 +7280,7 @@ hurdles:
 >
 > . . . . . . . .
 >
-> \# \# \# \# \# &gt; . .
+> \# \# \# \# \# > . .
 >
 > . . . . . . . . . . . . . . . . . . . . . . .
 
@@ -7296,13 +7296,13 @@ The Grid: The Grid:
 
 . . . . . . . . . . . . . . . .
 
-. . . . . . . . . . . . &gt;
+. . . . . . . . . . . . >
 
 > . . . . . \# \# \# . . . \# \# \# . . . . \# . . . . . \# . . .
 
 . . . \# . . . . . \# . . . .
 
-> &gt; . \# . . . . . \# . . . . . . . . . . . . . . . . . . . . .
+> > . \# . . . . . \# . . . . . . . . . . . . . . . . . . . . .
 
 5E TEN String PROCESSING FUNCTIONS
 
@@ -7312,28 +7312,28 @@ The Grid: The Grid:
 
 // Test drive 10 String processing functions int main() {
 
-cout &lt;&lt; " matterAntiMatter(\\"LOL\\"): " &lt;&lt;
-matterAntiMatter("LOL") &lt;&lt; endl; cout &lt;&lt; "
-removeEnds(\\"MarkeR\\"): " &lt;&lt; removeEnds("Marker") &lt;&lt; endl;
-cout &lt;&lt; " tripleUp(\\"on\\"): " &lt;&lt; tripleUp("on") &lt;&lt;
-endl; cout &lt;&lt; " splitString(\\"IU\\", \\"owe\\"): " &lt;&lt;
-splitString("IU", "owe") &lt;&lt; endl; cout &lt;&lt; "
-reverse7Chars(\\"1234567\\"): " &lt;&lt; reverse7Chars("1234567")
-&lt;&lt; endl; cout &lt;&lt; " halfAndHalf(\\"ABcde\\"): " &lt;&lt;
-halfAndHalf("ABcde") &lt;&lt; endl; cout &lt;&lt; "nameRearranged(\\"Li,
-Kim R\\"): " &lt;&lt; nameRearranged("Li, Kim R") &lt;&lt; endl; cout
-&lt;&lt; " middleThree(\\"123456\\"): " &lt;&lt; middleThree("123456")
-&lt;&lt; endl;
+cout << " matterAntiMatter(\\"LOL\\"): " <<
+matterAntiMatter("LOL") << endl; cout << "
+removeEnds(\\"MarkeR\\"): " << removeEnds("Marker") << endl;
+cout << " tripleUp(\\"on\\"): " << tripleUp("on") <<
+endl; cout << " splitString(\\"IU\\", \\"owe\\"): " <<
+splitString("IU", "owe") << endl; cout << "
+reverse7Chars(\\"1234567\\"): " << reverse7Chars("1234567")
+<< endl; cout << " halfAndHalf(\\"ABcde\\"): " <<
+halfAndHalf("ABcde") << endl; cout << "nameRearranged(\\"Li,
+Kim R\\"): " << nameRearranged("Li, Kim R") << endl; cout
+<< " middleThree(\\"123456\\"): " << middleThree("123456")
+<< endl;
 
 // Use reference parameters instead of returning a string string
 str1("abacada"); remove3(str1, "a");
 
-cout &lt;&lt; " remove3(\\"abacada\\", \\"a\\"): " &lt;&lt; str1
-&lt;&lt; endl; string str2("ornoon");
+cout << " remove3(\\"abacada\\", \\"a\\"): " << str1
+<< endl; string str2("ornoon");
 
 replace(str2, 'o', 'X');
 
-cout &lt;&lt; "replace(\\"ornoon\\", 'o', 'X'): " &lt;&lt; str2 &lt;&lt;
+cout << "replace(\\"ornoon\\", 'o', 'X'): " << str2 <<
 endl;
 
 return 0; }
@@ -7612,7 +7612,7 @@ COMING UP
 
 File BankAccount.h
 
-> \#include &lt;string&gt;
+> \#include <string>
 >
 > // Do not place using statements in header les. Use std::
 >
@@ -7664,8 +7664,8 @@ File BankAccount.h
 > 437.05 and its own name of "Skyler Boatwright". So the return values
 > of these two messages would be 507.34 followed by 437.05.
 >
-> cout &lt;&lt; anAccount.balance() &lt;&lt; endl; // 507.34 cout
-> &lt;&lt; another.balance() &lt;&lt; endl; // 437.05
+> cout << anAccount.balance() << endl; // 507.34 cout
+> << another.balance() << endl; // 437.05
 
 SELF-CHECK
 
@@ -7680,7 +7680,7 @@ SELF-CHECK
 
 > \*/
 >
-> \#include&lt;string&gt;
+> \#include<string>
 >
 > class LibraryBook { public:
 >
@@ -7791,8 +7791,8 @@ Th e following code implements the two-parameter constructor:
 >
 > BankAccount anInitializedAccount("Corker", 250.55);
 >
-> // Output: cout &lt;&lt; anInitializedAccount.getName() &lt;&lt; endl;
-> // Corker cout &lt;&lt; anInitializedAccount.getBalance() &lt;&lt;
+> // Output: cout << anInitializedAccount.getName() << endl;
+> // Corker cout << anInitializedAccount.getBalance() <<
 > endl; // 250.55
 >
 > Th ere is a major diff erence between implementing class member
@@ -7806,7 +7806,7 @@ Th e following code implements the two-parameter constructor:
 > error messages at any attempt to access private data members (name and
 > balance). BankAccount:: is missing.
 >
-> BankAccount(string initName, double initBalance) { // &lt;-- WHOOPS
+> BankAccount(string initName, double initBalance) { // <-- WHOOPS
 > name = initName; // ERROR: name is not known balance = initBalance; //
 > ERROR: balance is not known }
 >
@@ -7962,7 +7962,7 @@ SELF-CHECK
 
 > \*/
 >
-> \#include &lt;string&gt; using namespace std; \#include
+> \#include <string> using namespace std; \#include
 > "LibraryBook.h" const std::string AVAILABLE\_MESSAGE = "CAN BORROW";
 >
 > //--two argument constructor
@@ -7997,23 +7997,23 @@ SELF-CHECK
 >
 > // Send every possible message to a LibraryBook object
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > \#include "LibraryBook.h" // For class LibraryBook de nition
 >
 > int main() {
 >
 > LibraryBook aBook("Tinker Tailor Soldier Spy", "John le Carre"); cout
-> &lt;&lt; aBook.getBookInfo() &lt;&lt; endl; cout &lt;&lt;
-> aBook.getBorrower() &lt;&lt; endl;
+> << aBook.getBookInfo() << endl; cout <<
+> aBook.getBorrower() << endl;
 >
-> cout &lt;&lt; aBook.isAvailable() &lt;&lt; endl; // 1 if true, 0 if
-> false aBook.borrowBook("Charlie Archer"); cout &lt;&lt;
-> aBook.getBorrower() &lt;&lt; endl; cout &lt;&lt; aBook.isAvailable()
-> &lt;&lt; endl; aBook.returnBook();
+> cout << aBook.isAvailable() << endl; // 1 if true, 0 if
+> false aBook.borrowBook("Charlie Archer"); cout <<
+> aBook.getBorrower() << endl; cout << aBook.isAvailable()
+> << endl; aBook.returnBook();
 >
-> cout &lt;&lt; aBook.isAvailable() &lt;&lt; endl; cout &lt;&lt;
-> aBook.getBorrower() &lt;&lt; endl; return 0; }
+> cout << aBook.isAvailable() << endl; cout <<
+> aBook.getBorrower() << endl; return 0; }
 >
 > Output
 >
@@ -8043,7 +8043,7 @@ SELF-CHECK
 >
 > // File: Adder.h
 >
-> \#include &lt;string&gt; class Adder { public:
+> \#include <string> class Adder { public:
 >
 > // Default constructors have no parameters.
 >
@@ -8089,23 +8089,23 @@ constructor
 
 Th e following program uses both constructors to show the diff erence.
 
-> \#include &lt;iostream&gt; using namespace std; \#include "Adder.h"
+> \#include <iostream> using namespace std; \#include "Adder.h"
 >
 > int main() {
 >
 > Adder adder1(123.45);
 >
-> cout &lt;&lt; " Initial sum: " &lt;&lt; adder1.getSum() &lt;&lt; endl;
+> cout << " Initial sum: " << adder1.getSum() << endl;
 
 6.3: Default Constructors
 
 > Adder adder2;
 >
-> cout &lt;&lt; " Default sum: " &lt;&lt; adder2.getSum() &lt;&lt; endl;
+> cout << " Default sum: " << adder2.getSum() << endl;
 >
 > adder2.add(1.1); adder2.add(2.2); adder2.add(3.3);
 >
-> cout &lt;&lt; "After 3 adds: " &lt;&lt; adder2.getSum() &lt;&lt; endl;
+> cout << "After 3 adds: " << adder2.getSum() << endl;
 >
 > return 0; }
 >
@@ -8158,7 +8158,7 @@ Th e following program uses both constructors to show the diff erence.
 > However, functions that diff er only in their return type cannot be
 > overloaded.
 >
-> void aFunction(int n); string aFunction(int n); // &lt;- Error
+> void aFunction(int n); string aFunction(int n); // <- Error
 
 6.4 THE STATE OBJECT PATTERN
 
@@ -8293,7 +8293,7 @@ Th e following program uses both constructors to show the diff erence.
 > outside of the class:
 >
 > // An error occurs: attempting to modify private data myAcct.balance =
-> myAcct.balance + 100000.00; // &lt;- ERROR
+> myAcct.balance + 100000.00; // <- ERROR
 >
 > or a debit like this:
 >
@@ -8462,19 +8462,19 @@ Keep related data and behavior in one place.
 >
 > // functions and passing objects of that class as const parameter
 >
-> \#include &lt;iostream&gt; // For cout and endl using namespace std;
+> \#include <iostream> // For cout and endl using namespace std;
 > \#include "BankAccount.h" // For the BankAccount class
 >
 > void display(const BankAccount & ba) {
 >
-> // Can send accessing messages--they are declared const cout &lt;&lt;
-> "{ BankAccount: " &lt;&lt; ba.getName() &lt;&lt; ", \$" &lt;&lt;
-> ba.getBalance() &lt;&lt; " }" &lt;&lt; endl;
+> // Can send accessing messages--they are declared const cout <<
+> "{ BankAccount: " << ba.getName() << ", \$" <<
+> ba.getBalance() << " }" << endl;
 >
 > // This modi er was not tagged with const. A compile time // error
 > will be generated since ba is a const parameter.
 >
-> ba.withdraw(234.56); // &lt;-- ERROR at compile time }
+> ba.withdraw(234.56); // <-- ERROR at compile time }
 >
 > int main() { BankAccount anAcct("Angel Draper", 1234.56);
 >
@@ -8536,8 +8536,8 @@ Always declare accessor member functions as const.
 > Th e presence of const tells the compiler to allow the message to be
 > sent even for objects passed by const reference (g here):
 >
-> void doSomething(const Grid & g) { cout &lt;&lt; g.row() &lt;&lt;
-> endl; // OKAY cout &lt;&lt; g.nColumns() &lt;&lt; endl; // OKAY
+> void doSomething(const Grid & g) { cout << g.row() <<
+> endl; // OKAY cout << g.nColumns() << endl; // OKAY
 >
 > g.display(); // OKAY
 >
@@ -8585,13 +8585,13 @@ SELF-CHECK
 > lines that cause errors in a standard C++ compiler (1, 2, 3, and/or
 > 4).
 >
-> \#include &lt;iostream&gt; using namespace std; \#include
+> \#include <iostream> using namespace std; \#include
 > "BankAccount.h" // For the BankAccount class
 >
-> void check(const BankAccount & b, double amount) { cout &lt;&lt;
-> b.getName() &lt;&lt; endl; // 1 b.deposit(amount); // 2
+> void check(const BankAccount & b, double amount) { cout <<
+> b.getName() << endl; // 1 b.deposit(amount); // 2
 >
-> b.withdraw(amount); // 3 cout &lt;&lt; b.getBalance() &lt;&lt; endl;
+> b.withdraw(amount); // 3 cout << b.getBalance() << endl;
 > // 4
 >
 > }
@@ -8755,7 +8755,7 @@ Exercises
 >
 > **TEST DRIVER**
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > \#include "Counter.h" // For the counter class de nition
 >
@@ -8763,22 +8763,22 @@ Exercises
 >
 > Counter aCounter(3);
 >
-> cout &lt;&lt; "a: " &lt;&lt; aCounter.getCount() &lt;&lt; endl;
+> cout << "a: " << aCounter.getCount() << endl;
 > aCounter.click();
 >
-> cout &lt;&lt; "b: " &lt;&lt; aCounter.getCount() &lt;&lt; endl;
+> cout << "b: " << aCounter.getCount() << endl;
 > aCounter.click();
 >
-> cout &lt;&lt; "c: " &lt;&lt; aCounter.getCount() &lt;&lt; endl;
+> cout << "c: " << aCounter.getCount() << endl;
 > aCounter.click();
 >
-> cout &lt;&lt; "d: " &lt;&lt; aCounter.getCount() &lt;&lt; endl;
+> cout << "d: " << aCounter.getCount() << endl;
 > aCounter.click();
 >
-> cout &lt;&lt; "e: " &lt;&lt; aCounter.getCount() &lt;&lt; endl;
+> cout << "e: " << aCounter.getCount() << endl;
 > aCounter.reset();
 >
-> cout &lt;&lt; "f: " &lt;&lt; aCounter.getCount() &lt;&lt; endl; return
+> cout << "f: " << aCounter.getCount() << endl; return
 > 0; }
 >
 > 14\. Write all code that would go into Counter.cpp that completely
@@ -8841,7 +8841,7 @@ PROGRAMMING TIPS
 >
 > \*/
 >
-> \#include &lt;string&gt; class CD {
+> \#include <string> class CD {
 >
 > public:
 >
@@ -8880,21 +8880,21 @@ PROGRAMMING PROJECTS
 > getTransactionCount(). Use this test driver and ensure your output
 > matches and compiles:
 >
-> \#include &lt;iostream&gt; using namespace std; \#include
+> \#include <iostream> using namespace std; \#include
 > "BankAccount.h"
 >
 > int main() {
 >
 > BankAccount anAcct("Do 3", 3.00);
 >
-> cout &lt;&lt; "0? " &lt;&lt; anAcct.getTransactionCount() &lt;&lt;
+> cout << "0? " << anAcct.getTransactionCount() <<
 > endl; anAcct.deposit(10.00); anAcct.withdraw(20.00);
-> anAcct.deposit(30.00); cout &lt;&lt; "3? " &lt;&lt;
-> anAcct.getTransactionCount() &lt;&lt; endl;
+> anAcct.deposit(30.00); cout << "3? " <<
+> anAcct.getTransactionCount() << endl;
 >
 > BankAccount another("Do 1", 1.00); another.withdraw(25.00);
 >
-> cout &lt;&lt; "1? " &lt;&lt; another.getTransactionCount() &lt;&lt;
+> cout << "1? " << another.getTransactionCount() <<
 > endl;
 >
 > return 0;
@@ -8928,7 +8928,7 @@ PROGRAMMING PROJECTS
                                >
   int main() {                 > . . . . . . . . . . . .
                                >
-  Grid g(6, 12, 1, 9, east);   > . . . . . . . . . &gt; . .
+  Grid g(6, 12, 1, 9, east);   > . . . . . . . . . > . .
                                >
   g.display();                 > . . . . . . . . . . . .
                                >
@@ -8946,7 +8946,7 @@ PROGRAMMING PROJECTS
                                >
   g.display(); return 0;       > . . . . . . . . . . .
                                >
-  }                            > . &lt; . . . . . . .
+  }                            > . < . . . . . . .
                                >
                                > . . . . . . . . . . . .
                                >
@@ -8989,26 +8989,26 @@ PROGRAMMING PROJECTS
 >
 > Th is test driver should generate the expected output below:
 >
-> \#include &lt;iostream&gt; using namespace std; \#include "Averager.h"
+> \#include <iostream> using namespace std; \#include "Averager.h"
 >
 > int main() {
 >
 > Averager averager;
 >
-> cout &lt;&lt; " 0? " &lt;&lt; averager.getScoresAdded() &lt;&lt; endl;
+> cout << " 0? " << averager.getScoresAdded() << endl;
 >
 > averager.addScore(90.0);
 >
-> cout &lt;&lt; " 90? " &lt;&lt; averager.getAverage() &lt;&lt; endl;
-> cout &lt;&lt; " 1? " &lt;&lt; averager.getScoresAdded() &lt;&lt; endl;
+> cout << " 90? " << averager.getAverage() << endl;
+> cout << " 1? " << averager.getScoresAdded() << endl;
 >
-> cout &lt;&lt; endl; averager.addScore(100.0); averager.addScore(80.0);
+> cout << endl; averager.addScore(100.0); averager.addScore(80.0);
 > averager.addScore(70.0); averager.addScore(60.0);
 > averager.addScore(53.0);
 >
-> cout &lt;&lt; "Scores Added 6? " &lt;&lt; averager.getScoresAdded()
-> &lt;&lt; endl; cout &lt;&lt; " Average 75.5? " &lt;&lt;
-> averager.getAverage() &lt;&lt; endl; return 0; }
+> cout << "Scores Added 6? " << averager.getScoresAdded()
+> << endl; cout << " Average 75.5? " <<
+> averager.getAverage() << endl; return 0; }
 >
 > Expected Output
 >
@@ -9052,25 +9052,25 @@ PROGRAMMING PROJECTS
 >
 > void addPennies(int penniesAdded);
 >
-> // pre: penniesAdded &gt; 0
+> // pre: penniesAdded > 0
 >
 > // post: This PiggyBank has penniesAdded more pennies
 >
 > void addNickels(int nickelsAdded);
 >
-> // pre: nickelsAdded &gt; 0
+> // pre: nickelsAdded > 0
 >
 > // post: This PiggyBank has nickelsAdded more nickels
 >
 > void addDimes(int dimesAdded);
 >
-> // pre: dimesAdded &gt; 0
+> // pre: dimesAdded > 0
 >
 > // post: This PiggyBank has dimesAdded more dimes
 >
 > void addQuarters(int quartersAdded);
 >
-> // pre: quartersAdded &gt; 0
+> // pre: quartersAdded > 0
 >
 > // post: This PiggyBank has quartersAdded more quarters
 >
@@ -9106,21 +9106,21 @@ PROGRAMMING PROJECTS
 >
 > Th is test driver should generate the expected output below:
 >
-> \#include &lt;iostream&gt; using namespace std; \#include
+> \#include <iostream> using namespace std; \#include
 > "PiggyBank.h"
 >
 > int main() { PiggyBank pb;
 >
-> cout &lt;&lt; " 0? " &lt;&lt; pb.getTotalCashInBank() &lt;&lt; endl;
+> cout << " 0? " << pb.getTotalCashInBank() << endl;
 > pb.addPennies(4); pb.addNickels(3); pb.addDimes(2); pb.addQuarters(1);
 >
-> cout &lt;&lt; " 4? " &lt;&lt; pb.getPennies() &lt;&lt; endl; cout
-> &lt;&lt; " 3? " &lt;&lt; pb.getNickels() &lt;&lt; endl; cout &lt;&lt;
-> " 2? " &lt;&lt; pb.getDimes() &lt;&lt; endl; cout &lt;&lt; " 1? "
-> &lt;&lt; pb.getQuarters() &lt;&lt; endl; cout &lt;&lt; "0.64? "
-> &lt;&lt; pb.getTotalCashInBank() &lt;&lt; endl; cout &lt;&lt; "0.64? "
-> &lt;&lt; pb.drainTheBank() &lt;&lt; endl; cout &lt;&lt; " 0? "
-> &lt;&lt; pb.getTotalCashInBank() &lt;&lt; endl; return 0; }
+> cout << " 4? " << pb.getPennies() << endl; cout
+> << " 3? " << pb.getNickels() << endl; cout <<
+> " 2? " << pb.getDimes() << endl; cout << " 1? "
+> << pb.getQuarters() << endl; cout << "0.64? "
+> << pb.getTotalCashInBank() << endl; cout << "0.64? "
+> << pb.drainTheBank() << endl; cout << " 0? "
+> << pb.getTotalCashInBank() << endl; return 0; }
 >
 > Expected Output
 >
@@ -9168,11 +9168,11 @@ Selection*
 
 > \*/
 >
-> \#include &lt;string&gt;
+> \#include <string>
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;cmath&gt;
+> \#include <cmath>
 >
 > class Employee { public:
 >
@@ -9189,11 +9189,11 @@ Selection*
 >
 > void giveRaise(double raise);
 >
-> // pre: raise &gt; 0. The argument 3.5 means a 3.50% raise.
+> // pre: raise > 0. The argument 3.5 means a 3.50% raise.
 >
 > // post: The hourly rate of pay has changed
 >
-> void setHoursWorked(double hoursWorked); // pre: hoursWorked &gt;= 0.0
+> void setHoursWorked(double hoursWorked); // pre: hoursWorked >= 0.0
 > // post: hours worked for the current week is set.
 >
 > // Gross pay, net pay, and taxes can now be computed.
@@ -9210,7 +9210,7 @@ Selection*
 > message in order for the gross pay taxes and net pay to be computed.
 > Th is test driver should generate the expected output below:
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
 > \#include "Employee.h" using namespace std;
 >
@@ -9218,23 +9218,23 @@ Selection*
 >
 > Employee emp1("Ali", 10.00);
 >
-> cout &lt;&lt; " Ali? " &lt;&lt; emp1.getName() &lt;&lt; endl; cout
-> &lt;&lt; " 10? " &lt;&lt; emp1.getHourlyRate() &lt;&lt; endl; cout
-> &lt;&lt; " 0? " &lt;&lt; emp1.getHoursWorked() &lt;&lt; endl; cout
-> &lt;&lt; " 0? " &lt;&lt; emp1.getGrossPay() &lt;&lt; endl;
+> cout << " Ali? " << emp1.getName() << endl; cout
+> << " 10? " << emp1.getHourlyRate() << endl; cout
+> << " 0? " << emp1.getHoursWorked() << endl; cout
+> << " 0? " << emp1.getGrossPay() << endl;
 >
 > // Record the hours worked in the current week
 > emp1.setHoursWorked(40.00);
 >
-> cout &lt;&lt; " 400? " &lt;&lt; emp1.getGrossPay() &lt;&lt; endl; cout
-> &lt;&lt; " 24.8? " &lt;&lt; emp1.getSocSecurityTax() &lt;&lt; endl;
-> cout &lt;&lt; " 5.8? " &lt;&lt; emp1.getMedicareTax() &lt;&lt; endl;
-> cout &lt;&lt; " 369.4? " &lt;&lt; emp1.getNetPay() &lt;&lt; endl; cout
-> &lt;&lt; endl; emp1.giveRaise(10); // 10% raise
+> cout << " 400? " << emp1.getGrossPay() << endl; cout
+> << " 24.8? " << emp1.getSocSecurityTax() << endl;
+> cout << " 5.8? " << emp1.getMedicareTax() << endl;
+> cout << " 369.4? " << emp1.getNetPay() << endl; cout
+> << endl; emp1.giveRaise(10); // 10% raise
 >
-> cout &lt;&lt; " 11? " &lt;&lt; emp1.getHourlyRate() &lt;&lt; endl;
-> cout &lt;&lt; " 440? " &lt;&lt; emp1.getGrossPay() &lt;&lt; endl; cout
-> &lt;&lt; "406.34? " &lt;&lt; emp1.getNetPay() &lt;&lt; endl; }
+> cout << " 11? " << emp1.getHourlyRate() << endl;
+> cout << " 440? " << emp1.getGrossPay() << endl; cout
+> << "406.34? " << emp1.getNetPay() << endl; }
 >
 > Expected Output
 >
@@ -9284,7 +9284,7 @@ COMING UP
 
 -   implement the Guarded Action pattern with the C++ if statement
 
--   use relational operators such as &lt; and &gt;
+-   use relational operators such as < and >
 
 -   create and evaluate expressions with the logical operators
 
@@ -9340,9 +9340,9 @@ COMING UP
   ------------------- --------------------------------------------------------------------
   **Problem:**        Do something only if certain conditions are true
   **Outline:**        if ( *true-or-false-condition is true* ) *execute this action (s)*
-  **Code Example:**   if (GPA &gt;= 3.5)
+  **Code Example:**   if (GPA >= 3.5)
 
-> cout &lt;&lt; "Made the deans list" &lt;&lt; endl;
+> cout << "Made the deans list" << endl;
 
 7.1.2 THE if STATEMENT
 
@@ -9362,11 +9362,11 @@ if (*logical-expression*) *true-part*;
 
 > Example: if *statements*
 >
-> cin &gt;&gt; hoursStudied; if (hoursStudied &gt; 4.5)
+> cin >> hoursStudied; if (hoursStudied > 4.5)
 >
-> cout &lt;&lt; "You are ready for the test" &lt;&lt; endl;
+> cout << "You are ready for the test" << endl;
 >
-> if (hours &gt; 40.0) { regularHours = 40.0; overtimeHours = hours -
+> if (hours > 40.0) { regularHours = 40.0; overtimeHours = hours -
 > 40.0; }
 >
 > When an if statement is encountered, the logical expression is
@@ -9387,24 +9387,24 @@ if (*logical-expression*) *true-part*;
 >
 > // showAward has three instances of the Guarded Action pattern.
 >
-> \#include &lt;iostream&gt; // For cout and endl
+> \#include <iostream> // For cout and endl
 >
-> \#include &lt;string&gt; // For the string class using namespace std;
+> \#include <string> // For the string class using namespace std;
 >
 > string musicAward(long int recordSales) {
 >
-> // pre: Argument &lt; maximum long int (usually 2,147,483,647)
+> // pre: Argument < maximum long int (usually 2,147,483,647)
 >
 > // post: Return a message appropriate to record sales string result;
-> if (recordSales &lt; 500000)
+> if (recordSales < 500000)
 >
 > result = "--Sorry, no certi cation yet. Try more concerts.";
 >
-> if (recordSales &gt;= 500000)
+> if (recordSales >= 500000)
 >
 > result = "--Congrats, your music is certi ed gold.";
 >
-> if (recordSales &gt;= 1000000)
+> if (recordSales >= 1000000)
 >
 > result = result + " It's also gone platinum!";
 >
@@ -9413,9 +9413,9 @@ if (*logical-expression*) *true-part*;
 > int main() {
 >
 > // Test drive showAwards three times with different results cout
-> &lt;&lt; 123456 &lt;&lt; musicAward( 123456) &lt;&lt; endl; cout
-> &lt;&lt; 504123 &lt;&lt; musicAward( 504123) &lt;&lt; endl; cout
-> &lt;&lt; 3402394 &lt;&lt; musicAward(3402394) &lt;&lt; endl; return 0;
+> << 123456 << musicAward( 123456) << endl; cout
+> << 504123 << musicAward( 504123) << endl; cout
+> << 3402394 << musicAward(3402394) << endl; return 0;
 > }
 >
 > Output
@@ -9437,17 +9437,17 @@ if (*logical-expression*) *true-part*;
 
 7.2 RELATIONAL OPERATORS
 
-> Two new operators, &lt; and &gt;=, test the relationship between the
+> Two new operators, < and >=, test the relationship between the
 > value of recordSales and the numeric values 500,000 and 1,000,000. Th
 > ey are part of the set of relational operators that create logical
 > expressions—an important part of if statements (see table below):
 
   **Relational Operator **   **Meaning**
   -------------------------- ----------------------------
-  &lt;                       Less than
-  &gt;                       Greater than
-  &lt;=                      > Less than or equal to
-  &gt;=                      > Greater than or equal to
+  <                       Less than
+  >                       Greater than
+  <=                      > Less than or equal to
+  >=                      > Greater than or equal to
   ==                         > Equal to
   !=                         > Not equal to
 
@@ -9466,11 +9466,11 @@ Logical Expression Result Logical Expression Result
   -------------------------------------------------------------------------------------------------------------------------------------------------------------------
   double x = 4.0;                                       > true false true false true   string name = "Bill";                           > false true true false true
                                                                                                                                        
-  x &lt; 5.0 x &gt; 5.0 x &lt;= 5.0 5.0 == x x != 5.0                                  name == "Sue" name != "Sue" name &lt; "Chris"   
+  x < 5.0 x > 5.0 x <= 5.0 5.0 == x x != 5.0                                  name == "Sue" name != "Sue" name < "Chris"   
                                                                                                                                        
-                                                                                       "Bobbie" &gt; Bobby"                            
+                                                                                       "Bobbie" > Bobby"                            
                                                                                                                                        
-                                                                                       "Bob" &lt; "Bobbie"                             
+                                                                                       "Bob" < "Bobbie"                             
   ----------------------------------------------------- ------------------------------ ----------------------------------------------- ------------------------------
   -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -9481,7 +9481,7 @@ Logical Expression Result Logical Expression Result
 > than ==, the C++ equality operator. Th e problem is that the compiler
 > does not detect an error. Consider this if statement:
 >
-> int x = 0; if (x = 3) cout &lt;&lt; x &lt;&lt; " equals 3" &lt;&lt;
+> int x = 0; if (x = 3) cout << x << " equals 3" <<
 > endl;
 >
 > Output
@@ -9495,7 +9495,7 @@ Logical Expression Result Logical Expression Result
 > assigned, which in this case is 3, or nonzero, or true. If you want to
 > compare x to 3, use == like this:
 >
-> int x = 0; if (x == 3) cout &lt;&lt; x &lt;&lt; " equals 3" &lt;&lt;
+> int x = 0; if (x == 3) cout << x << " equals 3" <<
 > endl;
 >
 > Output
@@ -9511,53 +9511,53 @@ like this:
 
 a.  (j+4) == k d. j != k g. j = 0 *careful*
 
-b.  0 == j e. j &lt; k h. j = 165 *careful*
+b.  0 == j e. j < k h. j = 165 *careful*
 
-c.  j &gt;= k f. 4 == j
+c.  j >= k f. 4 == j
 
 7-2 Write the output generated by the following code:
 
 a.  string option = "A"; d. int grade = 45; if (option == "A") if
-    > (grade &gt;= 70) cout &lt;&lt; "addRecord"; cout &lt;&lt;
-    > "passing" &lt;&lt; endl; if (option == "D") { if (grade &lt; 70)
-    > cout &lt;&lt; "deleteRecord"; cout &lt;&lt; "dubious" &lt;&lt;
+    > (grade >= 70) cout << "addRecord"; cout <<
+    > "passing" << endl; if (option == "D") { if (grade < 70)
+    > cout << "deleteRecord"; cout << "dubious" <<
     > endl;
 
-> } if (grade &lt; 60) cout &lt;&lt; "failing" &lt;&lt; endl;
+> } if (grade < 60) cout << "failing" << endl;
 
 a.  string option = "D"; e. int grade = 65; if (option == "A") if
-    > (grade &gt;= 70) cout &lt;&lt; "addRecord"; cout &lt;&lt;
-    > "passing" &lt;&lt; endl; if (option == "D") if (grade &lt; 70)
+    > (grade >= 70) cout << "addRecord"; cout <<
+    > "passing" << endl; if (option == "D") if (grade < 70)
 
-cout &lt;&lt; "deleteRecord"; cout &lt;&lt; "dubious" &lt;&lt; endl;
+cout << "deleteRecord"; cout << "dubious" << endl;
 
-if (grade &lt; 60)
+if (grade < 60)
 
-cout &lt;&lt; "failing" &lt;&lt; endl;
+cout << "failing" << endl;
 
 a.  string option = "a"; f. int g = 45; if (option == "A") { // Careful!
 
-cout &lt;&lt; "addRecord"; cout &lt;&lt; "g: " &lt;&lt; g &lt;&lt; endl;
+cout << "addRecord"; cout << "g: " << g << endl;
 
 } if (g = 70)
 
-if (option == "D") { cout &lt;&lt; "at cutoff" &lt;&lt; endl;
+if (option == "D") { cout << "at cutoff" << endl;
 
-cout &lt;&lt; "deleteRecord"; cout &lt;&lt; "g: " &lt;&lt; g &lt;&lt;
+cout << "deleteRecord"; cout << "g: " << g <<
 endl;
 
 } if (g = 1)
 
-> cout &lt;&lt; "you get one" &lt;&lt; endl; cout &lt;&lt; "g: "
-> &lt;&lt; g &lt;&lt; endl;
+> cout << "you get one" << endl; cout << "g: "
+> << g << endl;
 
 7.3: The Alternative Action Pattern
 
 7.3 THE ALTERNATIVE ACTION PATTERN
 
 > Programs must often select from a variety of actions. For example, one
-> student passes with a fi nal grade of &gt;= 60.0 and the next student
-> fails with a fi nal grade of &lt; 60.0. Th is is an example of the
+> student passes with a fi nal grade of >= 60.0 and the next student
+> fails with a fi nal grade of < 60.0. Th is is an example of the
 > Alternative Action algorithmic pattern. Th e program must choose one
 > course of action or an alternative.
 >
@@ -9572,9 +9572,9 @@ endl;
                    
                    *execute action-2*
 
-  > **Code**       if ( nalGrade &gt;= 60.0) cout &lt;&lt; "passing" &lt;&lt; endl; else
+  > **Code**       if ( nalGrade >= 60.0) cout << "passing" << endl; else
   >                
-  > **Example:**   cout &lt;&lt; "failing" &lt;&lt; endl;
+  > **Example:**   cout << "failing" << endl;
   ----------------------------------------------------------------------------------------
 
 7.3.1 THE if...else STATEMENT
@@ -9596,10 +9596,10 @@ if (*boolean-expression*)
 > path after an else. Th e *true-part* and the *false-part* may be any
 > valid C++ statement, including a block.
 >
-> if (sales &lt;= 20000.00)
+> if (sales <= 20000.00)
 >
-> cout &lt;&lt; "No bonus this month" &lt;&lt; endl; else cout &lt;&lt;
-> "Bonus coming" &lt;&lt; endl;
+> cout << "No bonus this month" << endl; else cout <<
+> "Bonus coming" << endl;
 
 When an if...else statement is encountered, the *logical expression*
 evaluates to either false or true. When true, the true part executes—the
@@ -9610,26 +9610,26 @@ false part executes.
 > less than or equal to zero, the output is FALSE. When x is positive,
 > the true part executes and TRUE is output.
 >
-> double x; cout &lt;&lt; "Enter x: "; cin &gt;&gt; x; if (x &gt; 0.0)
+> double x; cout << "Enter x: "; cin >> x; if (x > 0.0)
 >
-> cout &lt;&lt; "TRUE" &lt;&lt; endl; else cout &lt;&lt; "FALSE"
-> &lt;&lt; endl;
+> cout << "TRUE" << endl; else cout << "FALSE"
+> << endl;
 >
 > Here is another example of if...else demonstrating alternative action
-> that depends on the logical expression (miles &gt; 900000). Sometimes
+> that depends on the logical expression (miles > 900000). Sometimes
 > the true part executes—when miles is greater than 90000. Otherwise,
 > the false part executes—when miles is not greater than 90000.
 >
-> int miles; cout &lt;&lt; "Enter miles: "; cin &gt;&gt; miles; if
-> (miles &gt; 90000) {
+> int miles; cout << "Enter miles: "; cin >> miles; if
+> (miles > 90000) {
 >
-> cout &lt;&lt; "Tune-up " &lt;&lt; (miles-90000) &lt;&lt; " miles
-> overdue" &lt;&lt; endl;
+> cout << "Tune-up " << (miles-90000) << " miles
+> overdue" << endl;
 >
 > } else {
 >
-> cout &lt;&lt; "Tune-up due in " &lt;&lt; (90000-miles) &lt;&lt; "
-> miles" &lt;&lt; endl; }
+> cout << "Tune-up due in " << (90000-miles) << "
+> miles" << endl; }
 >
 > When miles is input as 96230, the output is Tune-up 6230 miles
 > overdue, but when miles is input as 89200, the false part executes;
@@ -9660,19 +9660,19 @@ pay = (40 \* rate) + (hours - 40) \* 1.5 \* rate;
 >
 > // Illustrate the exibility offered by Alternative Action
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() { double pay = 0.0; double rate = 0.0; double hours = 0.0;
 >
-> cout &lt;&lt; "Enter hours worked and rate of pay: "; cin &gt;&gt;
-> hours &gt;&gt; rate;
+> cout << "Enter hours worked and rate of pay: "; cin >>
+> hours >> rate;
 >
-> if (hours &lt;= 40.0)
+> if (hours <= 40.0)
 >
 > pay = hours \* rate; // True part else
 >
 > pay = (40 \* rate) + (hours - 40) \* 1.5 \* rate; // False part cout
-> &lt;&lt; "pay: " &lt;&lt; pay &lt;&lt; endl;
+> << "pay: " << pay << endl;
 >
 > return 0; }
 >
@@ -9696,7 +9696,7 @@ SELF-CHECK
 
 7-4 Given the following code:
 
-> if (hours &gt;= 40.0) hours = 40 + 1.5 \* (hours - 40);
+> if (hours >= 40.0) hours = 40 + 1.5 \* (hours - 40);
 
 Determine the fi nal value of hours when hours starts as:
 
@@ -9709,24 +9709,24 @@ b.  40 d. 43.5
 >
 > int n = 8; double x = -1.5;
 
-a.  if (x &lt; -1.0) c. if (x &gt;= n)
+a.  if (x < -1.0) c. if (x >= n)
 
-cout &lt;&lt; "true" &lt;&lt; endl; cout &lt;&lt; "x is high";
+cout << "true" << endl; cout << "x is high";
 
 else else
 
-> cout &lt;&lt; "false" &lt;&lt; endl; cout &lt;&lt; "x is low"; cout
-> &lt;&lt; "after if...else";
+> cout << "false" << endl; cout << "x is low"; cout
+> << "after if...else";
 
-a.  if (n &gt;= 0) { d. // true part is another if...else cout &lt;&lt;
-    > "zero or pos"; if (x &lt;= 0.0) {
+a.  if (n >= 0) { d. // true part is another if...else cout <<
+    > "zero or pos"; if (x <= 0.0) {
 
-> } if (x &lt; 0.0) else { cout &lt;&lt; "neg"; cout &lt;&lt; "neg";
+> } if (x < 0.0) else { cout << "neg"; cout << "neg";
 > else
 
-} cout &lt;&lt; "zero";
+} cout << "zero";
 
-> } else cout &lt;&lt; "pos";
+> } else cout << "pos";
 >
 > 7-6 Write an if...else statement that displays your name if option has
 > the value 1, and displays your school if option has the value of
@@ -9744,7 +9744,7 @@ a.  if (n &gt;= 0) { d. // true part is another if...else cout &lt;&lt;
 > // This program uses blocks for both the true and false parts. The //
 > block makes it possible to treat many statements as one.
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 
 7.4: Blocks with Selection Structures
 
@@ -9752,28 +9752,28 @@ a.  if (n &gt;= 0) { d. // true part is another if...else cout &lt;&lt;
 >
 > double margin = 0.0; // How far from dean's list cut-off
 >
-> cout &lt;&lt; "Enter GPA: "; cin &gt;&gt; GPA; if (GPA &gt;= 3.5) {
+> cout << "Enter GPA: "; cin >> GPA; if (GPA >= 3.5) {
 >
 > // True part contains more than one statement in this block cout
-> &lt;&lt; "Congratulations, you are on the dean's list." &lt;&lt; endl;
+> << "Congratulations, you are on the dean's list." << endl;
 > margin = GPA - 3.5;
 >
-> cout &lt;&lt; "You made it by " &lt;&lt; margin &lt;&lt; " points."
-> &lt;&lt; endl;
+> cout << "You made it by " << margin << " points."
+> << endl;
 >
 > } else {
 >
 > // False part contains more than one statement in this block cout
-> &lt;&lt; "Sorry, you are not on the dean's list." &lt;&lt; endl;
+> << "Sorry, you are not on the dean's list." << endl;
 > margin = 3.5 - GPA;
 >
-> cout &lt;&lt; "You missed it by " &lt;&lt; margin &lt;&lt; " points."
-> &lt;&lt; endl;
+> cout << "You missed it by " << margin << " points."
+> << endl;
 >
 > } return 0; }
 >
 > Th e block makes it possible to treat several statements as one. When
-> GPA is input as 3.7, GPA &gt;= 3.5 becomes true and the following
+> GPA is input as 3.7, GPA >= 3.5 becomes true and the following
 > dialog is generated:
 >
 > Enter GPA: ***3.7***
@@ -9782,7 +9782,7 @@ a.  if (n &gt;= 0) { d. // true part is another if...else cout &lt;&lt;
 >
 > You made it by 0.2 points.
 
-When GPA is 2.9, GPA &gt;= 3.5 becomes false and this output occurs:
+When GPA is 2.9, GPA >= 3.5 becomes false and this output occurs:
 
 Enter GPA: ***2.9***
 
@@ -9791,7 +9791,7 @@ Enter GPA: ***2.9***
 > You missed it by 0.6 points.
 >
 > Th is alternative execution is provided by the two possible
-> evaluations of the logical expression GPA &gt;= 3.5. If true, the true
+> evaluations of the logical expression GPA >= 3.5. If true, the true
 > part executes; if false, the false part executes.
 
 7.4.1 THE TROUBLE IN FORGETTING AND
@@ -9800,11 +9800,11 @@ Enter GPA: ***2.9***
 > the previous example illustrates what can go wrong if the block is not
 > used when attempting to execute both cout statements.
 >
-> if (GPA &gt;= 3.5) margin = GPA - 3.5;
+> if (GPA >= 3.5) margin = GPA - 3.5;
 >
-> cout &lt;&lt; "Congratulations, you are on the dean's list." &lt;&lt;
-> endl; cout &lt;&lt; "You made it by " &lt;&lt; margin &lt;&lt; "
-> points." &lt;&lt; endl; else // &lt;- ERROR: Unexpected else
+> cout << "Congratulations, you are on the dean's list." <<
+> endl; cout << "You made it by " << margin << "
+> points." << endl; else // <- ERROR: Unexpected else
 >
 > With { and } removed there is no block; the two highlighted statements
 > no longer belong to the preceding if...else—even though the
@@ -9820,13 +9820,13 @@ Enter GPA: ***2.9***
 >
 > margin = 3.5 - GPA;
 >
-> cout &lt;&lt; "Sorry, you are not on the dean's list." &lt;&lt; endl;
-> cout &lt;&lt; "You missed it by " &lt;&lt; margin &lt;&lt; " points."
-> &lt;&lt; endl;
+> cout << "Sorry, you are not on the dean's list." << endl;
+> cout << "You missed it by " << margin << " points."
+> << endl;
 >
 > Th ere are no compile time errors here, but the code does contain an
 > intent error. Th e fi nal two statements always execute! Th ey do not
-> belong to if...else. Whenever GPA &gt;= 3.5 is false, the code does
+> belong to if...else. Whenever GPA >= 3.5 is false, the code does
 > execute as one would expect, but when this logical expression is true,
 > the output is not what is intended. Instead, this rather confusing
 > output shows up:
@@ -9857,20 +9857,20 @@ Enter GPA: ***2.9***
 > // Demonstrates bool initialization and assignment. A standard C++ //
 > compiler has bool, true, and false built in.
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() {
 >
 > // Initialize three bool objects to false bool ready, willing, able;
 > double credits = 28.5; double hours = 9.5;
 >
-> // Assign true or false to all three bool objects ready = hours &gt;=
-> 8.0; willing = credits &gt; 20.0; able = credits &lt;= 32.0;
+> // Assign true or false to all three bool objects ready = hours >=
+> 8.0; willing = credits > 20.0; able = credits <= 32.0;
 >
 > // If all three bools are true, the logical expression is true if
-> (ready && willing && able) cout &lt;&lt; "YES" &lt;&lt; endl; else
+> (ready && willing && able) cout << "YES" << endl; else
 >
-> cout &lt;&lt; "NO" &lt;&lt; endl;
+> cout << "NO" << endl;
 >
 > return 0; }
 >
@@ -9897,7 +9897,7 @@ argument is odd:
 
 > // Demonstrate a simple bool function
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > bool isOdd(int n) {
 >
@@ -9909,7 +9909,7 @@ argument is odd:
 >
 > }
 >
-> cout &lt;&lt; j &lt;&lt; endl;
+> cout << j << endl;
 >
 > return 0;
 >
@@ -9925,7 +9925,7 @@ argument is odd:
 > create more complex logical expressions. For example, this logical
 > expression:
 >
-> (test &gt;= 0) && (test &lt;= 100) shows the logical “and” operator
+> (test >= 0) && (test <= 100) shows the logical “and” operator
 > (&&) applied to two logical operands. Since there are only two logical
 > values, true and false, the following table shows every possible
 > combination of logical values and the logical operators !, ¦¦, and &&:
@@ -9943,20 +9943,20 @@ argument is odd:
 > Th e next example logical expression uses the Boolean operator &&
 > (logical “and”) to ensure a test is in the range of 0 through 100
 > inclusive. Th e logical expression is true when test has a value
-> greater than or equal to 0 (test &gt;= 0) and at the same time is less
+> greater than or equal to 0 (test >= 0) and at the same time is less
 > than or equal to 100
 
-(test &lt;= 100).
+(test <= 100).
 
-> if ((test &gt;= 0) && (test &lt;= 100)) cout &lt;&lt; "Test is in
-> range"; else cout &lt;&lt; "\*\*Warning--Test is out of range";
+> if ((test >= 0) && (test <= 100)) cout << "Test is in
+> range"; else cout << "\*\*Warning--Test is out of range";
 >
 > Here is how the if statement evaluates its logical expressions when
 > test has the value 97 and then 977 (to simulate an attempt to enter 97
 > when the user accidentally presses 7 twice):
 >
-> (test &gt;= 0) && (test &lt;= 100) (test &gt;= 0) && (test &lt;= 100)
-> ( 97 &gt;= 0) && ( 97 &lt;= 100) (977 &gt;= 0) && (977 &lt;= 100)
+> (test >= 0) && (test <= 100) (test >= 0) && (test <= 100)
+> ( 97 >= 0) && ( 97 <= 100) (977 >= 0) && (977 <= 100)
 >
 > true && true true && false true false
 
@@ -9964,7 +9964,7 @@ argument is odd:
 
 > Programming languages have precedence rules governing the order in
 > which operators are applied to the operand(s). For example, in the
-> absence of parentheses, the relational operators &gt;= and &lt;= are
+> absence of parentheses, the relational operators >= and <= are
 > evaluated before the && operator. Most operators are grouped
 > (evaluated) in a left-to-right order: a / b / c / d is equivalent to
 > (((a / b) / c) / d).
@@ -9996,11 +9996,11 @@ argument is odd:
 
   Additive         + , -                 Binary plus, Binary minus             Left to right
 
-  Input/Output     &gt;&gt; , &lt;&lt;   Stream extraction, Stream insertion   Left to right
+  Input/Output     >> , <<   Stream extraction, Stream insertion   Left to right
 
-  Relational       &lt; , &gt;           Less than, Greater than               Left to right
+  Relational       < , >           Less than, Greater than               Left to right
                                                                                
-                   &lt;= , &gt;=         Less or equal, Greater or equal       
+                   <= , >=         Less or equal, Greater or equal       
 
   Equality         == , !=               Equal, Not equal                      Left to right
 
@@ -10028,11 +10028,11 @@ c.  (1 \* 3 == 4 - 1)
 
 d.  (false ¦¦ (true && false))
 
-e.  (3 &lt; 4 && 3 != 4)
+e.  (3 < 4 && 3 != 4)
 
 f.  (! false && ! true)
 
-g.  ((5 + 2) &gt; 3 && (11 &lt; 12))
+g.  ((5 + 2) > 3 && (11 < 12))
 
 h.  ! ((false && true) ¦¦ false)
 
@@ -10044,7 +10044,7 @@ h.  ! ((false && true) ¦¦ false)
 
     10. Write the output generated by the following code (be careful):
 
-> double GPA = 1.03; if (GPA = 4.0) cout &lt;&lt; "President's list";
+> double GPA = 1.03; if (GPA = 4.0) cout << "President's list";
 
 7.5.3 THE BOOLEAN “OR” ¦¦ WITH A grid OBJECT
 
@@ -10069,7 +10069,7 @@ The grid:
 
 . . . . . .
 
-. . . . . &gt; . . . . . .
+. . . . . > . . . . . .
 
 . . . . . .
 
@@ -10090,7 +10090,7 @@ false ¦¦ 5==5 false ¦¦ true true
 >
 > // Show a more complex logical expression inside a bool function
 >
-> \#include &lt;iostream&gt; // For cout using namespace std; \#include
+> \#include <iostream> // For cout using namespace std; \#include
 > "Grid.h" // For class Grid bool moverOnEdge(const Grid & g) {
 >
 > // post: Return true if the mover is on an edge or false if not bool
@@ -10110,11 +10110,11 @@ false ¦¦ 5==5 false ¦¦ true true
 >
 > Grid tarpit(6, 6, 2, 5, east);
 >
-> if (moverOnEdge(tarpit)) { cout &lt;&lt; "On edge" &lt;&lt; endl;
+> if (moverOnEdge(tarpit)) { cout << "On edge" << endl;
 >
 > } else {
 >
-> cout &lt;&lt; "Not on edge" &lt;&lt; endl; }
+> cout << "Not on edge" << endl; }
 >
 > return 0; }
 >
@@ -10148,12 +10148,12 @@ SELF-CHECK
 > if E1 is true, E2 is not evaluated. A programmer can actually get away
 > with code like this:
 >
-> if ((x &gt;= 0.0) && (sqrt(x) &lt;= 4.0))
+> if ((x >= 0.0) && (sqrt(x) <= 4.0))
 >
 > When x is negative, the second expression with sqrt(x) is never
-> evaluated. By checking for x &gt;= 0.0 fi rst, the square root of a
+> evaluated. By checking for x >= 0.0 fi rst, the square root of a
 > negative number never occurs. Switch the order of statements and a
-> runtime error occurs when x &lt; 0.0.
+> runtime error occurs when x < 0.0.
 
 Also consider the previous example of Boolean evaluation in the bool
 function moverOnEdge.
@@ -10167,7 +10167,7 @@ function moverOnEdge.
 >
 > The grid:
 >
-> . . . . . &gt; . . . . . .
+> . . . . . > . . . . . .
 >
 > . . . . . .
 >
@@ -10195,7 +10195,7 @@ SELF-CHECK
 > 7-12 Evaluate the following expressions after each set of assignments
 > to x and y:
 >
-> ((fabs(x - y) &gt;= 0.001) && (x &gt;= 0.0) && (sqrt(x) &lt; 6.5))
+> ((fabs(x - y) >= 0.001) && (x >= 0.0) && (sqrt(x) < 6.5))
 
   a\. x = 1.0        c\. x = -1.0
   ------------------ --------------
@@ -10224,7 +10224,7 @@ SELF-CHECK
 >
 > void BankAccount::withdraw(double withdrawalAmount) {
 >
-> // pre: withdrawalAmount &lt;= balance balance = balance -
+> // pre: withdrawalAmount <= balance balance = balance -
 > withdrawalAmount; }
 >
 > A better design would be to disallow negative balances. Th en the
@@ -10236,7 +10236,7 @@ SELF-CHECK
 > BankAccount.h:
 >
 > bool withdraw(double withdrawalAmount); // post: If withdrawalAmount
-> &lt;= balance && withdrawalAmount &gt; 0.0, // debit withdrawalAmount
+> <= balance && withdrawalAmount > 0.0, // debit withdrawalAmount
 > from this balance and return true.
 >
 > // Otherwise don't change anything--just return false.
@@ -10248,7 +10248,7 @@ SELF-CHECK
 > bool BankAccount::withdraw(double withdrawalAmount) { bool result =
 > true;
 >
-> if ((withdrawalAmount &gt; balance) ¦¦ (withdrawalAmount &lt;= 0.00))
+> if ((withdrawalAmount > balance) ¦¦ (withdrawalAmount <= 0.00))
 > result = false; else
 >
 > balance = balance - withdrawalAmount;
@@ -10261,25 +10261,25 @@ SELF-CHECK
 >
 > // Test drive the "safe" BankAccount::withdraw
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > \#include "BankAccount.h" // A modi ed "safe" BankAccount
 >
 > int main() {
 >
 > BankAccount aSafeAccount("Charlie", 50.00); double withdrawalAmount;
-> cout &lt;&lt; "Enter amount to withdraw: ";
+> cout << "Enter amount to withdraw: ";
 >
-> cin &gt;&gt; withdrawalAmount;
+> cin >> withdrawalAmount;
 >
 > if (aSafeAccount.withdraw(withdrawalAmount)) {
 >
-> cout &lt;&lt; "Balance = \$" &lt;&lt; aSafeAccount.getBalance()
-> &lt;&lt; endl;
+> cout << "Balance = \$" << aSafeAccount.getBalance()
+> << endl;
 >
 > } else {
 >
-> cout &lt;&lt; "Could not withdraw " &lt;&lt; withdrawalAmount &lt;&lt;
+> cout << "Could not withdraw " << withdrawalAmount <<
 > endl; }
 >
 > // Can ignore return result aSafeAccount.withdraw(10000); return 0; }
@@ -10312,7 +10312,7 @@ a.  double wAmount = 100.00; c. double wAmount = 112.50;
 
 b.  double wAmount = -100.00; d. double wAmount = 200.00;
 
-> \#include &lt;iostream&gt; // For cout using namespace std; \#include
+> \#include <iostream> // For cout using namespace std; \#include
 > "BankAccount.h" // For the BankAccount class
 >
 > int main() {
@@ -10320,7 +10320,7 @@ b.  double wAmount = -100.00; d. double wAmount = 200.00;
 > BankAccount b("Kilroy", 112.50);
 >
 > double wAmount = -100.00; // Substitute new values here if
-> (b.withdraw(wAmount)) { cout &lt;&lt; "okay" &lt;&lt; endl;
+> (b.withdraw(wAmount)) { cout << "okay" << endl;
 >
 > }
 
@@ -10328,7 +10328,7 @@ b.  double wAmount = -100.00; d. double wAmount = 200.00;
 
 > else {
 >
-> cout &lt;&lt; "failed" &lt;&lt; endl;
+> cout << "failed" << endl;
 >
 > } return 0; }
 
@@ -10355,7 +10355,7 @@ b.  double wAmount = -100.00; d. double wAmount = 200.00;
                    
                    *execute action n*
 
-  > **Code**       if (grade &lt; 60.0) result = "F"; else if (grade &lt; 70) result = "D"; else if (grade &lt; 80) result = "C"; else if (grade &lt; 90) result = "B"; else result = "A";
+  > **Code**       if (grade < 60.0) result = "F"; else if (grade < 70) result = "D"; else if (grade < 80) result = "C"; else if (grade < 90) result = "B"; else result = "A";
   >                
   > **Example:**   
   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -10367,25 +10367,25 @@ b.  double wAmount = -100.00; d. double wAmount = 200.00;
 >
 > // The output is dependent on the input value for GPA.
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() { double GPA;
 >
-> cout &lt;&lt; "Enter your GPA: "; cin &gt;&gt; GPA;
+> cout << "Enter your GPA: "; cin >> GPA;
 >
-> if (GPA &lt; 3.5) {
+> if (GPA < 3.5) {
 >
-> cout &lt;&lt; "Try harder" &lt;&lt; endl;
+> cout << "Try harder" << endl;
 >
 > }
 >
 > else {
 >
-> // Execute this multiple selection statement if (GPA &lt; 4.0)
+> // Execute this multiple selection statement if (GPA < 4.0)
 >
-> cout &lt;&lt; "You made the dean's list" &lt;&lt; endl; else
+> cout << "You made the dean's list" << endl; else
 >
-> cout &lt;&lt; "You made the president's list" &lt;&lt; endl;
+> cout << "You made the president's list" << endl;
 >
 > } return 0; }
 >
@@ -10405,32 +10405,32 @@ b.  double wAmount = -100.00; d. double wAmount = 200.00;
 > preferred manner to line up the three paths through this control
 > structure:
 >
-> if (GPA &lt; 3.5)
+> if (GPA < 3.5)
 >
-> cout &lt;&lt; "Try harder" &lt;&lt; endl; else if (GPA &lt; 4.0)
+> cout << "Try harder" << endl; else if (GPA < 4.0)
 >
-> cout &lt;&lt; "You made the dean's list" &lt;&lt; endl; else cout
-> &lt;&lt; "You made the president's list" &lt;&lt; endl;
+> cout << "You made the dean's list" << endl; else cout
+> << "You made the president's list" << endl;
 >
 > Th e previous formatting represents the preferred method of this
 > textbook. However, you could also use blocks to make multiple
 > selection look like this:
 >
-> if (GPA &lt; 3.5) {
+> if (GPA < 3.5) {
 >
-> cout &lt;&lt; "Try harder" &lt;&lt; endl;
+> cout << "Try harder" << endl;
 >
 > }
 
 7.7: Multiple Selection
 
-> else if (GPA &lt; 4.0) {
+> else if (GPA < 4.0) {
 >
-> cout &lt;&lt; "You made the dean's list" &lt;&lt; endl;
+> cout << "You made the dean's list" << endl;
 >
 > } else {
 >
-> cout &lt;&lt; "You made the president's list" &lt;&lt; endl; }
+> cout << "You made the president's list" << endl; }
 
 7.7.1 ANOTHER EXAMPLE: DETERMINING LETTER GRADES
 
@@ -10445,12 +10445,12 @@ b.  double wAmount = -100.00; d. double wAmount = 200.00;
 
 A function could be implemented with if statements that begin like this:
 
-> if ( percentage &gt;= 90.0) result = "A";
+> if ( percentage >= 90.0) result = "A";
 >
-> if ( percentage &gt;= 80.0 && percentage &lt; 90 ) // Not necessary
+> if ( percentage >= 80.0 && percentage < 90 ) // Not necessary
 > result = "B";
 >
-> if ( percentage &gt;= 70.0 && percentage &lt; 80 ) // Not necessary //
+> if ( percentage >= 70.0 && percentage < 80 ) // Not necessary //
 > . . .
 >
 > However, when given the problem of choosing from among fi ve diff
@@ -10461,15 +10461,15 @@ A function could be implemented with if statements that begin like this:
 >
 > string letterGrade(double percentage) {
 >
-> // pre: percentage &gt;= 0.0 && percentage &lt;= 100.0
+> // pre: percentage >= 0.0 && percentage <= 100.0
 >
 > // post: Return letter grade according to external documentation
 > string result; // Determine the proper result . . .
 >
-> if (percentage &gt;= 90.0) result = "A"; else if (percentage &gt;=
-> 80.0) result = "B"; else if (percentage &gt;= 70.0) result = "C";
+> if (percentage >= 90.0) result = "A"; else if (percentage >=
+> 80.0) result = "B"; else if (percentage >= 70.0) result = "C";
 >
-> else if (percentage &gt;= 60.0) result = "D"; else result = "F";
+> else if (percentage >= 60.0) result = "D"; else result = "F";
 >
 > return result; }
 >
@@ -10481,25 +10481,25 @@ A function could be implemented with if statements that begin like this:
 > result = "F";.
 >
 > When percentage has a value between 60.0 and 90.0, logical expressions
-> evaluate until the fi rst one that is true. When percentage &gt;= 90.0
-> is false, the opposite logical expression, percentage &lt; 90.0, must
-> be true. Th e second logical expression, percentage &gt;= 80.0,
+> evaluate until the fi rst one that is true. When percentage >= 90.0
+> is false, the opposite logical expression, percentage < 90.0, must
+> be true. Th e second logical expression, percentage >= 80.0,
 > evaluates when the fi rst expression is false. When the fi rst true
 > logical expression is fi nally encountered, the very next true part
 > executes and the program skips over the remaining alternative(s). Th
 > is function could be improved by ensuring that letter grades are
 > returned only when percentage is within the range of 0.0 through 100.0
 > inclusive. Th ere is a possibility, for example, that an argument will
-> be passed as 777 instead of an intended input of 77. Since 777 &gt;=
+> be passed as 777 instead of an intended input of 77. Since 777 >=
 > 90.0 is true, the function improperly returns "A" when "C" would have
 > been the correct result. letterGrade could be modifi ed to contain a
 > test for out-of-range input. Th is fi rst logical expression now
 > checks to see if percentage is either less than 0.0 or greater than
 > 100.0.
 >
-> if ((percentage &lt; 0.0) ¦¦ (percentage &gt; 100.0)) result =
+> if ((percentage < 0.0) ¦¦ (percentage > 100.0)) result =
 > "\*\*Error--Percentage is not in range \[0...100\]"; else if
-> (percentage &gt;= 90) result = "A";
+> (percentage >= 90) result = "A";
 >
 > If percentage is out of range, the result becomes an error message and
 > the program skips over the remainder of the nested if...else
@@ -10517,15 +10517,15 @@ A function could be implemented with if statements that begin like this:
 > rst time any return statement executes, the function terminates. Th
 > erefore, a function could be written with many return statements:
 >
-> string letterGrade(double percentage) { if (percentage &gt;= 90)
+> string letterGrade(double percentage) { if (percentage >= 90)
 > return "A";
 
 7.8: Testing Multiple Selection
 
-> if (percentage &gt;= 80) return "B"; if (percentage &gt;= 70) return
-> "C"; if (percentage &gt;= 60) return "D"; if (percentage &gt;= 0)
+> if (percentage >= 80) return "B"; if (percentage >= 70) return
+> "C"; if (percentage >= 60) return "D"; if (percentage >= 0)
 >
-> return "F"; // ERROR: runtime error when percentage &lt; 0 }
+> return "F"; // ERROR: runtime error when percentage < 0 }
 >
 > If you do use the technique of multiple returns, ensure that something
 > is always returned. For example, the previous code will not return
@@ -10536,12 +10536,12 @@ A function could be implemented with if statements that begin like this:
 >
 > // . . .
 >
-> if (percentage &gt;= 0) return "F";
+> if (percentage >= 0) return "F";
 >
-> return "Error: argument to letterGrade &lt; 0"; }
+> return "Error: argument to letterGrade < 0"; }
 >
 > And while you’re at it, consider returning an error message when
-> percentage &gt; 100 if that would in fact be an error.
+> percentage > 100 if that would in fact be an error.
 
 7.8 TESTING MULTIPLE SELECTION
 
@@ -10579,9 +10579,9 @@ A function could be implemented with if statements that begin like this:
 >
 > int main() {
 >
-> cout &lt;&lt; "-1.0 = " &lt;&lt; letterGrade(-1.0) &lt;&lt; endl; cout
-> &lt;&lt; "55.0 = " &lt;&lt; letterGrade(55.0) &lt;&lt; endl; cout
-> &lt;&lt; "65.0 = " &lt;&lt; letterGrade(65.0) &lt;&lt; endl; // . . .
+> cout << "-1.0 = " << letterGrade(-1.0) << endl; cout
+> << "55.0 = " << letterGrade(55.0) << endl; cout
+> << "65.0 = " << letterGrade(65.0) << endl; // . . .
 >
 > and then the program output must be examined to indicate that every
 > function call returned the proper value:
@@ -10600,8 +10600,8 @@ A function could be implemented with if statements that begin like this:
 > (boundary) value. Th is extra eff ort could go a long way. For
 > example, boundary testing avoids situations where students with 90 are
 > accidentally shown to have a letter grade of B rather than A. Th is
-> would occur when the logical expression (percentage &gt;= 90) is
-> accidentally coded as (percentage &gt; 90). Th e arguments of 60, 70,
+> would occur when the logical expression (percentage >= 90) is
+> accidentally coded as (percentage > 90). Th e arguments of 60, 70,
 > 80, and 90 complete boundary testing of the code above.
 >
 > Perhaps the best testing strategy is to select test values that
@@ -10615,12 +10615,12 @@ A function could be implemented with if statements that begin like this:
 > int main() {
 >
 > // A test driver for string letterGrade(double percentage) cout
-> &lt;&lt; "90.0? " &lt;&lt; letterGrade(90.0) &lt;&lt; endl; // 90.0? A
-> cout &lt;&lt; "80.0? " &lt;&lt; letterGrade(80.0) &lt;&lt; endl; //
-> 80.0? B cout &lt;&lt; "70.0? " &lt;&lt; letterGrade(70.0) &lt;&lt;
-> endl; // 70.0? C cout &lt;&lt; "60.0? " &lt;&lt; letterGrade(60.0)
-> &lt;&lt; endl; // 60.0? D cout &lt;&lt; "59.9? " &lt;&lt;
-> letterGrade(59.9) &lt;&lt; endl; // 59.9? F return 0; }
+> << "90.0? " << letterGrade(90.0) << endl; // 90.0? A
+> cout << "80.0? " << letterGrade(80.0) << endl; //
+> 80.0? B cout << "70.0? " << letterGrade(70.0) <<
+> endl; // 70.0? C cout << "60.0? " << letterGrade(60.0)
+> << endl; // 60.0? D cout << "59.9? " <<
+> letterGrade(59.9) << endl; // 59.9? F return 0; }
 
 7.9 THE ASSERT FUNCTION
 
@@ -10658,18 +10658,18 @@ A function could be implemented with if statements that begin like this:
 
 > \*/
 >
-> \#include &lt;cassert&gt; // Required for the assert function
+> \#include <cassert> // Required for the assert function
 >
-> \#include &lt;string&gt; using namespace std;
+> \#include <string> using namespace std;
 >
 > string letterGrade(double percentage) {
 >
-> // pre: percentage &gt;= 0.0 && percentage &lt;= 100.0
+> // pre: percentage >= 0.0 && percentage <= 100.0
 >
 > // post: Return letter grade according to external documentation
-> string result; if (percentage &gt;= 90.0) result = "A"; else if
-> (percentage &gt;= 80.0) result = "B"; else if (percentage &gt;= 70.0)
-> result = "C"; else if (percentage &gt;= 60.0) result = "D"; else
+> string result; if (percentage >= 90.0) result = "A"; else if
+> (percentage >= 80.0) result = "B"; else if (percentage >= 70.0)
+> result = "C"; else if (percentage >= 60.0) result = "D"; else
 > result = "F"; return result; }
 >
 > int main() {
@@ -10701,9 +10701,9 @@ SELF-CHECK
 > 7-15 Which value of percentage would detect the intent error in the
 > following code?
 >
-> if (percentage &gt;= 90) result = "A"; else if (percentage &gt;= 80)
-> result = "B"; else if (percentage &gt; 70) result = "C"; else if
-> (percentage &gt;= 60) result = "D"; else result = "F";
+> if (percentage >= 90) result = "A"; else if (percentage >= 80)
+> result = "B"; else if (percentage > 70) result = "C"; else if
+> (percentage >= 60) result = "D"; else result = "F";
 >
 > 7-16 What string is incorrectly assigned to letterGrade for the value
 > of percentage you answered above?
@@ -10714,10 +10714,10 @@ SELF-CHECK
 > 7-18 Using the nested structure below, write the return value for each
 > of these six diff erent arguments for weather: -40 20 -1 42 15 31
 >
-> string weather(int temp) { if (temp &lt;= -40) return "extremely
-> frigid"; else if (temp &lt; 0) return "below freezing"; else if (temp
-> &lt; 20) return "freezing to mild"; else if (temp &lt; 30) return
-> "warm"; else if (temp &lt; 40) return "very hot"; else
+> string weather(int temp) { if (temp <= -40) return "extremely
+> frigid"; else if (temp < 0) return "below freezing"; else if (temp
+> < 20) return "freezing to mild"; else if (temp < 30) return
+> "warm"; else if (temp < 40) return "very hot"; else
 >
 > return "toast"; }
 >
@@ -10768,15 +10768,15 @@ SELF-CHECK
 >
 > int option = 0;
 >
-> cout &lt;&lt; "Enter option 1, 2, or 3: "; cin &gt;&gt; option;
+> cout << "Enter option 1, 2, or 3: "; cin >> option;
 >
 > switch(option) { case 1:
 >
-> cout &lt;&lt; "option 1 selected" &lt;&lt; endl; break; case 2: cout
-> &lt;&lt; "option 2 selected" &lt;&lt; endl; break; case 3: cout
-> &lt;&lt; "option 3 selected" &lt;&lt; endl; break; default:
+> cout << "option 1 selected" << endl; break; case 2: cout
+> << "option 2 selected" << endl; break; case 3: cout
+> << "option 3 selected" << endl; break; default:
 >
-> cout &lt;&lt; "option &lt; 1 or option &gt; 3" &lt;&lt; endl; } // End
+> cout << "option < 1 or option > 3" << endl; } // End
 > switch
 >
 > If neither 1, 2, nor 3 are entered, the statement(s) after default:
@@ -10820,7 +10820,7 @@ SELF-CHECK
 >
 > // Use some char objects
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 
 7.10: The switch Statement
 
@@ -10833,12 +10833,12 @@ SELF-CHECK
 > 'o';
 >
 > // Output some char objects, char constants, and escape sequences cout
-> &lt;&lt; "letterGrade is " &lt;&lt; letterGrade &lt;&lt; endl; cout
-> &lt;&lt; one &lt;&lt; two &lt;&lt; newLine &lt;&lt; one &lt;&lt; '\\t'
-> &lt;&lt; two &lt;&lt; endl; cout &lt;&lt; '\\"' &lt;&lt; 'A' &lt;&lt;
-> ' ' &lt;&lt; '\\\\' &lt;&lt; ' ' &lt;&lt; 'S' &lt;&lt; 't' &lt;&lt;
-> 'r' &lt;&lt; 'i' &lt;&lt; 'n' &lt;&lt; 'g' &lt;&lt; '?' &lt;&lt; '\\''
-> &lt;&lt; endl;
+> << "letterGrade is " << letterGrade << endl; cout
+> << one << two << newLine << one << '\\t'
+> << two << endl; cout << '\\"' << 'A' <<
+> ' ' << '\\\\' << ' ' << 'S' << 't' <<
+> 'r' << 'i' << 'n' << 'g' << '?' << '\\''
+> << endl;
 >
 > return 0; }
 >
@@ -10858,8 +10858,8 @@ SELF-CHECK
 > you want to see the actual character, typecast with char() to see the
 > ‘D’:
 >
-> cout &lt;&lt; toupper('d') &lt;&lt; endl; // Output: 68 cout &lt;&lt;
-> char(toupper('d')) &lt;&lt; endl; // Output: D
+> cout << toupper('d') << endl; // Output: 68 cout <<
+> char(toupper('d')) << endl; // Output: D
 >
 > Here is a switch statement that uses characters as the constant
 > expressions. It chooses one of fi ve paths based on the value of the
@@ -10867,20 +10867,20 @@ SELF-CHECK
 >
 > // Illustrate another switch statement
 >
-> \#include &lt;iostream&gt; // For cout &lt;&lt; using namespace std;
-> \#include &lt;cctype&gt; // For toupper(char) returns uppercase char
+> \#include <iostream> // For cout << using namespace std;
+> \#include <cctype> // For toupper(char) returns uppercase char
 >
 > int main() { char option;
 >
-> cout &lt;&lt; "B)alance W)ithdraw D)eposit Q)uit: "; cin &gt;&gt;
-> option; switch(toupper(option)) { case 'B': cout &lt;&lt; "Balance
-> selected" &lt;&lt; endl; break; case 'W': cout &lt;&lt; "Withdraw
-> selected" &lt;&lt; endl; break; case 'D':
+> cout << "B)alance W)ithdraw D)eposit Q)uit: "; cin >>
+> option; switch(toupper(option)) { case 'B': cout << "Balance
+> selected" << endl; break; case 'W': cout << "Withdraw
+> selected" << endl; break; case 'D':
 >
-> cout &lt;&lt; "Deposit selected" &lt;&lt; endl; break; case 'Q': cout
-> &lt;&lt; "Quit selected" &lt;&lt; endl; break; default:
+> cout << "Deposit selected" << endl; break; case 'Q': cout
+> << "Quit selected" << endl; break; default:
 >
-> cout &lt;&lt; "Invalid choice" &lt;&lt; endl; } // End switch
+> cout << "Invalid choice" << endl; } // End switch
 >
 > return 0; }
 >
@@ -10906,15 +10906,15 @@ SELF-CHECK
 >
 > switch(toupper(option)) { case 'B':
 >
-> cout &lt;&lt; "Balance selected" &lt;&lt; endl; case 'W':
+> cout << "Balance selected" << endl; case 'W':
 >
-> cout &lt;&lt; "Withdraw selected" &lt;&lt; endl; case 'D':
+> cout << "Withdraw selected" << endl; case 'D':
 >
-> cout &lt;&lt; "Deposit selected" &lt;&lt; endl; case 'Q':
+> cout << "Deposit selected" << endl; case 'Q':
 >
-> cout &lt;&lt; "Quit selected" &lt;&lt; endl; default:
+> cout << "Quit selected" << endl; default:
 >
-> cout &lt;&lt; "Invalid choice" &lt;&lt; endl; } // End switch
+> cout << "Invalid choice" << endl; } // End switch
 >
 > Now when B is input, every statement executes—including the default!
 >
@@ -10936,15 +10936,15 @@ SELF-CHECK
 
 char option = 'A';
 
-> switch(option) { case 'A': cout &lt;&lt; "AAA";
+> switch(option) { case 'A': cout << "AAA";
 >
 > break; case 'B':
 
-cout &lt;&lt; "BBB";
+cout << "BBB";
 
 > break; default:
 >
-> cout &lt;&lt; "Invalid";
+> cout << "Invalid";
 >
 > }
 >
@@ -10964,7 +10964,7 @@ CHAPTER SUMMARY
     > or false. Th e logical expressions usually have one or more of the
     > following relational, equality, or logical operators:
 
-&lt; &gt; &lt;= &gt;= != == ! ¦¦ &&
+< > <= >= != == ! ¦¦ &&
 
 -   Th e Guarded Action pattern is implemented with the if statement
     > that either executes a collection of statements or skips them
@@ -11012,44 +11012,44 @@ EXERCISES
     > segment is an example of poor indentation; try to predict
     > the output.
 
-> int j=123;if (j&gt;=0)if (0==j)cout&lt;&lt;"one";else
-> cout&lt;&lt;"two";else cout&lt;&lt;"three";
+> int j=123;if (j>=0)if (0==j)cout<<"one";else
+> cout<<"two";else cout<<"three";
 
 1.  Write the output from the following code fragments:
 
   --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  a.   double x = 4.0; if (10.0 == x) cout &lt;&lt; "is 10"; else                                                    c.   int j = 0, k = 1; if (j != k) cout &lt;&lt; "abc"; if (j == k) cout &lt;&lt; "def";
+  a.   double x = 4.0; if (10.0 == x) cout << "is 10"; else                                                    c.   int j = 0, k = 1; if (j != k) cout << "abc"; if (j == k) cout << "def";
                                                                                                                           
-       cout &lt;&lt; "not 10";                                                                                            (j &lt;= k) cout &lt;&lt; "ghi"; if (j &gt;= k) cout &lt;&lt; "klm";
+       cout << "not 10";                                                                                            (j <= k) cout << "ghi"; if (j >= k) cout << "klm";
   ---- ------------------------------------------------------------------------------------------------------------- ---- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  b.   string s1 = "Ab"; string s2 = "Bc"; if (s1 == s2) cout &lt;&lt; "equal"; if (s1 != s2) cout &lt;&lt; "not";   d.   double x = -123.4, y = 999.9; if (x &lt; y) cout &lt;&lt; "less "; if (x &gt; y) cout &lt;&lt; "greater "; if (x == y) cout &lt;&lt; "equal "; if (x != y) cout &lt;&lt; "not eq. ";
+  b.   string s1 = "Ab"; string s2 = "Bc"; if (s1 == s2) cout << "equal"; if (s1 != s2) cout << "not";   d.   double x = -123.4, y = 999.9; if (x < y) cout << "less "; if (x > y) cout << "greater "; if (x == y) cout << "equal "; if (x != y) cout << "not eq. ";
   --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 1.  Write the output from the following code fragments:
 
-    a.  string name = "Parker"; if (name &gt;= "A" && name &lt;= "F")
-        > cout &lt;&lt; "A..F"; if (name &gt;= "G" && name &lt;= "N")
-        > cout &lt;&lt; "G..N"; if (name &gt;= "O" && name &lt;= "T")
-        > cout &lt;&lt; "O..T"; if (name &gt;= "U" && name &lt;= "Z")
-        > cout &lt;&lt; "U..Z";
+    a.  string name = "Parker"; if (name >= "A" && name <= "F")
+        > cout << "A..F"; if (name >= "G" && name <= "N")
+        > cout << "G..N"; if (name >= "O" && name <= "T")
+        > cout << "O..T"; if (name >= "U" && name <= "Z")
+        > cout << "U..Z";
 
     b.  int t1 = 87, t2 = 76, larger = 0;
 
-> if (t1 &gt; t2) larger = t1; else larger = t2;
+> if (t1 > t2) larger = t1; else larger = t2;
 
-cout &lt;&lt; "larger: " &lt;&lt; larger;
+cout << "larger: " << larger;
 
 Exercises
 
 a.  double x1 = 2.89; double x2 = 3.12;
 
-if (fabs(x1 - x2) &lt; 1)
+if (fabs(x1 - x2) < 1)
 
-cout &lt;&lt; "true";
+cout << "true";
 
 else
 
-cout &lt;&lt; "false";
+cout << "false";
 
 1.  Write the output generated from the following program fragments,
     > assuming j and k are int objects with the values 25 and
@@ -11058,13 +11058,13 @@ cout &lt;&lt; "false";
 > int j = 25; int k = 50;
 
   ---------------------------------------------------------------------------------------------------------------------------------------
-  a.   > if (j == k) cout &lt;&lt; j; cout &lt;&lt; k;                   c.   > if (j &gt; k || k &lt; 100) cout &lt;&lt; "THREE"; else
+  a.   > if (j == k) cout << j; cout << k;                   c.   > if (j > k || k < 100) cout << "THREE"; else
                                                                               >
-                                                                              > cout &lt;&lt; "FOUR";
+                                                                              > cout << "FOUR";
   ---- ----------------------------------------------------------------- ---- -----------------------------------------------------------
-  b.   > if (j &lt;= k && j &gt;= 0) cout &lt;&lt; "ONE" &lt;&lt; else   d.   > if (j &gt;= 0 && j &lt;=100) cout &lt;&lt; "FIVE"; else
+  b.   > if (j <= k && j >= 0) cout << "ONE" << else   d.   > if (j >= 0 && j <=100) cout << "FIVE"; else
        >                                                                      >
-       > cout &lt;&lt; "TWO";                                                 > cout &lt;&lt; "SIX";
+       > cout << "TWO";                                                 > cout << "SIX";
   ---------------------------------------------------------------------------------------------------------------------------------------
 
 1.  Write a statement that displays YES if intObject is positive, NO if
@@ -11105,14 +11105,14 @@ cout &lt;&lt; "false";
 >
 > . . . . . . . . . .. . . \# \# \# . . . .
 >
-> . . . \# &lt; . . . . .. . . \# &lt; \# . . . . . \# \# \# \# \# \# \#
+> . . . \# < . . . . .. . . \# < \# . . . . . \# \# \# \# \# \# \#
 > \# .. \# \# \# \# \# \# \# \# . mover turns left twicemover is trapped
 >
 > The grid:The grid:
 >
 > . . . . . . . . . .. . . \# \# \# . . . .
 >
-> . . . \# &gt; . . . . .. . . \# \^ \# . . . . . \# \# \# \# \# . . . .
+> . . . \# > . . . . .. . . \# \^ \# . . . . . \# \# \# \# \# . . . .
 > . \# \# \# \# \# \# \# \# .
 
 1.  Write the output from the following program when:
@@ -11121,14 +11121,14 @@ cout &lt;&lt; "false";
   ---------------- ----------------
   b\. choice = 1   d\. choice = 0
 
-> \#include &lt;iostream&gt; using namespace std; int main() {
+> \#include <iostream> using namespace std; int main() {
 >
 > int choice = 3; // Change 3 to 1, 2, and then 0 switch(choice) { case
-> 1: cout &lt;&lt; "1 selected" &lt;&lt; endl; break; case 2: cout
-> &lt;&lt; "2 selected" &lt;&lt; endl; break; case 3: cout &lt;&lt; "3
-> selected" &lt;&lt; endl; break; default:
+> 1: cout << "1 selected" << endl; break; case 2: cout
+> << "2 selected" << endl; break; case 3: cout << "3
+> selected" << endl; break; default:
 >
-> cout &lt;&lt; "Invalid choice" &lt;&lt; endl;
+> cout << "Invalid choice" << endl;
 >
 > } // End switch return 0; }
 >
@@ -11141,10 +11141,10 @@ cout &lt;&lt; "false";
 
 Programming Tips
 
-> if (grade = 100) cout &lt;&lt; "another perfect score" &lt;&lt; endl;
+> if (grade = 100) cout << "another perfect score" << endl;
 > else
 >
-> cout &lt;&lt; "this never ever executes" &lt;&lt; endl;
+> cout << "this never ever executes" << endl;
 
 Perhaps this is the most famous C++ “gotcha”: using = instead of == in
 an if statement.
@@ -11164,8 +11164,8 @@ an if statement.
     > in C++. It is easy, even natural, to write the following code that
     > checks to see if a value is in a certain range:
 
-> int x = 2222; if ( 0 &lt;= x &lt;= 100 ) { cout &lt;&lt; x &lt;&lt; "
-> is in the range of 0 through 100" &lt;&lt; endl;
+> int x = 2222; if ( 0 <= x <= 100 ) { cout << x << "
+> is in the range of 0 through 100" << endl;
 >
 > }
 >
@@ -11177,9 +11177,9 @@ an if statement.
 
 Th at’s because the logical expression evaluates like this:
 
-> if ( 0 &lt;= x &lt;= 100 ) 0 &lt;= 222 &lt;= 100
+> if ( 0 <= x <= 100 ) 0 <= 222 <= 100
 >
-> true &lt;= 100 // True is like 1 and 1 &lt;= 100 is true true
+> true <= 100 // True is like 1 and 1 <= 100 is true true
 
 1.  Short circuit evaluation makes programs more effi cient and comes in
     > handy sometimes. Short circuit Boolean evaluation is always in eff
@@ -11197,9 +11197,9 @@ Th at’s because the logical expression evaluates like this:
 
 > switch(option) { case 'B':
 >
-> cout &lt;&lt; "Balance selected" &lt;&lt; endl; case 'W':
+> cout << "Balance selected" << endl; case 'W':
 >
-> cout &lt;&lt; "Withdraw selected" &lt;&lt; endl;
+> cout << "Withdraw selected" << endl;
 
 }
 
@@ -11252,8 +11252,8 @@ PROGRAMMING PROJECTS
 > Complete the free function rstOf3Strings to return a reference to the
 > string that is not “greater than” the other two. Th is is the string
 > that alphabetically precedes, or is equal to, the other two arguments.
-> Use the relational operator to compare strings. Note: "abc" &lt; "abc
-> " and "A" &lt; "a".
+> Use the relational operator to compare strings. Note: "abc" < "abc
+> " and "A" < "a".
 >
 > rstOf3Strings("c", "b", "a") returns "a"
 >
@@ -11273,9 +11273,9 @@ PROGRAMMING PROJECTS
   -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   93.0 ≤ percentage                                                                                                                                                                              A
                                                                                                                                                                                                  
-  90.0 ≤ percentage &lt; 93.0                                                                                                                                                                    A.  B+
+  90.0 ≤ percentage < 93.0                                                                                                                                                                    A.  B+
                                                                                                                                                                                                  
-  87.0 ≤ percentage &lt; 90.0 83.0 ≤ percentage &lt; 87.0 80.0 ≤ percentage &lt; 83.0 77.0 ≤ percentage &lt; 80.0 70.0 ≤ percentage &lt; 77.0 60.0 ≤ percentage &lt; 70.0 percentage &lt; 60.0   B
+  87.0 ≤ percentage < 90.0 83.0 ≤ percentage < 87.0 80.0 ≤ percentage < 83.0 77.0 ≤ percentage < 80.0 70.0 ≤ percentage < 77.0 60.0 ≤ percentage < 70.0 percentage < 60.0   B
                                                                                                                                                                                                  
                                                                                                                                                                                                  A.  C+
                                                                                                                                                                                                  
@@ -11386,7 +11386,7 @@ Sales Over But Not Over Monthly Salary
 > September, April, June, and November, or months 9, 4, 6, and 11.
 > February has 28 days unless it is a leap year, when it has 29. All
 > other months—1, 3, 5, 7, 8, 10, and 12 (December)—have 31 days. Assume
-> the year is always &gt;= 1582. You may use your own existing method
+> the year is always >= 1582. You may use your own existing method
 > isLeapYear. Return -1 if month is not in the range of 1 through 12.
 >
 > daysInMonth(1, 2020) returns 31 daysInMonth(2, 2020) returns 29
@@ -11477,7 +11477,7 @@ Sales Over But Not Over Monthly Salary
 
 > \*/
 >
-> \#include &lt;string&gt;
+> \#include <string>
 >
 > class Student { public:
 >
@@ -11537,8 +11537,8 @@ Sales Over But Not Over Monthly Salary
     > constructor to take in these two new arguments. Th is code must
     > compile:
 
-> Employee we("Peyton", 9.70, "S", 2); cout &lt;&lt; we.getIncomeTax()
-> &lt;&lt; endl;
+> Employee we("Peyton", 9.70, "S", 2); cout << we.getIncomeTax()
+> << endl;
 >
 > Fully test your two new methods, especially getIncomeTax. No one
 > should be withholding too much from an employee’s paycheck. Perhaps
@@ -11676,17 +11676,17 @@ COMING UP
 > the average of exactly three numbers. No repetitive control is present
 > yet.
 >
-> double sum = 0, average, number; cout &lt;&lt; "Enter number: "; //
-> &lt;- Repeat cin &gt;&gt; number; // &lt;- these sum = sum + number;
-> // &lt;- statements
+> double sum = 0, average, number; cout << "Enter number: "; //
+> <- Repeat cin >> number; // <- these sum = sum + number;
+> // <- statements
 >
-> cout &lt;&lt; "Enter number: "; cin &gt;&gt; number; sum = sum +
+> cout << "Enter number: "; cin >> number; sum = sum +
 > number;
 >
-> cout &lt;&lt; "Enter number: "; cin &gt;&gt; number; sum = sum +
+> cout << "Enter number: "; cin >> number; sum = sum +
 > number;
 >
-> average = sum / 3.0; cout &lt;&lt; "average = " &lt;&lt; average;
+> average = sum / 3.0; cout << "average = " << average;
 >
 > Th ere is a drawback to this brute-force approach to repetition. Any
 > time a larger or smaller set of numbers needs averaging, the program
@@ -11744,13 +11744,13 @@ THE DETERMINATE LOOP
   **Example:**     
   ---------------------------------------------------------------------------------
 
-> cout &lt;&lt; "Enter n: "; cin &gt;&gt; n;
+> cout << "Enter n: "; cin >> n;
 >
 > // do something n times
 >
-> for (int count = 1; count &lt;= n; count = count + 1) { cout &lt;&lt;
-> "Enter number: "; // &lt;- Repeat these cin &gt;&gt; number; // &lt;-
-> statements sum = sum + number; // &lt;- n times }
+> for (int count = 1; count <= n; count = count + 1) { cout <<
+> "Enter number: "; // <- Repeat these cin >> number; // <-
+> statements sum = sum + number; // <- n times }
 >
 > Th e Determinate Loop pattern uses an integer—named n here—to
 > represent the number of times the process must repeat. However, other
@@ -11761,7 +11761,7 @@ THE DETERMINATE LOOP
 n = *number of repetitions*
 
 > Th e number of repetitions may come from keyboard input as in cin
-> &gt;&gt; n;. Or n may be defi ned at compile time, int n = 124;. Or n
+> >> n;. Or n may be defi ned at compile time, int n = 124;. Or n
 > may be passed as an argument to a function as in pow(x, n). Once n is
 > defi ned, another object—named count here—controls the loop
 > iterations. Other appropriately-named objects could be used, counter
@@ -11771,7 +11771,7 @@ n = *number of repetitions*
 >
 > // Determine the average of n inputs. The user must supply n.
 >
-> \#include &lt;iostream&gt; // For cout, cin, and endl using namespace
+> \#include <iostream> // For cout, cin, and endl using namespace
 > std;
 >
 > int main() {
@@ -11780,16 +11780,16 @@ n = *number of repetitions*
 > // Keep running sum double number; // Temporarily store each input
 > double average; // Holds the average for potential future use
 >
-> cout &lt;&lt; "How many numbers do you need to average? "; cin
-> &gt;&gt; n;
+> cout << "How many numbers do you need to average? "; cin
+> >> n;
 >
-> for (int count = 1; count &lt;= n; count = count + 1) { cout &lt;&lt;
-> "Enter number: "; cin &gt;&gt; number; sum = sum + number; }
+> for (int count = 1; count <= n; count = count + 1) { cout <<
+> "Enter number: "; cin >> number; sum = sum + number; }
 >
 > average = sum / n;
 >
-> cout &lt;&lt; "Average of " &lt;&lt; n &lt;&lt; " numbers is "
-> &lt;&lt; average;
+> cout << "Average of " << n << " numbers is "
+> << average;
 >
 > return 0; }
 >
@@ -11817,19 +11817,19 @@ n = *number of repetitions*
 > the Determinate Loop pattern with the C++ for statement.
 >
 > int n = 5; // Predetermined number of iterations for (int count = 1;
-> count &lt;= n; count = count + 1) {
+> count <= n; count = count + 1) {
 >
 > // Execute this block n times
 >
 > }
 >
 > In the preceding for loop, count is declared and initialized with the
-> value of 1. Next, count &lt;= n (1 &lt;= 5) evaluates to true and so
+> value of 1. Next, count <= n (1 <= 5) evaluates to true and so
 > the block executes. When the statements inside the block are done,
 > count increments by 1 (count = count + 1). Th ese three components
 > ensure that the block executes n times:
 >
-> count = 1 // Declare and initialize counter count &lt;= n // Loop test
+> count = 1 // Declare and initialize counter count <= n // Loop test
 > count = count + 1 // Update counter
 >
 > General Form 8.1 for *statement*
@@ -11854,8 +11854,8 @@ count 15
 
 > int n = 5;
 >
-> for (int count = 1; count &lt;= n; count = count + 1) { cout &lt;&lt;
-> count &lt;&lt; " "; }
+> for (int count = 1; count <= n; count = count + 1) { cout <<
+> count << " "; }
 >
 > Output
 >
@@ -11894,12 +11894,12 @@ always using a block
 > So, within the context of the counting for loop, the update step can
 > be written as count++ rather than count = count + 1. Th e for loop
 >
-> for (int count = 1; count &lt;= n; count = count + 1) // . . .
+> for (int count = 1; count <= n; count = count + 1) // . . .
 >
 > may now be written as this equivalent loop with the ++ operator used
 > in the update step:
 >
-> for (int count = 1; count &lt;= n; count++) // . . .
+> for (int count = 1; count <= n; count++) // . . .
 >
 > Th ese new assignment operators are shown because they provide a
 > convenient method for accomplishing incrementing and decrementing
@@ -11932,22 +11932,22 @@ always using a block
 >
 > // Demonstrate the summing pattern
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() { int n; double aNum;
 >
 > double sum = 0.0; // Maintains running sum, so start at 0.0
 >
-> cout &lt;&lt; "How many numbers are there to sum? "; cin &gt;&gt; n;
+> cout << "How many numbers are there to sum? "; cin >> n;
 >
-> cout &lt;&lt; "Enter " &lt;&lt; n &lt;&lt; " numbers now: "; for (int
-> count = 1; count &lt;= n; count++) { cin &gt;&gt; aNum;
+> cout << "Enter " << n << " numbers now: "; for (int
+> count = 1; count <= n; count++) { cin >> aNum;
 >
 > sum += aNum; // Equivalent to sum = sum + aNum;
 >
 > }
 >
-> cout &lt;&lt; "Sum: " &lt;&lt; sum &lt;&lt; endl;
+> cout << "Sum: " << sum << endl;
 >
 > return 0;
 >
@@ -11976,8 +11976,8 @@ always using a block
 > Th e += and -= operators also increment and decrement for the loop
 > counters by values other than 1:
 >
-> for (int count = 0; count &lt;= 10; count += 2) { // Count by twos
-> cout &lt;&lt; count &lt;&lt; " ";
+> for (int count = 0; count <= 10; count += 2) { // Count by twos
+> cout << count << " ";
 >
 > }
 >
@@ -11991,30 +11991,30 @@ SELF-CHECK
 
 8-3 Do all for loops always execute the repeated part at least once?
 
-8-4 Describe a situation when the loop test count &lt;= n of a for loop
+8-4 Describe a situation when the loop test count <= n of a for loop
 never becomes false.
 
 8-5 Write the output from the following program segments.
 
-a\. for (int c = 1; c &lt; 5; c = c + 1) { cout &lt;&lt; c &lt;&lt; " ";
+a\. for (int c = 1; c < 5; c = c + 1) { cout << c << " ";
 }
 
-b\. int n = 5; for (int c = 1; c &lt;= n; c++) { cout &lt;&lt; c &lt;&lt;
+b\. int n = 5; for (int c = 1; c <= n; c++) { cout << c <<
 " ";
 
 }
 
-c.  int n = 3; for (int c = -3; c &lt;= n; c += 2) { cout &lt;&lt; c
-    &lt;&lt; " "; }
+c.  int n = 3; for (int c = -3; c <= n; c += 2) { cout << c
+    << " "; }
 
-d.  for (int c = 0; c &lt; 5; c++) { cout &lt;&lt; c &lt;&lt; " "; }
+d.  for (int c = 0; c < 5; c++) { cout << c << " "; }
 
-e.  for (int c = 5; c &gt;= 1; c --) { cout &lt;&lt; c &lt;&lt; " "; }
+e.  for (int c = 5; c >= 1; c --) { cout << c << " "; }
 
-f.  cout &lt;&lt; "before" &lt;&lt; endl; int n = 0; for (int c = 1; c
-    &lt;= n; c++) { cout &lt;&lt; c &lt;&lt; " ";
+f.  cout << "before" << endl; int n = 0; for (int c = 1; c
+    <= n; c++) { cout << c << " ";
 
-} cout &lt;&lt; "after" &lt;&lt; endl;
+} cout << "after" << endl;
 
 6.  Write a for loop that displays all the integers from 1 to 100 on
     > separate lines.
@@ -12032,7 +12032,7 @@ f.  cout &lt;&lt; "before" &lt;&lt; endl; int n = 0; for (int c = 1; c
 >
 > // Use for loops to set blocks around a Grid of any size
 >
-> \#include &lt;iostream&gt; using namespace std; \#include "Grid.h" //
+> \#include <iostream> using namespace std; \#include "Grid.h" //
 > For the Grid class
 >
 > void setBorder(Grid & g) { // Changing g changes the argument
@@ -12044,14 +12044,14 @@ f.  cout &lt;&lt; "before" &lt;&lt; endl; int n = 0; for (int c = 1; c
 > // It is useful that objects know things about themselves--number
 >
 > // of rows and columns for example, which vary from Grid to Grid for
-> (r = 0; r &lt; g.nRows(); r++) {
+> (r = 0; r < g.nRows(); r++) {
 >
 > g.block(r, 0); // Block west edge
 >
 > g.block(r, g.nColumns()-1); // Block east edge }
 >
 > // The rst and last columns are blocked already so block // column \#1
-> up to 1 less than the last column for (c = 1; c &lt; g.nColumns() - 1;
+> up to 1 less than the last column for (c = 1; c < g.nColumns() - 1;
 > c++) {
 >
 > g.block(0, c); // Block most of the north edge
@@ -12068,7 +12068,7 @@ f.  cout &lt;&lt; "before" &lt;&lt; endl; int n = 0; for (int c = 1; c
 >
 > Grid anotherGrid(3, 30, 1, 28, west);
 >
-> setBorder(aGrid); aGrid.display(); cout &lt;&lt; endl;
+> setBorder(aGrid); aGrid.display(); cout << endl;
 >
 > setBorder(anotherGrid); anotherGrid.display(); return 0;
 >
@@ -12080,7 +12080,7 @@ f.  cout &lt;&lt; "before" &lt;&lt; endl; int n = 0; for (int c = 1; c
 >
 > \# \# \# \# \# \# \# \# \# \#
 >
-> \# &gt; . . . . . . . \#
+> \# > . . . . . . . \#
 >
 > \# . . . . . . . . \#
 >
@@ -12099,7 +12099,7 @@ f.  cout &lt;&lt; "before" &lt;&lt; endl; int n = 0; for (int c = 1; c
 > \# \# \# \# \# \# \# \# \# \# \# \# \# \# \# \# \# \# \# \# \# \# \#
 > \# \# \# \# \# \# \#
 >
-> \# . . . . . . . . . . . . . . . . . . . . . . . . . . . &lt; \#
+> \# . . . . . . . . . . . . . . . . . . . . . . . . . . . < \#
 >
 > \# \# \# \# \# \# \# \# \# \# \# \# \# \# \# \# \# \# \# \# \# \# \#
 > \# \# \# \# \# \# \#
@@ -12116,10 +12116,10 @@ f.  cout &lt;&lt; "before" &lt;&lt; endl; int n = 0; for (int c = 1; c
 SELF-CHECK
 
 > 8-8 What diff erence occurs when the fi rst for loop in setBorder is
-> changed to for (r = 0; r &lt;= g.nRows(); r++)?
+> changed to for (r = 0; r <= g.nRows(); r++)?
 >
 > 8-9 What diff erence occurs when the second for loop in setBorder is
-> changed to for (c = 1; c &lt; g.nColumns(); c++)?
+> changed to for (c = 1; c < g.nColumns(); c++)?
 >
 > 8-10 What diff erence would occur when the function heading is changed
 > to void setBorder(Grid g)?
@@ -12214,7 +12214,7 @@ soundness.
 
 2.  Input aTemp from user (aTemp == -5)
 
-3.  If aTemp &gt; highest so far (-5 &gt; Whoops!), store it as highest
+3.  If aTemp > highest so far (-5 > Whoops!), store it as highest
 
 > Th ere is no value for highest or lowest. Let us now assume the
 > program will initialize highest and lowest to 0:
@@ -12225,10 +12225,10 @@ lowest = 0; highest = 0;
 
 2.  Input aTemp from user (aTemp == -5)
 
-3.  If aTemp is greater than highest so far (-5 &gt; 0), store it as
+3.  If aTemp is greater than highest so far (-5 > 0), store it as
     > highest (highest stays 0)
 
-4.  If aTemp is less than lowest so far (-5 &lt; 0), store it as lowest
+4.  If aTemp is less than lowest so far (-5 < 0), store it as lowest
     > (lowest becomes -5) Well, this seems to work. How about one more
     > iteration?
 
@@ -12236,10 +12236,10 @@ lowest = 0; highest = 0;
 
 2.  Input aTemp from user (aTemp == 8)
 
-3.  If aTemp is greater than highest so far (8 &gt; 0), store it as
+3.  If aTemp is greater than highest so far (8 > 0), store it as
     > highest (highest becomes 8)
 
-4.  If aTemp is less than lowest so far (8 &lt; 0), store it as lowest
+4.  If aTemp is less than lowest so far (8 < 0), store it as lowest
     > (lowest stays -5)
 
 > Seems okay. Try three more inputs to verify that highest and lowest
@@ -12263,16 +12263,16 @@ SELF-CHECK
 > lower. Better yet, set lowest to the largest integer that is defi ned
 > in C++ as INT\_MAX. Also set lowest to the minimum integer that is
 > defi ned in C++ as INT\_MIN. You may need to use \#include
-> &lt;climits&gt;.
+> <climits>.
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;climits&gt; // for INT\_MIN and INT\_MAX
+> \#include <climits> // for INT\_MIN and INT\_MAX
 >
 > int main() {
 >
-> std::cout &lt;&lt; INT\_MIN &lt;&lt; std::endl; std::cout &lt;&lt;
-> INT\_MAX &lt;&lt; std::endl; return 0; }
+> std::cout << INT\_MIN << std::endl; std::cout <<
+> INT\_MAX << std::endl; return 0; }
 >
 > Output (may vary with diff erent compilers)
 >
@@ -12286,7 +12286,7 @@ SELF-CHECK
 > of inputs, the exact number of repetitions is determined. Th is is an
 > instance of the Determinate Loop pattern.
 >
-> for (int count = 1; count &lt;= n; count++) {
+> for (int count = 1; count <= n; count++) {
 >
 > // Process one input
 >
@@ -12299,35 +12299,35 @@ SELF-CHECK
 >
 > // Determine the range of temperatures in a set of known size
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;climits&gt; // For INT\_MIN and INT\_MAX using namespace
+> \#include <climits> // For INT\_MIN and INT\_MAX using namespace
 > std;
 >
 > int main() { int aTemp, n, range;
 >
-> int highest = INT\_MIN; // All ints will be &gt;= INT\_MIN int lowest
-> = INT\_MAX; // All ints will be &lt;= INT\_MAX
+> int highest = INT\_MIN; // All ints will be >= INT\_MIN int lowest
+> = INT\_MAX; // All ints will be <= INT\_MAX
 >
-> cout &lt;&lt; "Enter number of temperature readings: "; cin &gt;&gt;
+> cout << "Enter number of temperature readings: "; cin >>
 > n;
 >
 > // Input rst temperature to record it as highest and lowest cout
-> &lt;&lt; "Enter readings 1 per line" &lt;&lt; endl;
+> << "Enter readings 1 per line" << endl;
 >
 > // Use a determinate loop to process n temperatures for (int count =
-> 1; count &lt;= n; count++) {
+> 1; count <= n; count++) {
 >
-> // Get the next input cin &gt;&gt; aTemp;
+> // Get the next input cin >> aTemp;
 >
-> // Update the highest so far, if necessary if (aTemp &gt; highest)
+> // Update the highest so far, if necessary if (aTemp > highest)
 > highest = aTemp;
 >
-> // Update the lowest so far, if necessary if (aTemp &lt; lowest)
+> // Update the lowest so far, if necessary if (aTemp < lowest)
 > lowest = aTemp; }
 >
-> range = highest - lowest; cout &lt;&lt; "Range: " &lt;&lt; range
-> &lt;&lt; endl; return 0; }
+> range = highest - lowest; cout << "Range: " << range
+> << endl; return 0; }
 >
 > Dialogue
 >
@@ -12371,8 +12371,8 @@ SELF-CHECK
 > Now consider this slightly diff erent implementation sometimes seen in
 > introductory courses:
 >
-> for (int count = 1; count &lt;= n; count++) { cin &gt;&gt; aTemp; if
-> (aTemp &gt; highest) highest = aTemp; else if (aTemp &lt; lowest)
+> for (int count = 1; count <= n; count++) { cin >> aTemp; if
+> (aTemp > highest) highest = aTemp; else if (aTemp < lowest)
 > lowest = aTemp; }
 
 SELF-CHECK
@@ -12415,10 +12415,10 @@ c.  When the input is entered in neither ascending or descending order.
 > For example, a debugging output statement could be included in the
 > loop that contained the intent error:
 >
-> for (int count = 1; count &lt;= n; count++) { cin &gt;&gt; aTemp;
+> for (int count = 1; count <= n; count++) { cin >> aTemp;
 >
-> // Add an output statement in the loop to aid debugging cout &lt;&lt;
-> highest &lt;&lt; " " &lt;&lt; lowest &lt;&lt; endl; . . .
+> // Add an output statement in the loop to aid debugging cout <<
+> highest << " " << lowest << endl; . . .
 >
 > Now the dialogue, while testing the incorrect algorithm just before
 > the preceding self-checks, would look like this:
@@ -12532,9 +12532,9 @@ determinate loop pattern:
 > // Sum the rst n integers int accumulator = 0;
 >
 > int count = 1; // Initialization int n = 5; // Initialization while
-> (count &lt;= n) { // Loop test accumulator = accumulator + count ; //
-> Action count++; // Update step } cout &lt;&lt; "Sum of the rst "
-> &lt;&lt; n &lt;&lt; " integers is " &lt;&lt; accumulator;
+> (count <= n) { // Loop test accumulator = accumulator + count ; //
+> Action count++; // Update step } cout << "Sum of the rst "
+> << n << " integers is " << accumulator;
 >
 > Although the while loop can also be used for determinate loops, the
 > for loop is more concise and convenient. It is recommended that you
@@ -12552,7 +12552,7 @@ determinate loop pattern:
 >
 > // The event loop terminates when the front is no longer clear
 >
-> \#include &lt;iostream&gt; // For cout
+> \#include <iostream> // For cout
 >
 > using namespace std; // allow cout instead of std::cout \#include
 > "Grid.h" // For the Grid class
@@ -12572,12 +12572,12 @@ determinate loop pattern:
 >
 > Grid tarpit(5, 10);
 >
-> cout &lt;&lt; "When initialized with only the number of rows\\n"
-> &lt;&lt; "and columns, a Grid object gets a random opening\\n"
+> cout << "When initialized with only the number of rows\\n"
+> << "and columns, a Grid object gets a random opening\\n"
 >
-> &lt;&lt; "with the mover at a random location and direction\\n"
+> << "with the mover at a random location and direction\\n"
 >
-> &lt;&lt; endl;
+> << endl;
 >
 > moveTillStopped(tarpit); tarpit.display();
 >
@@ -12595,7 +12595,7 @@ determinate loop pattern:
 >
 > . . . . . . . . . \#
 >
-> \# . . . &gt; \#
+> \# . . . > \#
 >
 > \# . . . . . . . . \#
 >
@@ -12642,16 +12642,16 @@ SELF-CHECK
 > that sentinel value is. It could have been -999 or any other negative
 > number, for example.
 
-8.4.4 USING cin &gt;&gt; AS A LOOP TEST
+8.4.4 USING cin >> AS A LOOP TEST
 
-> Up to this point, cin &gt;&gt; has often been used for input. What
+> Up to this point, cin >> has often been used for input. What
 > hasn’t been revealed is this: a cin statement returns true when it is
-> successful. If the input operation fails to get a number, cin &gt;&gt;
-> is replaced with false. Th is means that a cin &gt;&gt; statement can
+> successful. If the input operation fails to get a number, cin >>
+> is replaced with false. Th is means that a cin >> statement can
 > be, and often is, used as the logical expression in an if...else or
 > while statement:
 >
-> if (cin &gt;&gt; intObject) - or - while (cin &gt;&gt; intObject)
+> if (cin >> intObject) - or - while (cin >> intObject)
 >
 > Both of the above logical expressions return true when cin
 > successfully extracts a valid integer from the input stream. However,
@@ -12661,14 +12661,14 @@ SELF-CHECK
 > is simplifi ed when the cin extraction is part of the loop test.
 >
 > // The priming extraction is now part of the loop test while ((cin
-> &gt;&gt; testScore) && (testScore != sentinel)) { accumulator =
+> >> testScore) && (testScore != sentinel)) { accumulator =
 > accumulator + testScore; // Update accumulator n++; // Update total
 > inputs }
 
-Th e actual return value of the input statement cin &gt;&gt; testScore
+Th e actual return value of the input statement cin >> testScore
 isn’t all that important.
 
-> However, because cin &gt;&gt; testScore is guaranteed to execute fi
+> However, because cin >> testScore is guaranteed to execute fi
 > rst, testScore is guaranteed to have obtained a valid numeric value
 > through keyboard input before it is compared to the sentinel.
 >
@@ -12680,7 +12680,7 @@ isn’t all that important.
 >
 > Loop Test Evaluation When Input Is 95.0
 >
-> while ((cin &gt;&gt; testScore) && (testScore != sentinel)) ( true &&
+> while ((cin >> testScore) && (testScore != sentinel)) ( true &&
 > ( 95.0 != -1.0 ))
 >
 > ( true && true ) true
@@ -12692,7 +12692,7 @@ isn’t all that important.
 >
 > Loop Test Evaluation When Input Is -1.0 (or -1)
 >
-> while ((cin &gt;&gt; testScore) && (testScore != sentinel)) ( true &&
+> while ((cin >> testScore) && (testScore != sentinel)) ( true &&
 > ( -1.0 != -1.0 )) true && false false
 >
 > Th is loop test is now placed into the context of a program that
@@ -12700,7 +12700,7 @@ isn’t all that important.
 >
 > // Use a sentinel of -1 to terminate a loop
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() {
 >
@@ -12710,25 +12710,25 @@ isn’t all that important.
 >
 > // Prompt
 >
-> cout &lt;&lt; "Enter test scores \[0.0 through 100.0\] or " &lt;&lt;
-> sentinel &lt;&lt; " to quit" &lt;&lt; endl;
+> cout << "Enter test scores \[0.0 through 100.0\] or " <<
+> sentinel << " to quit" << endl;
 >
 > // Input and process at the same time
 >
-> while ((cin &gt;&gt; testScore) && (testScore != sentinel)) {
+> while ((cin >> testScore) && (testScore != sentinel)) {
 > accumulator += testScore; // Update accumulator n++; // Update total
 > inputs }
 >
-> if (n &gt; 0) {
+> if (n > 0) {
 >
 > average = accumulator / n;
 >
-> cout &lt;&lt; "Average of " &lt;&lt; n &lt;&lt; " tests = " &lt;&lt;
-> average &lt;&lt; endl;
+> cout << "Average of " << n << " tests = " <<
+> average << endl;
 >
 > } else
 >
-> cout &lt;&lt; "Can't average 0 numbers" &lt;&lt; endl; return 0; }
+> cout << "Can't average 0 numbers" << endl; return 0; }
 >
 > Dialogue
 >
@@ -12757,7 +12757,7 @@ SELF-CHECK
 > simulating execution when the user inputs ***70.0***, ***90.0***,
 > ***80.0***, ***-1***.
 
-a.  cin &gt;&gt; testScore; while (testScore != sentinel) { cin &gt;&gt;
+a.  cin >> testScore; while (testScore != sentinel) { cin >>
     > testScore; accumulator += testScore; // Update accumulator
 
 > n++; // Update total inputs
@@ -12766,10 +12766,10 @@ a.  cin &gt;&gt; testScore; while (testScore != sentinel) { cin &gt;&gt;
 >
 > average = accumulator / n; // Division by 0 possible
 
-a.  cin &gt;&gt; testScore; while (testScore != sentinel) { accumulator
+a.  cin >> testScore; while (testScore != sentinel) { accumulator
     > += testScore; // Update accumulator n++; // Update total inputs
 
-> cin &gt;&gt; testScore;
+> cin >> testScore;
 >
 > }
 >
@@ -12779,7 +12779,7 @@ a.  cin &gt;&gt; testScore; while (testScore != sentinel) { accumulator
     > diff erent answers.
 
 20. Which code (a or b) is equivalent to the previous complete program
-    > where the loop test is while ((cin &gt;&gt; testScore) &&
+    > where the loop test is while ((cin >> testScore) &&
     > (testScore != sentinel))?
 
 8.4.5 INFINITE LOOPS
@@ -12791,7 +12791,7 @@ a.  cin &gt;&gt; testScore; while (testScore != sentinel) { accumulator
 > failure, for example). Th is is potentially an *infi nite loop*,
 > something that is usually undesirable.
 >
-> cin &gt;&gt; testScore; while (testScore != sentinel) {
+> cin >> testScore; while (testScore != sentinel) {
 >
 > accumulator += testScore; // Update accumulator n++; // Update total
 > inputs }
@@ -12828,13 +12828,13 @@ SELF-CHECK
 
 a.  int n = 3;
 
-> int counter = 1; while (counter &lt;= n) { cout &lt;&lt; counter
-> &lt;&lt; " "; counter++;
+> int counter = 1; while (counter <= n) { cout << counter
+> << " "; counter++;
 >
 > }
 
-a.  int last = 10; int count = 2; while (count &lt;= last) { cout
-    &lt;&lt; count &lt;&lt; " "; count += 2;
+a.  int last = 10; int count = 2; while (count <= last) { cout
+    << count << " "; count += 2;
 
 > }
 
@@ -12843,21 +12843,21 @@ a.  int last = 10; int count = 2; while (count &lt;= last) { cout
     > “unknown” are valid answers.
 
   ----------------------------------------------------------------------------------------------------------------------------------------------
-  a.   while (count &lt;= n) { cout &lt;&lt; count&lt;&lt; endl;                             d.   count = 1; sum = 0;
+  a.   while (count <= n) { cout << count<< endl;                             d.   count = 1; sum = 0;
                                                                                                   
-       }                                                                                          while (count &lt;= 5) { sum += count; sum++;
+       }                                                                                          while (count <= 5) { sum += count; sum++;
                                                                                                   
                                                                                                   }
   ---- ------------------------------------------------------------------------------------- ---- ----------------------------------------------
-  b.   n = 5; count = 1; while (count &lt;= n) cout &lt;&lt; count &lt;&lt; endl; count++;   e.   count = 1; n = 5;
+  b.   n = 5; count = 1; while (count <= n) cout << count << endl; count++;   e.   count = 1; n = 5;
                                                                                                   
-                                                                                                  while (count &lt;= n) { count++;
+                                                                                                  while (count <= n) { count++;
                                                                                                   
                                                                                                   }
 
   c.   count = 1; n = 0;                                                                     f.   count = 10;
                                                                                                   
-       while (count &lt;= n) cout &lt;&lt; " " &lt;&lt; count;                                    while (count &gt;= 0);
+       while (count <= n) cout << " " << count;                                    while (count >= 0);
                                                                                                   
                                                                                                   {
                                                                                                   
@@ -12900,11 +12900,11 @@ a.  int last = 10; int count = 2; while (count &lt;= last) { cout
 
 > int counter = 1; int n = 4;
 >
-> cout &lt;&lt; endl &lt;&lt; "Before loop..." &lt;&lt; endl; do {
+> cout << endl << "Before loop..." << endl; do {
 >
-> cout &lt;&lt; "Loop \#" &lt;&lt; counter &lt;&lt; endl; counter++;
+> cout << "Loop \#" << counter << endl; counter++;
 >
-> } while (counter &lt;= n); cout &lt;&lt; "...After loop" &lt;&lt;
+> } while (counter <= n); cout << "...After loop" <<
 > endl;
 >
 > Output
@@ -12933,18 +12933,18 @@ a.  int last = 10; int count = 2; while (count &lt;= last) { cout
 >
 > // Use a do while loop that repeatedly asks for a valid option
 >
-> \#include &lt;cctype&gt; // For toupper
+> \#include <cctype> // For toupper
 >
-> \#include &lt;iostream&gt; // For cout, cin, and endl
+> \#include <iostream> // For cout, cin, and endl
 >
-> \#include &lt;string&gt; using namespace std;
+> \#include <string> using namespace std;
 >
 > char nextOption() {
 >
 > // post: Return an uppercase W, D, or Q string option; char rstChar;
 > do {
 >
-> cout &lt;&lt; "W)ithdraw, D)eposit, or Q)uit: "; cin &gt;&gt; option;
+> cout << "W)ithdraw, D)eposit, or Q)uit: "; cin >> option;
 >
 > rstChar = toupper(option.at(0));
 >
@@ -12961,15 +12961,15 @@ a.  int last = 10; int count = 2; while (count &lt;= last) { cout
 >
 > if ('W' == choice)
 >
-> cout &lt;&lt; "\\nValid entry--process W\\n" &lt;&lt; endl;
+> cout << "\\nValid entry--process W\\n" << endl;
 >
 > if ('D' == choice)
 >
-> cout &lt;&lt; "\\nValid entry--process D\\n" &lt;&lt; endl;
+> cout << "\\nValid entry--process D\\n" << endl;
 >
 > if ('Q' == choice)
 >
-> cout &lt;&lt; "\\nHave a nice day :)" &lt;&lt; endl; } while (choice
+> cout << "\\nHave a nice day :)" << endl; } while (choice
 > != 'Q');
 >
 > return 0; }
@@ -12999,11 +12999,11 @@ a.  int last = 10; int count = 2; while (count &lt;= last) { cout
 > wants to quit. Although do while is not necessary, it is a bit easier
 > to implement than using a while loop.
 >
-> cout &lt;&lt; "W)ithdraw, D)eposit, or Q)uit: "; cin &gt;&gt; option;
+> cout << "W)ithdraw, D)eposit, or Q)uit: "; cin >> option;
 >
 > rstChar = toupper(option.at(0)); while (( rstChar != 'W') && ( rstChar
-> != 'D') && ( rstChar != 'Q')) { cout &lt;&lt; "W)ithdraw, D)eposit, or
-> Q)uit: "; cin &gt;&gt; option;
+> != 'D') && ( rstChar != 'Q')) { cout << "W)ithdraw, D)eposit, or
+> Q)uit: "; cin >> option;
 >
 > rstChar = toupper(option.at(0));
 >
@@ -13015,12 +13015,12 @@ SELF-CHECK
 
 a.  int count = 1;
 
-> do { cout &lt;&lt; count &lt;&lt; endl; count++;
+> do { cout << count << endl; count++;
 >
-> } while (count &lt;= 3);
+> } while (count <= 3);
 
-a.  double x = -1.0; do { cout &lt;&lt; x &lt;&lt; endl; x = x + 0.5; }
-    while (x &lt;= 1.0);
+a.  double x = -1.0; do { cout << x << endl; x = x + 0.5; }
+    while (x <= 1.0);
 
 8.6: Loop Selection and Design
 
@@ -13115,8 +13115,8 @@ while (inputName != "STOP") { do {
 >
 > double sum, x, average; int n;
 >
-> cout &lt;&lt; "Enter numbers or -1 to stop: "; while (x != -1) { sum =
-> sum + x; n++; cin &gt;&gt; x;
+> cout << "Enter numbers or -1 to stop: "; while (x != -1) { sum =
+> sum + x; n++; cin >> x;
 >
 > } average = sum / n;
 >
@@ -13133,8 +13133,8 @@ Chapter Summary
 > double sum = 0.0; int n = 0;
 >
 > double x, average; // x and average don't require initialization cout
-> &lt;&lt; "Enter numbers or -1 to stop: "; cin &gt;&gt; x; while (x !=
-> -1) { sum += x; n++; cin &gt;&gt; x;
+> << "Enter numbers or -1 to stop: "; cin >> x; while (x !=
+> -1) { sum += x; n++; cin >> x;
 >
 > } average = sum / n;
 
@@ -13162,13 +13162,13 @@ b.  Write the loop test for a while or do while loop.
 
 > 8-32 For each loop, which objects are not initialized but should be?
 
-a.  while (count &lt;= n) {
+a.  while (count <= n) {
 
 > // . . . ;
 >
 > }
 
-a.  for (int count = 1; count &lt;= n; count = count + inc) {
+a.  for (int count = 1; count <= n; count = count + inc) {
 
 > // . . . ;
 >
@@ -13235,23 +13235,23 @@ CHAPTER SUMMARY
 
 EXERCISES
 
-1.  How many times will the following loops execute cout &lt;&lt; "Hello
+1.  How many times will the following loops execute cout << "Hello
     > ";? “Zero,” “unknown,” and “infi nite” are perfectly
     > legitimate answers.
 
     a.  int n = 5;
 
-for (int count = 1; count &lt;= n; count++) {
+for (int count = 1; count <= n; count++) {
 
-cout &lt;&lt; "Hello ";
+cout << "Hello ";
 
 }
 
 a.  int n = 0;
 
-for (int count = 5; count &gt;= n; count --) {
+for (int count = 5; count >= n; count --) {
 
-cout &lt;&lt; "Hello ";
+cout << "Hello ";
 
 }
 
@@ -13259,9 +13259,9 @@ Exercises
 
 a.  int n = 5;
 
-for (int count = 1; count &lt;= n; count --) {
+for (int count = 1; count <= n; count --) {
 
-cout &lt;&lt; "Hello ";
+cout << "Hello ";
 
 count++;
 
@@ -13269,22 +13269,22 @@ count++;
 
 a.  int n = 0;
 
-for (int count = 1; count &lt;= n; count++) {
+for (int count = 1; count <= n; count++) {
 
-cout &lt;&lt; "Hello ";
+cout << "Hello ";
 
 }
 
 1.  Write the output produced by these for loops:
 
-> for (int counter = 1; counter &lt;= 5; counter++) cout &lt;&lt; " "
-> &lt;&lt; counter;
+> for (int counter = 1; counter <= 5; counter++) cout << " "
+> << counter;
 >
-> cout &lt;&lt; "Loop One"; // Incorrectly indented to confuse for (int
-> counter = 10; counter &gt;= 1; counter--) cout &lt;&lt; " " &lt;&lt;
+> cout << "Loop One"; // Incorrectly indented to confuse for (int
+> counter = 10; counter >= 1; counter--) cout << " " <<
 > counter;
 >
-> cout &lt;&lt; "Blast Off"; // Correctly indented to avoid confusion
+> cout << "Blast Off"; // Correctly indented to avoid confusion
 
 1.  Write loops to produce the outputs shown:
 
@@ -13296,7 +13296,7 @@ cout &lt;&lt; "Hello ";
 
 2.  Write the output generated by the following code:
 
-> int count = 0; while (count &lt; 5) { cout &lt;&lt; " " &lt;&lt; count
+> int count = 0; while (count < 5) { cout << " " << count
 > ; count = count + 1; }
 
 1.  Write a loop that sums all the integers between start and stop
@@ -13309,18 +13309,18 @@ cout &lt;&lt; "Hello ";
     > segments? “Zero,” “undetermined,” and “infi nite” are perfectly
     > legitimate answers.
 
-> a\. while (count &lt;= 10) cout &lt;&lt; "Hello"; b. count = 1; while
-> (count &lt;= 7) { cout &lt;&lt; "Hello";
+> a\. while (count <= 10) cout << "Hello"; b. count = 1; while
+> (count <= 7) { cout << "Hello";
 >
 > count++;
 >
 > }
 
-c.  count = 7; while (count &lt;= 1) { cout &lt;&lt; "Hello";
+c.  count = 7; while (count <= 1) { cout << "Hello";
 
 }
 
-c.  count = 1; while (count &lt;= 5) cout &lt;&lt; "Hello"; count++;
+c.  count = 1; while (count <= 5) cout << "Hello"; count++;
 
 <!-- -->
 
@@ -13338,11 +13338,11 @@ c.  count = 1; while (count &lt;= 5) cout &lt;&lt; "Hello"; count++;
 
 > int counter = 1; double sum = 0; int n, number;
 >
-> cout &lt;&lt; "Enter number of ints to be summed: "; cin &gt;&gt; n;
-> while (counter &lt;= n) { cin &gt;&gt; number; sum = sum + number;
+> cout << "Enter number of ints to be summed: "; cin >> n;
+> while (counter <= n) { cin >> number; sum = sum + number;
 > counter++;
 >
-> } cout &lt;&lt; sum;
+> } cout << sum;
 
 1.  Write a loop that counts the number of words input by a user until
     > the user enters the string ENDOFDATA (must be uppercase letters,
@@ -13351,17 +13351,17 @@ c.  count = 1; while (count &lt;= 5) cout &lt;&lt; "Hello"; count++;
 2.  Write the complete output generated by the following program when
     > the user enters 1, 2, 3, 4, and -1 on separate lines.
 
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() { double test; double sum = 0.0;
 >
-> cout &lt;&lt; "Enter tests or a negative number to stop: " &lt;&lt;
-> endl; while ((cin &gt;&gt; test) && (test &gt;= 0.0)) { sum = sum +
+> cout << "Enter tests or a negative number to stop: " <<
+> endl; while ((cin >> test) && (test >= 0.0)) { sum = sum +
 > test;
 >
 > }
 >
-> cout &lt;&lt; "Sum: " &lt;&lt; sum &lt;&lt; endl; }
+> cout << "Sum: " << sum << endl; }
 
 13. Write the output generated by the following code:
 
@@ -13371,25 +13371,25 @@ c.  count = 1; while (count &lt;= 5) cout &lt;&lt; "Hello"; count++;
 
 Exercises
 
-> cout &lt;&lt; "Opt: " &lt;&lt; choice\[count \] &lt;&lt; endl;
+> cout << "Opt: " << choice\[count \] << endl;
 > count++; }
 
-13. How many times will the following loops execute cout &lt;&lt; "Hello
+13. How many times will the following loops execute cout << "Hello
     > ";? “Zero,” “unknown,” and “infi nite” are perfectly
     > legitimate answers.
 
   ------------------------------------------------------------------------------------------------------------------
   a.   count = 1; n = 10; do {                                               c.   count = -1; do {
                                                                                   
-       cout &lt;&lt; "Hello "; } while (count &gt; n);                            cout &lt;&lt; "Hello "; count++;
+       cout << "Hello "; } while (count > n);                            cout << "Hello "; count++;
                                                                                   
                                                                                   } while (count != -3);
   ---- --------------------------------------------------------------------- ---- ----------------------------------
   b.   n = 10; count = 1; do {                                               d.   count = 1; do {
                                                                                   
-       cout &lt;&lt; "Hello "; count = count - 2; } while (count &lt;= n);        cout &lt;&lt; "Hello "; count++;
+       cout << "Hello "; count = count - 2; } while (count <= n);        cout << "Hello "; count++;
                                                                                   
-                                                                                  } while (count &lt;= 100);
+                                                                                  } while (count <= 100);
   ------------------------------------------------------------------------------------------------------------------
 
 13. Write a do while loop that generates this output:
@@ -13398,13 +13398,13 @@ Exercises
 
 13. Write the output generated by the following program:
 
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() { int count = -2; do {
 >
-> cout &lt;&lt; " " &lt;&lt; count; count--;
+> cout << " " << count; count--;
 >
-> } while (count &gt; -6);
+> } while (count > -6);
 >
 > }
 
@@ -13412,11 +13412,11 @@ Exercises
 
 > char option;
 >
-> cout &lt;&lt; "Enter option A, B, or Q: "; cin &gt;&gt; option; option
+> cout << "Enter option A, B, or Q: "; cin >> option; option
 > = toupper(option);
 >
 > while ((option != 'A') && (option != 'B') && (option != 'Q')) { cout
-> &lt;&lt; "Enter option A, B, or Q: "; cin &gt;&gt; option; option =
+> << "Enter option A, B, or Q: "; cin >> option; option =
 > toupper(option); }
 
 13. Write a function named option that prompts for and returns an
@@ -13425,7 +13425,7 @@ Exercises
     > name, not as a reference. Th e following code must only assign one
     > of four allowed letters to choice:
 
-> char choice = option(); cout &lt;&lt; choice; // Output must be either
+> char choice = option(); cout << choice; // Output must be either
 > S, A, M, or Q only!
 
 PROGRAMMING TIPS
@@ -13448,11 +13448,11 @@ PROGRAMMING TIPS
   --------------------------------------------------------------------------------------------------------------------
   a.  int count = 1; int sum = 0;                             c.  int count = 1; int sum = 0;
                                                               
-  > while (count &lt;= 100);                                  > while (count &lt;= 100)
+  > while (count <= 100);                                  > while (count <= 100)
   >                                                           >
   > { // Sum the rst 100 integers sum += count ; count++; }   > // Sum the rst 100 integers sum += count ; count++;
                                                               
-  a.  for (int count = 0; count &lt;=                         c.  for (int count = 0; count &lt;= 100; count++) {
+  a.  for (int count = 0; count <=                         c.  for (int count = 0; count <= 100; count++) {
                                                               
   > 100; count++);                                            > // Sum the rst 100 integers sum += count ; count --;
   >                                                           >
@@ -13479,7 +13479,7 @@ PROGRAMMING TIPS
 >
 > mid = (lo + hi) / 2.0;
 >
-> cout &lt;&lt; "In loop, mid == " &lt;&lt; mid &lt;&lt; endl; }
+> cout << "In loop, mid == " << mid << endl; }
 
 1.  Loops may not always execute the iterative part. It is possible that
     > a loop will execute zero times, or fewer than you might
@@ -13491,7 +13491,7 @@ PROGRAMMING TIPS
     > C++ allows input as part of the loop test, so it is easier to
     > write sentinel loop tests like this:
 
-> while ((cin &gt;&gt; aNumber) && (aNumber != sentinel)) {
+> while ((cin >> aNumber) && (aNumber != sentinel)) {
 >
 > // Process aNumber but not the sentinel
 >
@@ -13502,7 +13502,7 @@ PROGRAMMING TIPS
     > consider using a loop with a guarded break (this code is
     > equivalent to the previous sentinel loop):
 
-> while ( true ) { cin &gt;&gt; aNumber;
+> while ( true ) { cin >> aNumber;
 >
 > if (aNumber == sentinel) // The termination condition break; // Exit
 > this loop
@@ -13522,7 +13522,7 @@ PROGRAMMING TIPS
 >
 > Dialogue
 >
-> Enter wind speed readings or a number &lt; 0 to quit:
+> Enter wind speed readings or a number < 0 to quit:
 >
 > 5.0 6.0 2.0
 >
@@ -13610,7 +13610,7 @@ PROGRAMMING TIPS
 >
 > \# . . . . . . . . . . . . . \#
 >
-> &lt; . . . . . . . . . . . . . \#
+> < . . . . . . . . . . . . . \#
 >
 > \# . . . . . . . . . . . . . . \#
 >
@@ -13672,7 +13672,7 @@ string.
 1.  int bonacci(int n)
 
 > Return the correct Fibonacci number for the given argument.
-> precondition: n &gt;= 0. (*Hint:* Keep track of two consecutive
+> precondition: n >= 0. (*Hint:* Keep track of two consecutive
 > Fibonacci numbers.)
 
 n bonacci(n) n bonacci(n)
@@ -13885,7 +13885,7 @@ COMING UP
 
 9.1 ifstream OBJECTS
 
-> Because keyboard input is fairly common, inclusion of &lt;iostream&gt;
+> Because keyboard input is fairly common, inclusion of <iostream>
 > was designed to make cin immediately available. Th e cin object is
 > automatically initialized and associated with the keyboard. However,
 > input may also be obtained from many other sources, such as a mouse, a
@@ -13896,10 +13896,10 @@ COMING UP
 > erefore, this compiler directive must be added to programs intended to
 > extract input from a disk fi le:
 >
-> \#include &lt;fstream&gt; // For the ifstream class
+> \#include <fstream> // For the ifstream class
 >
 > Th e ifstream class is similar to the istream class. For example, the
-> familiar extraction operator &gt;&gt; is also used to input data from
+> familiar extraction operator >> is also used to input data from
 > a fi le stored on a disk. Th e same rules that apply to keyboard input
 > for ints, doubles, and strings also apply to input from a fi le.
 
@@ -13926,7 +13926,7 @@ associated with.
 > Now this code will read input from the fi le input.data rather than
 > from the keyboard.
 >
-> inFile &gt;&gt; intObject;
+> inFile >> intObject;
 >
 > Th e following program uses an ifstream object to read three integers
 > from a disk fi le. Notice that there are a few diff erences between
@@ -13939,15 +13939,15 @@ associated with.
     > construct an ifstream object with an existing disk fi le name
     > associated with it.
 
--   Prompts aren’t needed anymore. Th e same &gt;&gt; operator reads an
+-   Prompts aren’t needed anymore. Th e same >> operator reads an
     > integer and stores it into the int object, but there is no need to
     > prompt the fi le for the next input.
 
 > // Include fstream for I/O streams dealing with disk les
 >
-> \#include &lt;fstream&gt; // For the ifstream class
+> \#include <fstream> // For the ifstream class
 >
-> \#include &lt;iostream&gt; // For cout using namespace std;
+> \#include <iostream> // For cout using namespace std;
 >
 > int main() { int n1, n2, n3;
 >
@@ -13955,10 +13955,10 @@ associated with.
 > associated with the operating system le named input.data ifstream
 > inFile("input.data");
 >
-> // Extract three integers from the le input.data inFile &gt;&gt; n1
-> &gt;&gt; n2 &gt;&gt; n3; cout &lt;&lt; "n1: " &lt;&lt; n1 &lt;&lt;
-> endl; cout &lt;&lt; "n2: " &lt;&lt; n2 &lt;&lt; endl; cout &lt;&lt;
-> "n3: " &lt;&lt; n3 &lt;&lt; endl;
+> // Extract three integers from the le input.data inFile >> n1
+> >> n2 >> n3; cout << "n1: " << n1 <<
+> endl; cout << "n2: " << n2 << endl; cout <<
+> "n3: " << n3 << endl;
 >
 > return 0;
 >
@@ -13994,7 +13994,7 @@ SELF-CHECK
 
 > 9-1 Write a complete program that reads the fi rst 30 strings from an
 > input fi le named student.data and displays each string to the screen.
-> Remember to \#include &lt;fstream&gt;.
+> Remember to \#include <fstream>.
 
 9.1.1 GETTING THE PATH RIGHT
 
@@ -14017,7 +14017,7 @@ SELF-CHECK
 > ifstream inFile("myC++Stuff/input.data");
 >
 > Also consider what happens if the fi le is not found. Input operations
-> such as inFile &gt;&gt; will not execute. If you don’t seem to be
+> such as inFile >> will not execute. If you don’t seem to be
 > extracting input from the fi le or the values appear to be garbage,
 > chances are the fi le does not exist as specifi ed, it has a diff
 > erent name, it’s in a diff erent directory, you used \\ rather than
@@ -14028,8 +14028,8 @@ SELF-CHECK
 >
 > if( ! inFile ) {
 >
-> // If true, the input le was not found. cout &lt;&lt; "Failed to nd
-> the le." &lt;&lt; endl;
+> // If true, the input le was not found. cout << "Failed to nd
+> the le." << endl;
 >
 > } else {
 >
@@ -14047,11 +14047,11 @@ SELF-CHECK
 > Ctrl-D (\^D) in Unix.
 >
 > When the end-of-fi le event is encountered on an input stream, the
-> input statement (cin &gt;&gt;, for example) returns false (0,
+> input statement (cin >>, for example) returns false (0,
 > actually). So once again, the cin statement can be used as a loop test
 > for processing an undetermined number of inputs.
 >
-> while(cin &gt;&gt; x) { // Input value at start of each iteration
+> while(cin >> x) { // Input value at start of each iteration
 >
 > // Process value
 >
@@ -14063,7 +14063,7 @@ SELF-CHECK
 > and the loop terminates.
 >
 > Th e loop in the following program terminates when the user enters end
-> of fi le. Th e loop test (cin &gt;&gt; x) returns false when end-of-fi
+> of fi le. Th e loop test (cin >> x) returns false when end-of-fi
 > le is detected.
 
 9.2: The Indeterminate Loop Pattern Applied to Disk Files
@@ -14096,9 +14096,9 @@ end-of-fi le fi rst?
 > // Count how many numbers are in a disk le. The ifstream object //
 > named is used as the input stream, not cin.
 >
-> \#include &lt;fstream&gt; // For the ifstream class
+> \#include <fstream> // For the ifstream class
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() {
 >
@@ -14109,16 +14109,16 @@ end-of-fi le fi rst?
 >
 > // If true, the input le was not found
 >
-> cout &lt;&lt; "Failed to nd the le numbers.data" &lt;&lt; endl;
+> cout << "Failed to nd the le numbers.data" << endl;
 >
-> } else { cout &lt;&lt; "The le was successfully constructed" &lt;&lt;
-> endl; while( inFile &gt;&gt; x ) { n++; // Track the number of loops
+> } else { cout << "The le was successfully constructed" <<
+> endl; while( inFile >> x ) { n++; // Track the number of loops
 >
-> cout &lt;&lt; "iteration \#" &lt;&lt; n &lt;&lt; ": " &lt;&lt; x
-> &lt;&lt; endl;
+> cout << "iteration \#" << n << ": " << x
+> << endl;
 >
-> } cout &lt;&lt; "End of le reached. " &lt;&lt; n &lt;&lt; " numbers
-> found." &lt;&lt; endl;
+> } cout << "End of le reached. " << n << " numbers
+> found." << endl;
 >
 > } return 0; }
 >
@@ -14150,7 +14150,7 @@ b.  the fi le numbers.data contains one number?
 c.  the fi le numbers.data contains zero numbers (the fi le is empty)?
 
 > 9-4 Write the output of the following program with the various data
-> stored in the fi le input.data. (*Note:* inFile &gt;&gt; intObject
+> stored in the fi le input.data. (*Note:* inFile >> intObject
 > will fail if an invalid number is encountered in the input fi le
 > stream; input need not be on separate lines.)
 
@@ -14158,17 +14158,17 @@ a.  1 2 3 c. 1 2 3 BAD
 
 b.  1 2 3 4 5 d. 1.5 2.6 3.7
 
-> \#include &lt;fstream&gt; // For the ifstream class
+> \#include <fstream> // For the ifstream class
 >
-> \#include &lt;iostream&gt; // For cout using namespace std; int main()
+> \#include <iostream> // For cout using namespace std; int main()
 > {
 >
 > ifstream inFile("input.data"); int sum = 0; int intObject;
-> while(inFile &gt;&gt; intObject) { sum += intObject;
+> while(inFile >> intObject) { sum += intObject;
 >
 > }
 >
-> cout &lt;&lt; sum &lt;&lt; endl; return 0; }
+> cout << sum << endl; return 0; }
 
 9.2.2 LETTING THE USER SELECT THE FILE NAME
 
@@ -14177,7 +14177,7 @@ b.  1 2 3 4 5 d. 1.5 2.6 3.7
 > read the fi le name as a string. However, the string object itself
 > cannot be used to initialize an ifstream object.
 >
-> string leName; cout &lt;&lt; "Enter le name: "; cin &gt;&gt; leName;
+> string leName; cout << "Enter le name: "; cin >> leName;
 >
 > ifstream inFile( leName);
 >
@@ -14231,8 +14231,8 @@ b.  1 2 3 4 5 d. 1.5 2.6 3.7
 > to construct one Employee object (class Employee) are read from the
 > ifstream object referenced by inFile.
 >
-> while(inFile &gt;&gt; hourlyRate &gt;&gt; exemptions &gt;&gt;
-> maritalStatus &gt;&gt; rstName &gt;&gt; lastName) {
+> while(inFile >> hourlyRate >> exemptions >>
+> maritalStatus >> rstName >> lastName) {
 >
 > // process the data
 >
@@ -14253,9 +14253,9 @@ the repeated part.
 > objects, // set the hours worked for the week, and show the gross pay
 > for each.
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;fstream&gt; // For the ifstream class using namespace
+> \#include <fstream> // For the ifstream class using namespace
 > std; \#include "Employee.h" // For the Employee class
 >
 > int main() { string rstName, lastName; double hourlyRate,
@@ -14265,16 +14265,16 @@ the repeated part.
 > inFile("employee.data"); if (!inFile) {
 >
 > // Show error if the le "payroll.data" is not found on the disk cout
-> &lt;&lt; "\*\*Error opening le 'employee.data'" &lt;&lt; endl;
+> << "\*\*Error opening le 'employee.data'" << endl;
 >
 > } else {
 >
-> // Process data until end of le while (inFile &gt;&gt; hourlyRate
-> &gt;&gt; exemptions &gt;&gt; maritalStatus
+> // Process data until end of le while (inFile >> hourlyRate
+> >> exemptions >> maritalStatus
 >
-> &gt;&gt; rstName &gt;&gt; lastName) { string name (lastName + ", " +
-> rstName); cout &lt;&lt; "Hours worked for " &lt;&lt; name &lt;&lt; "?
-> "; cin &gt;&gt; hoursThisWeek;
+> >> rstName >> lastName) { string name (lastName + ", " +
+> rstName); cout << "Hours worked for " << name << "?
+> "; cin >> hoursThisWeek;
 >
 > Employee anEmp(name, hourlyRate, maritalStatus, exemptions);
 > anEmp.setHoursWorked(hoursThisWeek); // Print the gross pay in a
@@ -14345,8 +14345,8 @@ SELF-CHECK
 >
 > When that input is read and executes:
 >
-> while(inFile &gt;&gt; hourlyRate &gt;&gt; exemptions &gt;&gt;
-> maritalStatus &gt;&gt; rstName &gt;&gt; lastName)
+> while(inFile >> hourlyRate >> exemptions >>
+> maritalStatus >> rstName >> lastName)
 >
 > Th e fi rst time through the loop, the S is encountered while
 > attempting to read an integer for exemptions. Th e input stream fails.
@@ -14420,8 +14420,8 @@ SELF-CHECK
 >
 > string sentence;
 >
-> cout &lt;&lt; "Enter a sentence ended with a period &lt;'.'&gt;: "
-> &lt;&lt; endl; getline(cin, sentence, '.');
+> cout << "Enter a sentence ended with a period <'.'>: "
+> << endl; getline(cin, sentence, '.');
 >
 > // assert: sentence has all characters up to, but not including //
 > '.'. The '.' is pulled out of input stream (discarded).
@@ -14433,16 +14433,16 @@ SELF-CHECK
 > any input fi le. Th e input is the program itself, so the number of
 > lines should be 17.
 >
-> \#include &lt;iostream&gt; // 1 File name: getline.cpp
+> \#include <iostream> // 1 File name: getline.cpp
 >
-> \#include &lt;fstream&gt; // 2 \#include &lt;string&gt; // 3 using
+> \#include <fstream> // 2 \#include <string> // 3 using
 > namespace std; // 4
 >
 > // 5 int main() { // 6 string aLine; // 7 ifstream
 > inFile("getline.cpp"); int lineCount = 0; // 9 // 10
 > while(getline(inFile, aLine)) { lineCount++; // 12 } // 13 // 14
 >
-> cout &lt;&lt; "Lines in getline.cpp: " &lt;&lt; lineCount &lt;&lt;
+> cout << "Lines in getline.cpp: " << lineCount <<
 > endl; return 0; // 16 } // 17
 >
 > Output
@@ -14456,13 +14456,13 @@ prompt?
 
 a\. 1313 Mockingbird Lane. b. 1214 Chestnut Drive.
 
-> \#include &lt;iostream&gt; // For cout
+> \#include <iostream> // For cout
 >
-> \#include &lt;string&gt; // For getline and string using namespace
+> \#include <string> // For getline and string using namespace
 > std; int main() { string street;
 >
-> cout &lt;&lt; "Enter street address, end with a period &lt;.&gt; "
-> &lt;&lt; endl; getline(cin, street, '.'); cout &lt;&lt; street; return
+> cout << "Enter street address, end with a period <.> "
+> << endl; getline(cin, street, '.'); cout << street; return
 > 0; }
 >
 > Getting back to the problem of reading names that may have one, two,
@@ -14473,13 +14473,13 @@ a\. 1313 Mockingbird Lane. b. 1214 Chestnut Drive.
 >
 > // Process data until end of le
 >
-> while (inFile &gt;&gt; hourlyRate &gt;&gt; exemptions &gt;&gt;
+> while (inFile >> hourlyRate >> exemptions >>
 > maritalStatus
 >
 > && (getline(inFile, fullName))) { // Extract rst blank character in
 > fullName fullName = fullName.substr(1, fullName.length() - 1); cout
-> &lt;&lt; "Hours worked for " &lt;&lt; fullName &lt;&lt; "? "; cin
-> &gt;&gt; hoursThisWeek;
+> << "Hours worked for " << fullName << "? "; cin
+> >> hoursThisWeek;
 >
 > Employee anEmp(fullName, hourlyRate, maritalStatus, exemptions);
 > anEmp.setHoursWorked(hoursThisWeek);
@@ -14499,18 +14499,18 @@ a\. 1313 Mockingbird Lane. b. 1214 Chestnut Drive.
 > messages that could be sent to cout can also be sent to ofstream
 > objects.
 >
-> \#include &lt;iostream&gt; // For cout
+> \#include <iostream> // For cout
 >
-> \#include &lt;fstream&gt; // For the ofstream class using namespace
+> \#include <fstream> // For the ofstream class using namespace
 > std; int main() {
 >
 > ofstream outFile("out.data");
 >
-> outFile &lt;&lt; "This string goes to a disk, not the screen" &lt;&lt;
-> endl; double x = 1.23; outFile &lt;&lt; x &lt;&lt; endl;
-> outFile.width(30); outFile &lt;&lt; x &lt;&lt; endl;
+> outFile << "This string goes to a disk, not the screen" <<
+> endl; double x = 1.23; outFile << x << endl;
+> outFile.width(30); outFile << x << endl;
 >
-> cout &lt;&lt; "This string goes to the screen" &lt;&lt; endl; return
+> cout << "This string goes to the screen" << endl; return
 > 0; }
 >
 > Output (to the fi le associated with the object named outFile)
@@ -14533,8 +14533,8 @@ SELF-CHECK
 
 9-8 What output goes to the disk fi le named out.data?
 
-> ofstream out("out.data"); for(int j = 1; j &lt;= 5; j++) cout &lt;&lt;
-> j &lt;&lt; " ";
+> ofstream out("out.data"); for(int j = 1; j <= 5; j++) cout <<
+> j << " ";
 
 CHAPTER SUMMARY
 
@@ -14544,7 +14544,7 @@ CHAPTER SUMMARY
 -   Th e ! operator is overloaded to determine if a fi le has not been
     > properly opened for input.
 
--   Use the input operator &gt;&gt; in the loop test to read input until
+-   Use the input operator >> in the loop test to read input until
     > the end of any fi le of any size.
 
 -   You can use ofstream objects like cout. Th e only diff erence is
@@ -14583,8 +14583,8 @@ EXERCISES
 >
 > string address;
 >
-> cout &lt;&lt; "Enter your address: "; getline(cin, address); cout
-> &lt;&lt; "Address: " &lt;&lt; address &lt;&lt; endl;
+> cout << "Enter your address: "; getline(cin, address); cout
+> << "Address: " << address << endl;
 >
 > Dialogue
 >
@@ -14592,10 +14592,10 @@ EXERCISES
 >
 > Address: 1313 Mockingbird Lane, Washington D.C.
 
-2.  Be careful when using getline and &gt;&gt; together. Be careful when
-    > mixing getline with the &gt;&gt; operator on the same
-    > input stream. Th e &gt;&gt; operator skips whitespace; getline
-    > does not. Worse yet, cin &gt;&gt; will stop at the new line. A
+2.  Be careful when using getline and >> together. Be careful when
+    > mixing getline with the >> operator on the same
+    > input stream. Th e >> operator skips whitespace; getline
+    > does not. Worse yet, cin >> will stop at the new line. A
     > subsequent getline will go up to the new line, eff ectively
     > reading nothing. In this case, you will need an extra getline to
     > get beyond the end of the line.
@@ -14605,7 +14605,7 @@ EXERCISES
     > le loop. Consider fi rst writing a test driver with code that
     > inputs the fi rst line from the fi le and then displays it.
 
-4.  Input is messy. Using istream &gt;&gt; and getline on the same input
+4.  Input is messy. Using istream >> and getline on the same input
     > stream can cause diffi cultto-detect errors. Additionally, when
     > there is a mix of integer, fl oating-point, character, and string
     > input, it is not always easy to get the input statements correct.
@@ -14644,7 +14644,7 @@ Programming Projects
 > that has the fi le name input by the user. Remember to use
 > string::c\_str to initialize the ifstream object.
 >
-> cin &gt;&gt; leName;
+> cin >> leName;
 >
 > ifstream inFile( leName.c\_str());
 
@@ -14740,9 +14740,9 @@ COMING UP
 >
 > General Form 10.1 vector *initialization*
 >
-> vector &lt;*type*&gt; *vector-name*(*capacity*);
+> vector <*type*> *vector-name*(*capacity*);
 
-- or vector &lt;*type*&gt; *vector-name*(*capacity*, *initial-value*);
+- or vector <*type*> *vector-name*(*capacity*, *initial-value*);
 
 -   *type* specifi es the class of objects stored in the vector.
 
@@ -14759,15 +14759,15 @@ COMING UP
 
 > Examples of vector Initializations
 >
-> vector &lt;int&gt; garbage(1000000); // A million integers of unknown
-> value vector &lt;double&gt; x(100, 99.9); // Store 100 numbers, all
-> equal to 99.9 vector &lt;string&gt; names(20, "TBA"); // Store 20
+> vector <int> garbage(1000000); // A million integers of unknown
+> value vector <double> x(100, 99.9); // Store 100 numbers, all
+> equal to 99.9 vector <string> names(20, "TBA"); // Store 20
 > strings, all equal to "TBA"
 >
-> To use vector, include &lt;vector&gt;, and when using namespace std;
+> To use vector, include <vector>, and when using namespace std;
 > you can write vector instead of std::vector.
 >
-> \#include &lt;vector&gt; // For the vector&lt;type&gt; class using
+> \#include <vector> // For the vector<type> class using
 > namespace std;
 >
 > It should be noted that the vector syntax and algorithms that follow
@@ -14796,7 +14796,7 @@ COMING UP
 >
 > Th e subscript range of a C++ vector is an integer value in the range
 > of 0 through its capacity - 1. Th erefore, the individual objects of x
-> declared as vector &lt;double&gt; x(8, 0.0);
+> declared as vector <double> x(8, 0.0);
 >
 > may be referenced using the integer subscripts 0, 1, 2, 3, . . . 7,
 > but not 8. Values can be stored into the fi rst two vector elements of
@@ -14828,7 +14828,7 @@ COMING UP
 Keyboard input can also be used to set the state of vector elements like
 this:
 
-> cout &lt;&lt; "Enter two numbers: "; cin &gt;&gt; x\[3\] &gt;&gt;
+> cout << "Enter two numbers: "; cin >> x\[3\] >>
 > x\[4\];
 >
 > Dialogue
@@ -14855,27 +14855,27 @@ x\[0\] x\[1\] x\[2\] x\[3\] x\[4\] x\[5\] x\[6\] x\[7\]
 > Notice that x\[5\], x\[6\], and x\[7\] still have the initial value of
 > 0.0.
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;vector&gt; // For the vector&lt;type&gt; class using
+> \#include <vector> // For the vector<type> class using
 > namespace std;
 >
-> int main() { vector&lt;double&gt; x(8, 0.0);
+> int main() { vector<double> x(8, 0.0);
 >
 > // Assign new values to the rst two elements of vector named x x\[0\]
 > = 2.6; x\[1\] = 5.7;
 >
 > x\[2\] = x\[0\] + x\[1\]; // Store 8.3
 >
-> cout &lt;&lt; "Enter two numbers: "; cin &gt;&gt; x\[3\] &gt;&gt;
+> cout << "Enter two numbers: "; cin >> x\[3\] >>
 > x\[4\];
 >
 > int n = 5; // assert: n represents the number of meaningful elements
 >
 > // Display the meaningful elements of x--the rst n elements cout
-> &lt;&lt; "\\nThe rst " &lt;&lt; n &lt;&lt; " elements of x: " &lt;&lt;
-> endl; for (int index = 0; index &lt; n; index++) { cout &lt;&lt; "x\["
-> &lt;&lt; index &lt;&lt; "\]: "; cout &lt;&lt; x\[index\] &lt;&lt;
+> << "\\nThe rst " << n << " elements of x: " <<
+> endl; for (int index = 0; index < n; index++) { cout << "x\["
+> << index << "\]: "; cout << x\[index\] <<
 > endl; }
 >
 > return 0; }
@@ -14907,11 +14907,11 @@ x\[0\] x\[1\] x\[2\] x\[3\] x\[4\] x\[5\] x\[6\] x\[7\]
 > x\[0\];
 >
 > // . . . then compare all other vector elements x\[1\] through
-> x\[n-1\] for(int i = 1; i &lt; n; i++) { if (x\[i\] &gt; largest)
+> x\[n-1\] for(int i = 1; i < n; i++) { if (x\[i\] > largest)
 > largest = x\[i\]; }
 >
-> // Display the largest cout &lt;&lt; "The largest element in vector x
-> = " &lt;&lt; largest;
+> // Display the largest cout << "The largest element in vector x
+> = " << largest;
 >
 > Output
 >
@@ -14976,8 +14976,8 @@ value at index 5, 6, or 7.
 > On one system, this statement produced the output shown in the
 > comment:
 >
-> // There is no warning or error with the statement cout &lt;&lt;
-> "x\[n\]: " &lt;&lt; x\[n\] &lt;&lt; endl;
+> // There is no warning or error with the statement cout <<
+> "x\[n\]: " << x\[n\] << endl;
 >
 > Output
 >
@@ -14996,18 +14996,18 @@ value at index 5, 6, or 7.
 > errors that are diffi cult to locate. Here is what will happen with
 > the vector class when using the at member function:
 >
-> \#include &lt;vector&gt; // For the vector&lt;type&gt; class
+> \#include <vector> // For the vector<type> class
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
-> int main() { vector&lt;double&gt; x(8);
+> int main() { vector<double> x(8);
 >
 > // Attempt to assign 100 to all elements of vector named x
 >
-> for (int i = 1; i &lt;= x.capacity(); i++) {
+> for (int i = 1; i <= x.capacity(); i++) {
 >
-> x.at(i) = 100; } cout &lt;&lt; "Program would terminated above with
-> x\[8\]" &lt;&lt; endl;
+> x.at(i) = 100; } cout << "Program would terminated above with
+> x\[8\]" << endl;
 >
 > return 0; }
 >
@@ -15041,21 +15041,21 @@ value at index 5, 6, or 7.
 >
 > // Demonstrate capacity and resize
 >
-> \#include &lt;vector&gt; // For the standard vector&lt;type&gt; class
+> \#include <vector> // For the standard vector<type> class
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() {
 >
-> vector &lt;int&gt; v1; // v1 cannot store any elements with 0 capacity
-> vector &lt;int&gt; v2(100, -1);
+> vector <int> v1; // v1 cannot store any elements with 0 capacity
+> vector <int> v2(100, -1);
 >
-> cout &lt;&lt; "v1 can store " &lt;&lt; v1.capacity() &lt;&lt; endl;
-> cout &lt;&lt; "v2 can store " &lt;&lt; v2.capacity() &lt;&lt; endl;
+> cout << "v1 can store " << v1.capacity() << endl;
+> cout << "v2 can store " << v2.capacity() << endl;
 >
 > v1.resize(22);
 >
-> cout &lt;&lt; "v1 can now store " &lt;&lt; v1.capacity() &lt;&lt;
+> cout << "v1 can now store " << v1.capacity() <<
 > endl;
 >
 > // Odd behavior when the argument is less than the current capacity.
@@ -15063,12 +15063,12 @@ value at index 5, 6, or 7.
 > // at(55) shows you can not access past the smaller capacity.
 > v2.at(55) = 123;
 >
-> cout &lt;&lt; "v2.at(55): " &lt;&lt; v2.at(55) &lt;&lt; endl;
+> cout << "v2.at(55): " << v2.at(55) << endl;
 > v2.resize(55);
 >
-> cout &lt;&lt; "v2 can now store " &lt;&lt; v2.capacity() &lt;&lt;
-> endl; cout &lt;&lt; "v2 has this -1s: " &lt;&lt; v2.size() &lt;&lt;
-> endl; cout &lt;&lt; "v2.at(55): " &lt;&lt; v2.at(55) &lt;&lt; endl;
+> cout << "v2 can now store " << v2.capacity() <<
+> endl; cout << "v2 has this -1s: " << v2.size() <<
+> endl; cout << "v2.at(55): " << v2.at(55) << endl;
 >
 > return 0; }
 >
@@ -15092,17 +15092,17 @@ value at index 5, 6, or 7.
 >
 > // Demonstrate capacity and resize
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;vector&gt; // For the vector&lt;type&gt; class using
+> \#include <vector> // For the vector<type> class using
 > namespace std;
 >
-> int main() { vector &lt;int&gt; v1(3, -999); vector &lt;int&gt; v2;
+> int main() { vector <int> v1(3, -999); vector <int> v2;
 >
 > v2 = v1;
 >
 > // assert: v2 now stores 3 elements == -999 for(int index = 0; index
-> &lt; v2.capacity(); index++) { cout.width(5); cout &lt;&lt;
+> < v2.capacity(); index++) { cout.width(5); cout <<
 > v2\[index\]; }
 >
 > return 0;
@@ -15117,7 +15117,7 @@ SELF-CHECK
 
 > Use this initialization to answer the questions that follow:
 >
-> vector &lt;int&gt; x(100, 0);
+> vector <int> x(100, 0);
 
 10-1 How many integers can be stored in x?
 
@@ -15140,25 +15140,25 @@ for loop.
 >
 > 10-10 Write the output generated by the following program:
 >
-> \#include &lt;vector&gt; // For the standard vector&lt;type&gt; class
+> \#include <vector> // For the standard vector<type> class
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
-> int main() { int n = 5; vector &lt;int&gt; x(n, 0); for(int i = 0; i
-> &lt; n; i++) { x\[i\] = i; }
+> int main() { int n = 5; vector <int> x(n, 0); for(int i = 0; i
+> < n; i++) { x\[i\] = i; }
 >
 > x.resize(2 \* n);
 >
-> // Show the rst ve elements are still in x for(int i = 0; i &lt; n;
-> i++) { cout.width(5); cout &lt;&lt; x\[i\];
+> // Show the rst ve elements are still in x for(int i = 0; i < n;
+> i++) { cout.width(5); cout << x\[i\];
 >
-> } cout &lt;&lt; endl;
+> } cout << endl;
 >
-> for(int i = 0; i &lt; x.capacity(); i++) { cout.width(5);
+> for(int i = 0; i < x.capacity(); i++) { cout.width(5);
 >
-> cout &lt;&lt; x\[i\];
+> cout << x\[i\];
 >
-> } cout &lt;&lt; endl;
+> } cout << endl;
 >
 > return 0; }
 
@@ -15190,11 +15190,11 @@ for loop.
 >
 > // Initialize and show the rst n elements of vector named name
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;string&gt;
+> \#include <string>
 >
-> \#include &lt;vector&gt; // For the standard vector&lt;type&gt; class
+> \#include <vector> // For the standard vector<type> class
 > using namespace std;
 >
 > // This free function uses the sequential search algorithm to return
@@ -15202,10 +15202,10 @@ for loop.
 > // the index of searchName in the vector or -1 if searchName is not
 > found.
 >
-> int indexOf(string searchName, const vector&lt;string&gt; & names, int
+> int indexOf(string searchName, const vector<string> & names, int
 > n) {
 >
-> // Just show the vector elements for now for (int i = 0; i &lt; n;
+> // Just show the vector elements for now for (int i = 0; i < n;
 > i++) { if (searchName == names\[i\]) return i;
 >
 > }
@@ -15214,19 +15214,19 @@ for loop.
 >
 > int main() {
 >
-> vector&lt;string&gt; myFriends(10); int n = 5; // Set the number of
+> vector<string> myFriends(10); int n = 5; // Set the number of
 > meaningful elements to be searched
 >
 > myFriends\[0\] = "Sage"; myFriends\[1\] = "Harley"; myFriends\[2\] =
 > "Peyton"; myFriends\[3\] = "Quinn"; myFriends\[4\] = "Taylor";
 >
-> cout &lt;&lt; "Sage is at index " &lt;&lt; indexOf("Sage", myFriends,
-> n) &lt;&lt; endl; cout &lt;&lt; "Peyton is at index " &lt;&lt;
-> indexOf("Peyton", myFriends, n) &lt;&lt; endl; cout &lt;&lt; "Taylor
-> is at index " &lt;&lt; indexOf("Taylor", myFriends, n) &lt;&lt; endl;
+> cout << "Sage is at index " << indexOf("Sage", myFriends,
+> n) << endl; cout << "Peyton is at index " <<
+> indexOf("Peyton", myFriends, n) << endl; cout << "Taylor
+> is at index " << indexOf("Taylor", myFriends, n) << endl;
 >
-> if(indexOf("Not Here", myFriends, n) == -1) { cout &lt;&lt; "Not Here
-> was not found" &lt;&lt; endl; }
+> if(indexOf("Not Here", myFriends, n) == -1) { cout << "Not Here
+> was not found" << endl; }
 >
 > return 0; }
 >
@@ -15290,14 +15290,14 @@ Th erefore, this statement account\[0\] = BankAccount ("Baker", 0.00);
 >
 > // Illustrates a vector of programmer-de ned objects
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;vector&gt; // For the vector&lt;type&gt; class using
+> \#include <vector> // For the vector<type> class using
 > namespace std; \#include "BankAccount.h" // For the BankAccount class
 >
 > int main() {
 >
-> vector&lt;BankAccount&gt; account(100);
+> vector<BankAccount> account(100);
 >
 > // Initialize the rst n elements of account int n = 4;
 >
@@ -15309,8 +15309,8 @@ Th erefore, this statement account\[0\] = BankAccount ("Baker", 0.00);
 > double assets = 0.0;
 >
 > // Accumulate balance of n BankAccount objects stored in account for
-> (int i = 0; i &lt; n; i++) { assets += account\[i\].getBalance(); }
-> cout &lt;&lt; "Assets: " &lt;&lt; assets &lt;&lt; endl;
+> (int i = 0; i < n; i++) { assets += account\[i\].getBalance(); }
+> cout << "Assets: " << assets << endl;
 >
 > return 0; }
 >
@@ -15322,20 +15322,20 @@ SELF-CHECK
 
 > 10-17 Write the output generated by the following program:
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;vector&gt; // For the vector&lt;type&gt; class
+> \#include <vector> // For the vector<type> class
 >
-> \#include &lt;string&gt; // For the string class using namespace std;
+> \#include <string> // For the string class using namespace std;
 >
-> int main() { vector&lt;string&gt; s(10);
+> int main() { vector<string> s(10);
 >
 > // Initialize the rst 4 elements of account s\[0\] = "First"; s\[1\] =
 > "Second"; s\[2\] = "Third"; s\[3\] = "Fourth"; int n = 4;
 >
-> for (int i = 0; i &lt; n; i++) {
+> for (int i = 0; i < n; i++) {
 >
-> cout &lt;&lt; s\[i\].substr(1, s\[i\].length() - 2) &lt;&lt; " "; }
+> cout << s\[i\].substr(1, s\[i\].length() - 2) << " "; }
 >
 > return 0; }
 
@@ -15366,7 +15366,7 @@ SELF-CHECK
 > If the vector is declared with a maximum capacity of 20 like this,
 > then the fi rst BankAccount object can be stored in account\[0\]:
 
-vector &lt;BankAccount&gt; account(20); // assert: account could store
+vector <BankAccount> account(20); // assert: account could store
 20 default BankAccount objects So an object named numberOfAccounts
 starts at 0:
 
@@ -15387,15 +15387,15 @@ starts at 0:
 >
 > Th e following while loop test expression should be true before a
 > BankAccount object can be added at the next available location in the
-> vector. If there are no more data in the fi le, (inFile &gt;&gt; name
-> &gt;&gt; balance) is false and the loop will terminate. Also, if there
+> vector. If there are no more data in the fi le, (inFile >> name
+> >> balance) is false and the loop will terminate. Also, if there
 > are more data in the fi le but no more room in the vector,
-> (numberOfAccounts &lt; account.capacity()) is false and the loop
+> (numberOfAccounts < account.capacity()) is false and the loop
 > terminates for a diff erent reason—there is no room.
 >
-> while ((inFile &gt;&gt; name &gt;&gt; balance) &&
+> while ((inFile >> name >> balance) &&
 >
-> (numberOfAccounts &lt; account.capacity())) {
+> (numberOfAccounts < account.capacity())) {
 > account\[numberOfAccounts\] = BankAccount(name, balance);
 > numberOfAccounts++; }
 >
@@ -15421,42 +15421,42 @@ starts at 0:
 >
 > // Initialize a vector of BankAccount objects through le input
 >
-> \#include &lt;vector&gt; // For the vector&lt;type&gt; class
+> \#include <vector> // For the vector<type> class
 >
-> \#include &lt;fstream&gt; // For the ifstream class
+> \#include <fstream> // For the ifstream class
 >
-> \#include &lt;iostream&gt; // For cout and endl
+> \#include <iostream> // For cout and endl
 >
-> \#include &lt;string&gt; // For the string class using namespace std;
+> \#include <string> // For the string class using namespace std;
 > \#include "BankAccount.h" // For the BankAccount class
 >
 > int main() { string leName = "bank.data"; ifstream inFile(
 > leName.c\_str());
 >
-> if (!inFile) { cout &lt;&lt; "\*\*Error\*\* " &lt;&lt; leName &lt;&lt;
-> " was not found" &lt;&lt; endl;
+> if (!inFile) { cout << "\*\*Error\*\* " << leName <<
+> " was not found" << endl;
 >
 > } else {
 >
-> vector&lt;BankAccount&gt; account(20); string name; double balance =
+> vector<BankAccount> account(20); string name; double balance =
 > 0.0; int numberOfAccounts = 0;
 >
-> while ((inFile &gt;&gt; name &gt;&gt; balance)
+> while ((inFile >> name >> balance)
 >
-> && (numberOfAccounts &lt; account.capacity())) {
+> && (numberOfAccounts < account.capacity())) {
 > account\[numberOfAccounts\] = BankAccount(name, balance);
 > numberOfAccounts++; }
 >
-> cout &lt;&lt; "Number of accounts on le: " &lt;&lt; numberOfAccounts
-> &lt;&lt; endl; cout &lt;&lt; endl;
+> cout << "Number of accounts on le: " << numberOfAccounts
+> << endl; cout << endl;
 >
-> cout &lt;&lt; "The accounts" &lt;&lt; endl; cout &lt;&lt;
-> "===========================" &lt;&lt; endl; for (int index = 0; index
-> &lt; numberOfAccounts; index++) { cout.width(2); cout &lt;&lt; index
-> &lt;&lt; ". "; cout &lt;&lt; account\[index\].getName();
+> cout << "The accounts" << endl; cout <<
+> "===========================" << endl; for (int index = 0; index
+> < numberOfAccounts; index++) { cout.width(2); cout << index
+> << ". "; cout << account\[index\].getName();
 >
-> cout.width(20 - account\[index\].getName().length()); cout &lt;&lt;
-> account\[index\].getBalance() &lt;&lt; endl;
+> cout.width(20 - account\[index\].getName().length()); cout <<
+> account\[index\].getBalance() << endl;
 >
 > }
 >
@@ -15546,19 +15546,19 @@ locations. Use any data you desire.
 > Pass by Reference (when the function must modify the associated vector
 > argument)
 >
-> *return-type* *function-name* (vector &lt;*class*&gt; & *vector-name)*
+> *return-type* *function-name* (vector <*class*> & *vector-name)*
 >
 > Pass by const Reference (runtime effi cient with & and safe with
 > const)
 >
-> *return-type* *function-name* (const vector &lt;*class*&gt; &
+> *return-type* *function-name* (const vector <*class*> &
 > *vector-name*)
 >
 > A vector object should not be passed by value. Th is parameter-passing
 > mode is usually ineffi cient since vector objects can consume a large
 > amount of memory.
 >
-> void inef cient(vector &lt;BankAccount&gt; accounts, int n) {
+> void inef cient(vector <BankAccount> accounts, int n) {
 >
 > // VALUE parameter (should not be used with vectors). All elements //
 > of acct are copied after allocating additional memory.
@@ -15575,7 +15575,7 @@ locations. Use any data you desire.
 > Use pass by reference (with &) when a function is supposed to modify
 > the associated argument:
 >
-> void initialize(vector &lt;BankAccount&gt; & accounts, int & n){
+> void initialize(vector <BankAccount> & accounts, int & n){
 >
 > // REFERENCE parameter (allows changes to argument)
 >
@@ -15589,7 +15589,7 @@ locations. Use any data you desire.
 > When a function requires a vector but should not modify the associated
 > argument, pass the vector by const reference:
 >
-> void display(const vector &lt;BankAccount&gt; & accounts, int &
+> void display(const vector <BankAccount> & accounts, int &
 > numberOfAccounts)
 >
 > {
@@ -15610,11 +15610,11 @@ locations. Use any data you desire.
 > change to x or numberOfAccounts inside of initialize also changes the
 > arguments in the main function test and n.
 >
-> \#include &lt;vector&gt; // For the vector&lt;type&gt; class
+> \#include <vector> // For the vector<type> class
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
-> void initialize(vector&lt;int&gt; & x, int & numberOfAccounts) { //
+> void initialize(vector<int> & x, int & numberOfAccounts) { //
 > Two reference parameters
 >
 > // post: Initialize the rst n elements of the argument
@@ -15626,20 +15626,20 @@ locations. Use any data you desire.
 >
 > }
 >
-> void display(const vector&lt;int&gt; & x, int numberOfAccounts) { //
+> void display(const vector<int> & x, int numberOfAccounts) { //
 > Const reference
 >
-> // Display the vector with n meaningful values cout &lt;&lt; "The
+> // Display the vector with n meaningful values cout << "The
 > vector: ";
 >
-> for (int i = 0; i &lt; numberOfAccounts; i++) { cout.width(5); cout
-> &lt;&lt; x\[i\] &lt;&lt; " ";
+> for (int i = 0; i < numberOfAccounts; i++) { cout.width(5); cout
+> << x\[i\] << " ";
 >
 > }
 >
-> cout &lt;&lt; endl; }
+> cout << endl; }
 >
-> int main() { vector&lt;int&gt; vec(10, 0); int n;
+> int main() { vector<int> vec(10, 0); int n;
 >
 > // Initialize test and n initialize(vec, n); display(vec, n);
 >
@@ -15663,7 +15663,7 @@ locations. Use any data you desire.
 > value requires as much memory as the argument.
 >
 > // A vector should not be passed by value like this void
-> display(vector &lt;double&gt; x, int n) { // Value parameter
+> display(vector <double> x, int n) { // Value parameter
 >
 > // This function must obtain the memory necessary to store x when x
 >
@@ -15694,13 +15694,13 @@ locations. Use any data you desire.
 > example. However, the compiler will fl ag any attempt to send a
 > nonconst message:
 >
-> // precondition: x.capacity() &gt; 0
+> // precondition: x.capacity() > 0
 >
-> void display(const vector &lt;int&gt; & x, const int n) {
+> void display(const vector <int> & x, const int n) {
 >
-> cout &lt;&lt; "\\nThe vector's capacity is " &lt;&lt; x.capacity() //
-> &lt;- Okay cout &lt;&lt; x\[0\]; // &lt;- OKAY to reference vector
-> element x\[0\] = 123; // &lt;- ERROR caught during compilation
+> cout << "\\nThe vector's capacity is " << x.capacity() //
+> <- Okay cout << x\[0\]; // <- OKAY to reference vector
+> element x\[0\] = 123; // <- ERROR caught during compilation
 >
 > }
 >
@@ -15720,11 +15720,11 @@ SELF-CHECK
 > functions? Remember, pass by reference typically requires four bytes
 > of memory:
 
-a.  void one(vector&lt;BankAccount&gt; v1)
+a.  void one(vector<BankAccount> v1)
 
-b.  void two(vector&lt;BankAccount&gt; & v1)
+b.  void two(vector<BankAccount> & v1)
 
-c.  void one(const vector&lt;BankAccount&gt; & v1)
+c.  void one(const vector<BankAccount> & v1)
 
 10.5 SORTING
 
@@ -15734,14 +15734,14 @@ c.  void one(const vector&lt;BankAccount&gt; & v1)
 > the numeric values in lowest-to-highest order. A vector of string
 > objects sorted in ascending order establishes an alphabetized list
 > (A’s before B’s, B’s before C’s). To sort a vector, the elements must
-> be compared with the &lt; operator. If one object can be less than
+> be compared with the < operator. If one object can be less than
 > another object of the same type, then the vector is *sortable*. For
-> example, 85 &lt; 79 and "A" &lt; "B" are valid expressions.
+> example, 85 < 79 and "A" < "B" are valid expressions.
 >
 > Th e following code declares and gives meaningful values to a part of
 > the vector named data to demonstrate sorting a vector of integers:
 >
-> vector&lt;int&gt; data(10, 0); // Store up to 10 integers int n = 5;
+> vector<int> data(10, 0); // Store up to 10 integers int n = 5;
 > data\[0\] = 76; data\[1\] = 74; data\[2\] = 100; data\[3\] = 62;
 > data\[4\] = 89;
 >
@@ -15761,7 +15761,7 @@ c.  void one(const vector&lt;BankAccount&gt; & v1)
 > With the selection sort algorithm, the largest integer must end up in
 > data\[n - 1\] (where n is the number of meaningful vector elements).
 > Th e smallest number should end up in data\[0\]. In general, a vector
-> x of size n is sorted in ascending order if x\[i\] &lt;= x\[i + 1\]
+> x of size n is sorted in ascending order if x\[i\] <= x\[i + 1\]
 > for i = 0 to n-2. Th e selection sort begins by locating the smallest
 > element in the vector by searching from the fi rst element (data\[0\])
 > through the last (data\[4\]). Th e smallest element, data\[3\] in this
@@ -15787,7 +15787,7 @@ c.  void one(const vector&lt;BankAccount&gt; & v1)
 > data*\[*n - 1*\]*) *
 
 (a) for *index ranging from top* + 1 *through* n - 1 (c1) if
-    *data*\[*index*\] &lt; *data*\[*indexOfSmallest*\] *indexOfSmallest*
+    *data*\[*index*\] < *data*\[*indexOfSmallest*\] *indexOfSmallest*
     = *index*
 
 *// Place the smallest element into the rst position and place the rst
@@ -15894,7 +15894,7 @@ top == 1 Before After Sorted
 for *top ranging from 0 through n - 2* { *indexOfSmallest* = *top* for
 *index ranging from top + 1 through n - 1* {
 
-if *data*\[*indexOfSmallest*\] &lt; *data*\[*index*\] then
+if *data*\[*indexOfSmallest*\] < *data*\[*index*\] then
 
 *indexOfSmallest* = *index*
 
@@ -15908,20 +15908,20 @@ swap *data*\[*indexOfSmallest*\] with *data*\[*top*\]
 > numbers shown. Th e vector is printed before and after the numbers are
 > sorted into ascending order.
 >
-> \#include &lt;vector&gt; \#include &lt;iostream&gt; using namespace
+> \#include <vector> \#include <iostream> using namespace
 > std;
 >
-> void sort(vector&lt;int&gt; & data, int n) { int indexOfSmallest = 0;
+> void sort(vector<int> & data, int n) { int indexOfSmallest = 0;
 >
-> for (int top = 0; top &lt; n - 1; top++) {
+> for (int top = 0; top < n - 1; top++) {
 >
 > // First assume that the smallest is the rst element in the subvector
 > indexOfSmallest = top;
 >
 > // Then compare all of the other elements, looking for the smallest
-> for (int index = top + 1; index &lt; data.capacity(); index++) {
+> for (int index = top + 1; index < data.capacity(); index++) {
 >
-> // Compare elements in the subvector if (data\[index\] &lt;
+> // Compare elements in the subvector if (data\[index\] <
 > data\[indexOfSmallest\]) indexOfSmallest = index; }
 >
 > // Then make sure the smallest from data\[top\] through data.size
@@ -15934,23 +15934,23 @@ swap *data*\[*indexOfSmallest*\] with *data*\[*top*\]
 >
 > }
 >
-> vector&lt;int&gt; initialize() { vector&lt;int&gt; v(5); v\[0\] = 76;
+> vector<int> initialize() { vector<int> v(5); v\[0\] = 76;
 > v\[1\] = 91; v\[2\] = 100; v\[3\] = 62; v\[4\] = 89; return v; }
 >
-> void display(vector&lt;int&gt; v) { for (int i = 0; i &lt;
-> v.capacity(); i++) { cout &lt;&lt; v\[i\] &lt;&lt; " ";
+> void display(vector<int> v) { for (int i = 0; i <
+> v.capacity(); i++) { cout << v\[i\] << " ";
 >
 > }
 >
-> cout &lt;&lt; endl; }
+> cout << endl; }
 >
 > int main() {
 >
-> vector&lt;int&gt; data = initialize();
+> vector<int> data = initialize();
 >
-> cout &lt;&lt; "Before sorting: "; display(data);
+> cout << "Before sorting: "; display(data);
 >
-> sort(data, data.capacity()); cout &lt;&lt; " After sorting: ";
+> sort(data, data.capacity()); cout << " After sorting: ";
 > display(data);
 >
 > return 0; }
@@ -15963,15 +15963,15 @@ swap *data*\[*indexOfSmallest*\] with *data*\[*top*\]
 >
 > Most sort routines arrange the elements from smallest to largest.
 > However, with just a few simple changes, any type of elements that
-> allow the &lt; and &gt; operators may be arranged into descending
-> order using the &gt; operator.
+> allow the < and > operators may be arranged into descending
+> order using the > operator.
 >
-> if (data\[index\] &lt; data\[indexOfSmallest\]) indexOfSmallest =
+> if (data\[index\] < data\[indexOfSmallest\]) indexOfSmallest =
 > index;
 >
 > becomes
 >
-> if (data\[index\] &gt; data\[indexOfLargest\]) indexOfLargest = index;
+> if (data\[index\] > data\[indexOfLargest\]) indexOfLargest = index;
 
 SELF-CHECK
 
@@ -16041,7 +16041,7 @@ Th e binary search algorithm has these preconditions:
 > the vector. Th ese become subscripts in the search and will be
 > referred to as rst, mid, and last. Here is the vector to be searched:
 >
-> vector &lt;string&gt; str(32); int n = 7;
+> vector <string> str(32); int n = 7;
 >
 > str\[0\] = "ABE"; // rst == 0 str\[1\] = "CLAY"; str\[2\] = "KIM";
 > str\[3\] = "LAU"; // mid == 3 str\[4\] = "LISA"; str\[5\] = "PELE";
@@ -16072,7 +16072,7 @@ At this point, one of three things can happen:
 >
 > if *searchString* == *str*\[*mid*\] then *searchString is found* else
 >
-> if *searchString* &lt; *str*\[*mid*\] *eliminate mid...last elements
+> if *searchString* < *str*\[*mid*\] *eliminate mid...last elements
 > from the search* else *eliminate rst...mid elements from the search*
 >
 > Th e binary search algorithm is implemented here as a free function
@@ -16081,13 +16081,13 @@ At this point, one of three things can happen:
 
 10.6: Binary Search
 
-> \#include &lt;vector&gt;
+> \#include <vector>
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;string&gt; using namespace std;
+> \#include <string> using namespace std;
 >
-> vector&lt;string&gt; initialize() { vector&lt;string&gt; str(7);
+> vector<string> initialize() { vector<string> str(7);
 > str\[0\] = "ABE"; str\[1\] = "CLAY"; str\[2\] = "KIM"; str\[3\] =
 > "LAU"; str\[4\] = "LISA"; str\[5\] = "PELE"; str\[6\] = "ROE"; return
 > str; }
@@ -16096,16 +16096,16 @@ At this point, one of three things can happen:
 >
 > // str\[0\] through str\[6\] are de ned vector elements.
 >
-> // string de nes &lt; and ==. int indexOf(string searchString,
-> vector&lt;string&gt; str, int n) { int rst = 0;
+> // string de nes < and ==. int indexOf(string searchString,
+> vector<string> str, int n) { int rst = 0;
 >
 > int last = n - 1; // last = 6;
 >
-> while (( rst &lt;= last)) {
+> while (( rst <= last)) {
 >
 > int mid = ( rst + last) / 2; // (0 + 6) / 2 = 3 if (searchString ==
 > str\[mid\]) // Check the three possibilities return mid; // 1)
-> searchString is found else if (searchString &lt; str\[mid\]) // 2)
+> searchString is found else if (searchString < str\[mid\]) // 2)
 > It's in rst half so last = mid - 1; // eliminate second half else
 >
 > // 3) It's in second half so eliminate rst half
@@ -16116,13 +16116,13 @@ At this point, one of three things can happen:
 >
 > return -1; // searchString not found }
 >
-> void display(vector&lt;string&gt; v) { for (int i = 0; i &lt;
-> v.capacity(); i++) cout &lt;&lt; v\[i\] &lt;&lt; " "; cout &lt;&lt;
+> void display(vector<string> v) { for (int i = 0; i <
+> v.capacity(); i++) cout << v\[i\] << " "; cout <<
 > endl; }
 >
 > int main() {
 >
-> vector&lt;string&gt; data = initialize(); cout &lt;&lt;
+> vector<string> data = initialize(); cout <<
 > indexOf("LISA", data, data.capacity()); return 0; }
 >
 > Objects Before Comparing searchString ("LISA") to str\[mid\] ("LAU")
@@ -16141,7 +16141,7 @@ At this point, one of three things can happen:
 > from ~~str\[3\] "LAU"~~ // subsequent search str\[4\] "LISA" rst == 4
 > str\[5\] "PELE" mid == 5 str\[6\] "ROE" last == 6
 >
-> Since searchString &lt; str\[mid\] or "LISA" &lt; "PELE" is true, last
+> Since searchString < str\[mid\] or "LISA" < "PELE" is true, last
 > is decreased and a new mid is computed:
 >
 > ~~str\[0\] "ABE"~~ ~~str\[1\] "CLAY"~~ ~~str\[2\] "KIM"~~ ~~str\[3\]
@@ -16169,9 +16169,9 @@ At this point, one of three things can happen:
   1                   0     3     6      Compare "CARLA" to "LAU"
   2                   0     1     2      Compare "CARLA" to "CLAY"
   3                   0     0     0      Compare "CARLA" to "ABE"
-  4                   1     0     0      rst &lt;= last is false and the function returns -1
+  4                   1     0     0      rst <= last is false and the function returns -1
 
-> Th e loop test ( rst &lt;= last) evaluates to false when searchString
+> Th e loop test ( rst <= last) evaluates to false when searchString
 > ("CARLA") is not stored in the vector. Notice that last is less than
 > rst—the two subscripts have crossed each other.
 >
@@ -16212,7 +16212,7 @@ CHAPTER SUMMARY
 -   Individual vector elements are referenced with subscripts. With a
     > C++ vector, the int expression of a subscript reference should be
     > in the range of 0 through the capacity - 1. For example, the valid
-    > subscript range of vector &lt;double&gt; x(100) is 0 through
+    > subscript range of vector <double> x(100) is 0 through
     > 99 inclusive.
 
 -   Out-of-range subscripts may not be detected at compile time and may
@@ -16232,7 +16232,7 @@ CHAPTER SUMMARY
     > truncation of meaningful elements may occur.
 
 -   Th e selection sort algorithm was used to arrange vector elements
-    > into ascending order. Any object that can be compared with &lt;
+    > into ascending order. Any object that can be compared with <
     > may be sorted.
 
 -   vector objects may also be sorted in ascending order, which is more
@@ -16247,15 +16247,15 @@ EXERCISES
 
 > 1\. Show the output generated by the following program:
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;vector&gt; using namespace std;
+> \#include <vector> using namespace std;
 >
-> int main() { const int MAX = 10; vector&lt;int&gt; x(MAX);
+> int main() { const int MAX = 10; vector<int> x(MAX);
 >
-> for (int i = 0; i &lt; 3; i++) x\[i\] = i \* 2; for (int i = 3; i &lt;
-> MAX; i++) x\[i\] = x\[i - 1\] + x\[i - 2\]; for (int i = 0; i &lt;
-> MAX; i++) cout &lt;&lt; i &lt;&lt; ". " &lt;&lt; x\[i\] &lt;&lt; endl;
+> for (int i = 0; i < 3; i++) x\[i\] = i \* 2; for (int i = 3; i <
+> MAX; i++) x\[i\] = x\[i - 1\] + x\[i - 2\]; for (int i = 0; i <
+> MAX; i++) cout << i << ". " << x\[i\] << endl;
 > return 0; }
 
 2.  How many elements must be given meaningful values for a vector with
@@ -16274,11 +16274,11 @@ EXERCISES
 
 6.  Write the output generated by the following program:
 
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;vector&gt; \#include &lt;string&gt; using namespace std;
+> \#include <vector> \#include <string> using namespace std;
 >
-> void init(vector&lt;char&gt; & data, int & n) { // postcondition:
+> void init(vector<char> & data, int & n) { // postcondition:
 > Initialize data as a vector of chars.
 >
 > // Initialize n as the number of meaningful elements.
@@ -16288,19 +16288,19 @@ Exercises
 > n = 5; data\[0\] = 'c'; data\[1\] = 'b'; data\[2\] = 'e'; data\[3\] =
 > 'd'; data\[4\] = 'a'; }
 >
-> void display(const vector&lt;char&gt; & data, int n) { // post: Show
-> all meaningful elements of data cout &lt;&lt; endl;
+> void display(const vector<char> & data, int n) { // post: Show
+> all meaningful elements of data cout << endl;
 >
-> cout &lt;&lt; "Vector of chars: "; for(int i = 0; i &lt; n; i++) cout
-> &lt;&lt; data\[i\] &lt;&lt; " "; cout &lt;&lt; endl; }
+> cout << "Vector of chars: "; for(int i = 0; i < n; i++) cout
+> << data\[i\] << " "; cout << endl; }
 >
-> void mystery(vector&lt;char&gt; & data, int n) {
+> void mystery(vector<char> & data, int n) {
 >
 > // post: Reverse the order of data int last; char temp;
 >
 > last = n - 1;
 >
-> for(int i = 0; i &lt; n / 2 + 1; i++) { temp = data\[i\]; data\[i\] =
+> for(int i = 0; i < n / 2 + 1; i++) { temp = data\[i\]; data\[i\] =
 > data\[last\]; data\[last\] = temp; last--;
 >
 > }
@@ -16309,7 +16309,7 @@ Exercises
 >
 > int main() {
 >
-> vector&lt;char&gt; characters(10, ' '); int n;
+> vector<char> characters(10, ' '); int n;
 >
 > init(characters, n); display(characters, n); mystery(characters, n);
 > display(characters, n);
@@ -16332,7 +16332,7 @@ Exercises
     > be false. Assume only the fi rst n vector elements are initialized
     > and are to be considered.
 
-> vector&lt;string&gt; s(200); int n = 127; bool found = false;
+> vector<string> s(200); int n = 127; bool found = false;
 
 7.  How many comparisons does a sequential search make when the search
     > element is stored in the fi rst vector element and there are 1,000
@@ -16351,11 +16351,11 @@ Exercises
 10. Write the output generated by the following program (trick
     > question):
 
-> \#include &lt;vector&gt; // For the vector&lt;type&gt; class
+> \#include <vector> // For the vector<type> class
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
-> void init(vector&lt;int&gt; x, int n) {
+> void init(vector<int> x, int n) {
 >
 > // post: Supposedly modify n and the rst n elements of test in main
 > x\[0\] = 0; x\[1\] = 11; x\[2\] = 22; x\[3\] = 33; x\[4\] = 44; n = 5;
@@ -16363,13 +16363,13 @@ Exercises
 >
 > int main() {
 >
-> vector &lt;int&gt; test(100, 0); int n;
+> vector <int> test(100, 0); int n;
 >
 > // Initialize test and n init(test, n);
 >
-> // Display the vector with n meaningful values cout &lt;&lt; "The
-> vector: "; for(int i = 0; i &lt; n; i++) cout &lt;&lt; test\[i\]
-> &lt;&lt; " ";
+> // Display the vector with n meaningful values cout << "The
+> vector: "; for(int i = 0; i < n; i++) cout << test\[i\]
+> << " ";
 >
 > return 0; }
 
@@ -16381,28 +16381,28 @@ Exercises
 
 13. Write the output generated by the following program:
 
-> \#include &lt;vector&gt; // For the vector&lt;type&gt; class
+> \#include <vector> // For the vector<type> class
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
-> void f(const vector&lt;int&gt; & x) { cout &lt;&lt; x\[0\] &lt;&lt;
-> endl; cout &lt;&lt; x.capacity() &lt;&lt; endl; }
+> void f(const vector<int> & x) { cout << x\[0\] <<
+> endl; cout << x.capacity() << endl; }
 >
 > int main() {
 >
-> vector &lt;int&gt; test(10000, -1); f(test); return 0; }
+> vector <int> test(10000, -1); f(test); return 0; }
 
 15. Which lines contain compile time errors?
 
-> void f1(vector&lt;int&gt; x) {
+> void f1(vector<int> x) {
 >
-> cout &lt;&lt; x\[0\] &lt;&lt; endl; // Line 1 cout &lt;&lt;
-> x.capacity() &lt;&lt; endl; // Line 2 x\[0\] = 999; // Line 3 }
+> cout << x\[0\] << endl; // Line 1 cout <<
+> x.capacity() << endl; // Line 2 x\[0\] = 999; // Line 3 }
 
 15. Which lines contain compile time errors?
 
-> void f2(const vector&lt;int&gt; & x) { cout &lt;&lt; x\[0\] &lt;&lt;
-> endl; // Line 1 cout &lt;&lt; x.capacity() &lt;&lt; endl; // Line 2
+> void f2(const vector<int> & x) { cout << x\[0\] <<
+> endl; // Line 1 cout << x.capacity() << endl; // Line 2
 > x\[0\] = 999; // Line 3 }
 
 15. Which of the previous two functions (exercises 15 and 16) is more
@@ -16411,21 +16411,21 @@ Exercises
 16. Write the output generated by the program segment below using the
     > initialized vector of string objects.
 
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;string&gt;
+> \#include <string>
 >
-> \#include &lt;vector&gt; // For the vector&lt;type&gt; class using
+> \#include <vector> // For the vector<type> class using
 > namespace std;
 >
-> int main() { vector&lt;string&gt; x(10); int j; int top = 0; int n =
+> int main() { vector<string> x(10); int j; int top = 0; int n =
 > 5;
 >
 > x\[0\] = "Alex"; x\[1\] = "Andy"; x\[2\] = "Ari"; x\[3\] = "Ash";
 > x\[4\] = "Aspen";
 >
-> for (top = 0; top &lt; n - 1; top++) { int subscript = top; for (j =
-> top + 1; j &lt;= n - 1; j++) { if (x\[j\] &lt; x\[subscript\])
+> for (top = 0; top < n - 1; top++) { int subscript = top; for (j =
+> top + 1; j <= n - 1; j++) { if (x\[j\] < x\[subscript\])
 > subscript = j;
 >
 > }
@@ -16435,15 +16435,15 @@ Exercises
 >
 > }
 >
-> for (int index = n - 1; index &gt;= 0; index--) { cout &lt;&lt;
-> x\[index\] &lt;&lt; endl;
+> for (int index = n - 1; index >= 0; index--) { cout <<
+> x\[index\] << endl;
 >
 > } return 0; }
 >
 > 19\. Write the output of the program segment below using this initialized
 > vector of string objects.
 >
-> vector &lt;string&gt; str(20); str\[0\] = "ABE"; str\[1\] = "CLAY";
+> vector <string> str(20); str\[0\] = "ABE"; str\[1\] = "CLAY";
 > str\[2\] = "KIM"; str\[3\] = "LAU"; str\[4\] = "LISA"; str\[5\] =
 > "PELE"; str\[6\] = "ROE"; str\[7\] = "SAM"; str\[8\] = "TRUDY";
 >
@@ -16451,20 +16451,20 @@ Exercises
 >
 > string searchString("CLAY");
 >
-> cout &lt;&lt; "First Mid Last" &lt;&lt; endl; while ( rst &lt;= last)
-> { mid = ( rst + last) / 2; cout &lt;&lt; rst &lt;&lt; " " &lt;&lt; mid
-> &lt;&lt; " " &lt;&lt; last &lt;&lt; endl; if (searchString ==
-> str\[mid\]) break; else if (searchString &lt; str\[mid\]) last = mid -
+> cout << "First Mid Last" << endl; while ( rst <= last)
+> { mid = ( rst + last) / 2; cout << rst << " " << mid
+> << " " << last << endl; if (searchString ==
+> str\[mid\]) break; else if (searchString < str\[mid\]) last = mid -
 > 1; else rst = mid + 1;
 >
 > }
 
 Programming Tips
 
-> if ( rst &lt;= last) cout &lt;&lt; searchString &lt;&lt; " found"
-> &lt;&lt; endl; else
+> if ( rst <= last) cout << searchString << " found"
+> << endl; else
 >
-> cout &lt;&lt; searchString &lt;&lt; " was not" &lt;&lt; endl;
+> cout << searchString << " was not" << endl;
 
 20. Write the output generated by the program segment in exercise 19
     > when searchString is assigned each of the following values:
@@ -16507,9 +16507,9 @@ PROGRAMMING TIPS
     > in n, so it was necessary to initialize n to 0 and then increment
     > n by 1 for each number on fi le.
 
-> vector &lt;double&gt; x(100, 0.0); double aNumber; int n = 0;
+> vector <double> x(100, 0.0); double aNumber; int n = 0;
 >
-> while ((inFile &gt;&gt; aNumber) && (n &lt; x.capacity())) { x\[n\] =
+> while ((inFile >> aNumber) && (n < x.capacity())) { x\[n\] =
 > aNumber; n++; }
 
 1.  Consider using at(index) instead of \[index\]. Th e at message
@@ -16520,19 +16520,19 @@ PROGRAMMING TIPS
     > Don’t reference x\[n\]. Th is can be done in the code of the third
     > programming tip by accidentally writing the for loop like this:
 
-> int n = 10; vector&lt;int&gt; x(n, 123);
+> int n = 10; vector<int> x(n, 123);
 >
-> for (int j = 0; j &lt;= n; j++) { // Used &lt;= instead of &lt;
+> for (int j = 0; j <= n; j++) { // Used <= instead of <
 > cout.width(5);
 >
-> cout &lt;&lt; x\[j\]; // Will eventually reference garbage }
+> cout << x\[j\]; // Will eventually reference garbage }
 
 1.  Prevent assignments to a vector with out-of-range subscripts. Th e
     > code of the third programming tip has a loop test that terminates
     > before assignment to x\[x.capacity()\]. When n equals the
     > capacity, the loop terminates.
 
-> while ((inFile &gt;&gt; aNumber) && (n &lt; x.capacity()) ) {
+> while ((inFile >> aNumber) && (n < x.capacity()) ) {
 >
 > // The loop test prevents assignment to x\[x.capacity()\] x\[n\] =
 > aNumber; n++; }
@@ -16543,8 +16543,8 @@ PROGRAMMING TIPS
 >
 > if (n == x.capacity() && inFile) {
 >
-> cout &lt;&lt; "\*\*Error\*\* Vector was too small. Terminating
-> program" &lt;&lt; endl; return 0; }
+> cout << "\*\*Error\*\* Vector was too small. Terminating
+> program" << endl; return 0; }
 >
 > 7\. Make your programs robust with vector::resize and vector::capacity.
 > Th e code in programming tip 6 can be most irritating to users once they
@@ -16556,20 +16556,20 @@ PROGRAMMING TIPS
 > separate integer variable because size() and capacity() are 20 when
 > there were only 17 numbers in the input fi le.
 >
-> int aNumber; ifstream inFile("numbers"); vector&lt;int&gt; x(10); int
+> int aNumber; ifstream inFile("numbers"); vector<int> x(10); int
 > n = 0;
 
 Programming Tips
 
-> while (inFile &gt;&gt; aNumber) { if (n == x.capacity()) {
+> while (inFile >> aNumber) { if (n == x.capacity()) {
 >
 > x.resize(n + 10);
 >
 > } x\[n\] = aNumber; n++; }
 
-cout &lt;&lt; " n: " &lt;&lt; n &lt;&lt; endl; cout &lt;&lt; " Size: "
-&lt;&lt; x.size() &lt;&lt; endl; cout &lt;&lt; "Capacity: " &lt;&lt;
-x.capacity() &lt;&lt; endl; Output when the input fi le numbers has 17
+cout << " n: " << n << endl; cout << " Size: "
+<< x.size() << endl; cout << "Capacity: " <<
+x.capacity() << endl; Output when the input fi le numbers has 17
 integers:
 
 > n: 17 Size: 20
@@ -16582,7 +16582,7 @@ integers:
     > is not supposed to modify the vector, pass the vector by const
     > reference like this:
 
-> void constReferenceIsGood(const vector&lt;double&gt; & x, int n) {
+> void constReferenceIsGood(const vector<double> & x, int n) {
 >
 > // This function can reference any element in x, but cannot change x
 >
@@ -16591,7 +16591,7 @@ integers:
 > As usual, if a function is meant to modify the argument (a vector in
 > this case), pass it by reference like this:
 >
-> void init(vector&lt;double&gt; & x, int & n) { // Reference parameter
+> void init(vector<double> & x, int & n) { // Reference parameter
 >
 > // This function can change any element in x
 >
@@ -16610,18 +16610,18 @@ integers:
     > would look diff erent than other C++ programs due to the
     > historical use of \[\] and the newness of at.
 
-> \#include &lt;vector&gt; // For the vector&lt;type&gt; class
+> \#include <vector> // For the vector<type> class
 >
-> \#include &lt;iostream&gt; using namespace std; int main() { int n;
+> \#include <iostream> using namespace std; int main() { int n;
 >
-> cout &lt;&lt; "Enter vector capacity: "; cin &gt;&gt; n; vector
-> &lt;int&gt; x(n);
+> cout << "Enter vector capacity: "; cin >> n; vector
+> <int> x(n);
 >
-> for(int index = 0; index &lt; n; index++) {
+> for(int index = 0; index < n; index++) {
 >
-> x.at(index) = index; } cout &lt;&lt; "First: " &lt;&lt; x.at(0)
-> &lt;&lt; endl; cout &lt;&lt; "Last: " &lt;&lt; x.at(x.capacity() - 1)
-> &lt;&lt; endl;
+> x.at(index) = index; } cout << "First: " << x.at(0)
+> << endl; cout << "Last: " << x.at(x.capacity() - 1)
+> << endl;
 >
 > return 0; }
 >
@@ -16636,8 +16636,8 @@ integers:
 > Th e previous code once again demonstrates that the fi rst element in
 > the vector is referenced with a subscript of 0, and the last element
 > with index capacity()-1. So the following statement code would
-> generate a runtime error and terminate the program: cout &lt;&lt;
-> "Last: " &lt;&lt; x.at(x.capacity()) &lt;&lt; endl; // Always an error
+> generate a runtime error and terminate the program: cout <<
+> "Last: " << x.at(x.capacity()) << endl; // Always an error
 
 10. Th ere are many sorting algorithms other than selection sort.
     > Selection sort is only one of the many known sorting algorithms.
@@ -16704,7 +16704,7 @@ integers:
 >
 > Average: 75
 >
-> Inputs &gt;= average: 75 90 80
+> Inputs >= average: 75 90 80
 
 10C SEQUENTIAL SEARCH FUNCTION
 
@@ -16739,13 +16739,13 @@ integers:
 > BankAccount that has a balance less than or equal to \$100.00. Your
 > output should look like this:
 >
-> Balance &gt;= 1000.00
+> Balance >= 1000.00
 >
 > Pantone: 8790.56
 >
 > Kentish: 1234.56
 >
-> Balance &lt; 100.00:
+> Balance < 100.00:
 >
 > Solly: 53.45
 >
@@ -16785,7 +16785,7 @@ getline(istream& is, string& aString)
 > and then determines whether or not the resulting string is a
 > palindrome. Th e blank characters should be ignored and it must be
 > case-insensitive. (*Hint:* First convert the individual characters to
-> uppercase with the toupper function from &lt;cctype&gt;, and then
+> uppercase with the toupper function from <cctype>, and then
 > create a new string with no space characters.)
 >
 > Enter a line: A man a plan a canal Panama
@@ -16869,17 +16869,17 @@ getline(istream& is, string& aString)
 
 10K EIGHT VECTOR PROCESSING FUNCTIONS
 
-1\. int numberOfPairs(const vector&lt;string&gt; & strs)
+1\. int numberOfPairs(const vector<string> & strs)
 
 > Complete numberOfPairs to return the number of times a pair occurs in
 > strs. A pair is any two string elements that are equal (case
 > sensitive) at consecutive vector indexes. Th e vector may be empty or
 > have only one element. In both of these cases, return 0. Here is some
 > testing code that uses push\_back messages to add elements at the end
-> of the vector (you need \#include &lt;cassert&gt; for the assert
+> of the vector (you need \#include <cassert> for the assert
 > function).
 >
-> vector&lt;string&gt; strs; strs.push\_back("a"); assert(0 ==
+> vector<string> strs; strs.push\_back("a"); assert(0 ==
 > numberOfPairs(strs)); strs.push\_back("a"); assert(1 ==
 > numberOfPairs(strs)); strs.push\_back("a"); assert(2 ==
 > numberOfPairs(strs)); strs.push\_back("b"); strs.push\_back("b");
@@ -16888,20 +16888,20 @@ getline(istream& is, string& aString)
 >
 > assert(3 == numberOfPairs(strs));
 
-2.  int numberOfVowels(const vector&lt;char&gt; & chars)
+2.  int numberOfVowels(const vector<char> & chars)
 
 > Given a fi lled vector of char elements, complete numberOfVowels to
 > return the number of vowels which could be the letters A, E, I, O, or
 > U in either uppercase or lowercase. If the vector is empty, return 0.
 > Here is some testing code to help explain the expected behavior:
 >
-> vector&lt;char&gt; chars; chars.push\_back('x'); assert(0 ==
+> vector<char> chars; chars.push\_back('x'); assert(0 ==
 > numberOfVowels(chars)); chars.push\_back('A'); chars.push\_back('a');
 > assert(2 == numberOfVowels(chars)); chars.push\_back('I');
 > chars.push\_back('o'); chars.push\_back('U'); chars.push\_back('e');
 > assert(6 == numberOfVowels(chars));
 
-2.  bool sumGreaterThan(const vector&lt;double&gt; & doubles,
+2.  bool sumGreaterThan(const vector<double> & doubles,
     double sum)
 
 > Given a fi lled vector of double elements, write function
@@ -16910,23 +16910,23 @@ getline(istream& is, string& aString)
 > elements in doubles. Also return false if the vector is empty. Here is
 > some testing code to help explain the expected behavior:
 >
-> vector&lt;double&gt; doubles; doubles.push\_back(4.0);
+> vector<double> doubles; doubles.push\_back(4.0);
 >
 > assert(sumGreaterThan(doubles, 4.0)== false); doubles.push\_back(0.1);
 >
 > assert(sumGreaterThan(doubles, 4.0)== true);
 
-2.  int howMany(const vector&lt;string&gt; & vec, string valueToFind)
+2.  int howMany(const vector<string> & vec, string valueToFind)
 
 > Complete function howMany to return the number of elements in a vector
 > of strings that equals valueToFind. Th e vector may be empty.
 >
-> vector&lt;string&gt; strings; strings.push\_back("A");
+> vector<string> strings; strings.push\_back("A");
 > strings.push\_back("a"); strings.push\_back("A"); assert(0 ==
 > howMany(strings, "x")); assert(1 == howMany(strings, "a")); assert(2
 > == howMany(strings, "A"));
 
-2.  void sortOfSort(vector &lt;int&gt; & nums)
+2.  void sortOfSort(vector <int> & nums)
 
 > Complete function sortOfSort that modifi es the parameter nums to
 > place the largest integer at index n-1 and the smallest integer at
@@ -16940,7 +16940,7 @@ getline(istream& is, string& aString)
   {4, 3, 2, 1}           {1, 3, 2, 4}
   {4, 3, 1, 2}           {1, 3, 2, 4}
 
-> vector&lt;int&gt; nums; nums.push\_back(4); nums.push\_back(3);
+> vector<int> nums; nums.push\_back(4); nums.push\_back(3);
 > nums.push\_back(1); nums.push\_back(2); sortOfSort(nums); assert(1 ==
 > nums\[0\]); assert(4 == nums\[3\]);
 >
@@ -16950,7 +16950,7 @@ getline(istream& is, string& aString)
 > (*Hint:* Get the smallest value at index 0 before you look for and
 > swap the largest and the last index.)
 
-6.  void evensLeft(vector&lt;int&gt; & nums)
+6.  void evensLeft(vector<int> & nums)
 
 > Modify the parameter nums so it still contains the exact same numbers
 > as the given vector, but rearranged so that all the even numbers come
@@ -16964,11 +16964,11 @@ getline(istream& is, string& aString)
   > {1, 0, 1, 0, 0, 1, 1}   > {0, 0, 0, 1, 1, 1, 1}
   {3, 3, 2}                 {2, 3, 3}
 
-> vector&lt;int&gt; ints; ints.push\_back(3); ints.push\_back(3);
+> vector<int> ints; ints.push\_back(3); ints.push\_back(3);
 > ints.push\_back(2); evensLeft(ints); assert(2 == ints\[0\]); assert(3
 > == ints\[1\]); assert(3 == ints\[2\]);
 
-6.  void shiftNTimes(vector&lt;int&gt; & nums, int numShifts)
+6.  void shiftNTimes(vector<int> & nums, int numShifts)
 
 > Complete shiftNTimes to modify nums so it is “left shifted” n times.
 > So shiftNTimes({6, 2, 5, 3}, 1) changes the vector argument to {2, 5,
@@ -16986,7 +16986,7 @@ getline(istream& is, string& aString)
 > shiftNTimes( {1, 2, 3}, 5) modifi es the vector to { 3, 1, 2 }
 > shiftNTimes( {3}, 5) modifi es the vector to { 3 }
 >
-> vector&lt;int&gt; nums2; nums2.push\_back(1); nums2.push\_back(2);
+> vector<int> nums2; nums2.push\_back(1); nums2.push\_back(2);
 > nums2.push\_back(3);
 >
 > nums2.push\_back(4); nums2.push\_back(5);
@@ -17008,7 +17008,7 @@ Original vector Modifi ed vector
 > replaced({'A', 'B', 'C', 'D', 'B'}, 'C', 'L') { 'A', 'B', 'L', 'D',
 > 'B' } replaced({'n', 'n', 'D', 'N'}, 'n', 'T') { 'T', 'T', 'D', 'N' }
 >
-> vector&lt;char&gt; chars2; chars2.push\_back('n');
+> vector<char> chars2; chars2.push\_back('n');
 > chars2.push\_back('n'); chars2.push\_back('D');
 > chars2.push\_back('N'); replaced(chars2, 'n', 'T'); assert('T' ==
 > chars2\[0\]); assert('T' == chars2\[1\]); assert('D' == chars2\[2\]);
@@ -17033,9 +17033,9 @@ Original vector Modifi ed vector
 
 > \*/
 >
-> \#include &lt;fstream&gt;
+> \#include <fstream>
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
 > \#include "Stats.h"
 >
@@ -17043,19 +17043,19 @@ Original vector Modifi ed vector
 >
 > int main() { ifstream inFile("numbers"); int x = 0; Stats tests;
 >
-> while (inFile &gt;&gt; x) { tests.add(x); }
+> while (inFile >> x) { tests.add(x); }
 >
-> cout &lt;&lt; "Elements before sort: "; tests.display(); tests.sort();
+> cout << "Elements before sort: "; tests.display(); tests.sort();
 >
-> cout &lt;&lt; endl &lt;&lt; " Elements after sort: "; tests.display();
+> cout << endl << " Elements after sort: "; tests.display();
 >
-> cout &lt;&lt; endl; cout &lt;&lt; endl &lt;&lt; "Statistics for the
-> rst 10 integers" &lt;&lt; endl; cout &lt;&lt; " Size: " &lt;&lt;
-> tests.size() &lt;&lt; endl; cout &lt;&lt; " Mean: " &lt;&lt;
-> tests.mean() &lt;&lt; endl; cout &lt;&lt; " High: " &lt;&lt;
-> tests.max() &lt;&lt; endl; cout &lt;&lt; " Low: " &lt;&lt; tests.min()
-> &lt;&lt; endl; cout &lt;&lt; " Median: " &lt;&lt; tests.median()
-> &lt;&lt; endl;
+> cout << endl; cout << endl << "Statistics for the
+> rst 10 integers" << endl; cout << " Size: " <<
+> tests.size() << endl; cout << " Mean: " <<
+> tests.mean() << endl; cout << " High: " <<
+> tests.max() << endl; cout << " Low: " << tests.min()
+> << endl; cout << " Median: " << tests.median()
+> << endl;
 >
 > return 0; }
 >
@@ -17145,7 +17145,7 @@ COMING UP
 > Expressions such as x or 1.5 can be passed as arguments to functions.
 > Class names (types) such as int, double, string, and BankAccount can
 > also be passed as arguments using the C++ template mechanism,
-> &lt;int&gt; or &lt;string&gt; for example. Passing type names as
+> <int> or <string> for example. Passing type names as
 > arguments allows programmers to use the same collection class to hold
 > any type of object. Th is means we need only one Set class instead of
 > a diff erent Set class for every type to be stored.
@@ -17161,11 +17161,11 @@ COMING UP
 > automatically created to manage collections of that class. For
 > example, we can have sets of any type:
 >
-> Set&lt;string&gt; ids; // Store string objects only
+> Set<string> ids; // Store string objects only
 >
-> Set&lt;double&gt; nums; // Store numbers only
+> Set<double> nums; // Store numbers only
 >
-> Set&lt;BankAccount&gt; accounts; // Store BankAccount objects only
+> Set<BankAccount> accounts; // Store BankAccount objects only
 >
 > Another advantage to templates is that we can restrict the type to
 > insert only that one type. For example, these messages compile:
@@ -17189,13 +17189,13 @@ COMING UP
 
 General Form 11.1 *Class templates*
 
-> template&lt;class *template-parameter*&gt; class *class\_name*
+> template<class *template-parameter*> class *class\_name*
 >
 > Template declarations written before a class give the template
 > parameter scope that extends throughout the entire class defi nition.
 > For example, the Set template class in C++ could begin like this:
 >
-> template&lt;class Type&gt; class Set { public:
+> template<class Type> class Set { public:
 >
 > // Allow insertion of only one speci c type void insert (Type
 > element);
@@ -17203,7 +17203,7 @@ General Form 11.1 *Class templates*
 > Th e Set type makes frequent use of the template parameter named Type.
 > For example, when a Set is constructed like this:
 >
-> Set &lt;string&gt; names; the parameter Type is replaced by the Type
+> Set <string> names; the parameter Type is replaced by the Type
 > name that was passed as the argument between angle brackets, which is
 > string here. C++ then generates this code:
 >
@@ -17212,7 +17212,7 @@ General Form 11.1 *Class templates*
 > However, if a constructor were invoked to initialize a Set of ints as
 > in
 >
-> Set &lt;int&gt; x;
+> Set <int> x;
 >
 > C++ generates this code where Type gets replaced with int:
 >
@@ -17229,7 +17229,7 @@ General Form 11.1 *Class templates*
 > Type here) before the class defi nition is critically important to the
 > templated types:
 >
-> template&lt;class Type&gt; class Set { public: Set();
+> template<class Type> class Set { public: Set();
 >
 > Type insert(Type element) private:
 >
@@ -17244,9 +17244,9 @@ General Form 11.1 *Class templates*
 > For example, these object initializations cause s1 and s2 to become
 > templated to string and double, respectively:
 
-Set &lt;string&gt; s1; Set &lt;double&gt; s2;
+Set <string> s1; Set <double> s2;
 
-template&lt;class Type&gt; template&lt;class Type&gt;
+template<class Type> template<class Type>
 
 > class Set { class Set { public: public: Set(); Set();
 
@@ -17263,18 +17263,18 @@ string key; };
 Here is a sample program to summarize the capabilities of the generic
 Set class:
 
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;string&gt; using namespace std; \#include "Set.h" // For
+> \#include <string> using namespace std; \#include "Set.h" // For
 > a generic (with templates) Set class
 >
 > int main() {
 >
-> Set&lt;string&gt; names;
+> Set<string> names;
 >
-> cout &lt;&lt; "After contruction, size is " &lt;&lt; names.size()
-> &lt;&lt; endl; // 0 cout &lt;&lt; "and the Set isEmpty: " &lt;&lt;
-> names.isEmpty() &lt;&lt; endl; // true
+> cout << "After contruction, size is " << names.size()
+> << endl; // 0 cout << "and the Set isEmpty: " <<
+> names.isEmpty() << endl; // true
 >
 > // Add a few elements, duplicates not allowed names.insert("Chris");
 > names.insert("Chris"); names.insert("Dakota"); names.insert("River");
@@ -17282,16 +17282,16 @@ Set class:
 > names.remove("River"); // Succeeds names.remove("Not here"); // No
 > change to the Set
 >
-> cout &lt;&lt; endl &lt;&lt; "After 4 insert attempts and 2 remove
-> attempts: " &lt;&lt; endl; cout &lt;&lt; "isEmpty: " &lt;&lt;
-> names.isEmpty() &lt;&lt; endl; // false cout &lt;&lt; "size: "
-> &lt;&lt; names.size() &lt;&lt; endl; // 2 cout &lt;&lt;
-> "contains(\\"Chris\\")? " &lt;&lt; names.contains("Chris") &lt;&lt;
-> endl; cout &lt;&lt; "contains(\\"Dakota\\")? " &lt;&lt;
-> names.contains("Dakota") &lt;&lt; endl; cout &lt;&lt;
-> "contains(\\"River\\")? " &lt;&lt; names.contains("River") &lt;&lt;
-> endl; cout &lt;&lt; "contains(\\"No\\")? " &lt;&lt;
-> names.contains("No") &lt;&lt; endl;
+> cout << endl << "After 4 insert attempts and 2 remove
+> attempts: " << endl; cout << "isEmpty: " <<
+> names.isEmpty() << endl; // false cout << "size: "
+> << names.size() << endl; // 2 cout <<
+> "contains(\\"Chris\\")? " << names.contains("Chris") <<
+> endl; cout << "contains(\\"Dakota\\")? " <<
+> names.contains("Dakota") << endl; cout <<
+> "contains(\\"River\\")? " << names.contains("River") <<
+> endl; cout << "contains(\\"No\\")? " <<
+> names.contains("No") << endl;
 >
 > return 0;
 >
@@ -17338,8 +17338,8 @@ Set class:
 >
 > BankAccount acct3("Billie", 567.88);
 >
-> if(acct1 == acct2 && !(acct1 == acct3)) // true cout &lt;&lt; "acct1
-> == acct, but not acct3: " &lt;&lt; endl;
+> if(acct1 == acct2 && !(acct1 == acct3)) // true cout << "acct1
+> == acct, but not acct3: " << endl;
 >
 > Output
 >
@@ -17357,7 +17357,7 @@ SELF-CHECK
 
 > Use this object declaration to answer the following questions:
 >
-> Set&lt;int&gt; intSet;
+> Set<int> intSet;
 
 11-1 How many integers can be stored in intSet?
 
@@ -17368,12 +17368,12 @@ SELF-CHECK
 
 11-4 Write a message that will remove 89 from intSet.
 
-11.2 class Set&lt;Type&gt;
+11.2 class Set<Type>
 
 > Th is section shows how a vector and templates are combined to
 > implement a Set class. Th is Set object:
 
--   is generic because any type of element is allowed with &lt;Type&gt;
+-   is generic because any type of element is allowed with <Type>
 
 -   does not have a fi xed maximum size—it allocates memory as long
     > there is some memory available in the free store
@@ -17387,7 +17387,7 @@ SELF-CHECK
 >
 > A second reason for using just one .h fi le is it prevents writing the
 > same line before every method heading. Th e code looks cleaner with a
-> dozen fewer of these repeated lines: template &lt;class Type&gt;. Also
+> dozen fewer of these repeated lines: template <class Type>. Also
 > there are about a dozen fewer occurrences of Set:: before each method
 > defi nition. So the generic (template) Set class will be built in the
 > same fi le: Set.h. All methods are in the same fi le:
@@ -17402,17 +17402,17 @@ SELF-CHECK
 
 > \*/
 
-11.2: class Set&lt;Type&gt;
+11.2: class Set<Type>
 
-> \#ifndef SET\_H\_ \#de ne SET\_H\_ \#include &lt;vector&gt;
+> \#ifndef SET\_H\_ \#de ne SET\_H\_ \#include <vector>
 >
-> template&lt;class Type&gt; class Set {
+> template<class Type> class Set {
 >
-> A vector will be used to store the elements in any Set&lt;Type&gt;. Th
+> A vector will be used to store the elements in any Set<Type>. Th
 > is Set will also maintain an int variable n to store the number of
 > unique elements:
 >
-> private: std::vector&lt;Type&gt; elements; int n;
+> private: std::vector<Type> elements; int n;
 >
 > Th e member data n will be initialized to 0 in the constructor, must
 > be increased by 1 for each successful insert, and must be decreased by
@@ -17433,11 +17433,11 @@ SELF-CHECK
 
 Th e programmer may construct Set objects like this:
 
-> Set &lt;double&gt; tests;
+> Set <double> tests;
 >
-> Set &lt;string&gt; names;
+> Set <string> names;
 >
-> Set &lt;BankAccount&gt; names;
+> Set <BankAccount> names;
 
 11.2.2 bool contains(Type const& value) const
 
@@ -17447,7 +17447,7 @@ Th e programmer may construct Set objects like this:
 > immediately returns true.
 >
 > // Return true if value is in this set bool contains(Type const&
-> value) const { for (int i = 0; i &lt; n; i++) { if (value ==
+> value) const { for (int i = 0; i < n; i++) { if (value ==
 > elements\[i\]) return true;
 >
 > }
@@ -17499,7 +17499,7 @@ Th e programmer may construct Set objects like this:
 > bool remove(Type const& removalCandidate) { // Find the index of the
 > element to remove int index = 0;
 >
-> while (index &lt; n && !(removalCandidate == elements\[index\])) {
+> while (index < n && !(removalCandidate == elements\[index\])) {
 > index++;
 >
 > }
@@ -17527,13 +17527,13 @@ SELF-CHECK
 
 11-5 How many diff erent classes are built when this code is compiled?
 
-> Set&lt;string&gt; ids;
+> Set<string> ids;
 >
-> Set&lt;int&gt; studentNumber;
+> Set<int> studentNumber;
 >
-> Set&lt;double&gt; points;
+> Set<double> points;
 >
-> Set&lt;double&gt; tests;
+> Set<double> tests;
 >
 > 11-6 What is the value of a Set’s size() after each of these
 > situations? Assume the Set is constructed before each situation.
@@ -17555,9 +17555,9 @@ c)  40 successful inserts, then 40 successful removals
 > contained objects. Th e following program shows how the client code
 > could iterate over the entire collection without having to worry about
 > going out of bounds. It is a preview of the four methods that will be
-> added to class Set&lt;Type&gt; to allow access to all elements.
+> added to class Set<Type> to allow access to all elements.
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > \#include "Set.h" // For a generic (with templates) Set class
 >
@@ -17565,7 +17565,7 @@ c)  40 successful inserts, then 40 successful removals
 >
 > int main() {
 >
-> Set&lt;BankAccount&gt; set; // Store set of 3 BankAccount objects
+> Set<BankAccount> set; // Store set of 3 BankAccount objects
 >
 > BankAccount anAcct("Devon", 100.00); set.insert(anAcct);
 >
@@ -17575,13 +17575,13 @@ c)  40 successful inserts, then 40 successful removals
 > set. rst(); // Initialize an iteration over all elements double total
 > = 0.00; while(set.hasMore()) {
 >
-> cout &lt;&lt; set.current().getName() &lt;&lt; " has "; cout &lt;&lt;
-> set.current().getBalance() &lt;&lt; endl; total +=
+> cout << set.current().getName() << " has "; cout <<
+> set.current().getBalance() << endl; total +=
 > set.current().getBalance(); set.next();
 >
 > }
 >
-> cout &lt;&lt; "Total balance: " &lt;&lt; total &lt;&lt; endl;
+> cout << "Total balance: " << total << endl;
 >
 > return 0; }
 >
@@ -17607,7 +17607,7 @@ c)  40 successful inserts, then 40 successful removals
 SELF-CHECK
 
 > 11-7 Write code that determines the maximum BankAccount balance no
-> matter how many elements are in the Set&lt;BankAccount&gt;.
+> matter how many elements are in the Set<BankAccount>.
 
 11.3.1 THE ITERATOR MEMBER FUNCTIONS
 
@@ -17629,7 +17629,7 @@ SELF-CHECK
 > currentIndex to return true when there is at least one more element to
 > visit:
 >
-> bool hasMore() const { return currentIndex &lt; n;
+> bool hasMore() const { return currentIndex < n;
 >
 > }
 
@@ -17641,7 +17641,7 @@ Th e next() member function simply increments the internal index:
 >
 > And fi nally, current() returns the element referred to by the
 > internal cursor current. Notice that the return type is whatever the
-> client code specifi ed in constructing the Set&lt;Type&gt;.
+> client code specifi ed in constructing the Set<Type>.
 >
 > Type current() const { return elements\[currentIndex\]; }
 
@@ -17670,11 +17670,11 @@ CHAPTER SUMMARY
 
 -   /
 
-> \#ifndef SET\_H\_ \#de ne SET\_H\_ \#include &lt;vector&gt;
+> \#ifndef SET\_H\_ \#de ne SET\_H\_ \#include <vector>
 >
-> template&lt;class Type&gt; class Set {
+> template<class Type> class Set {
 >
-> private: std::vector&lt;Type&gt; elements; int n; int currentIndex;
+> private: std::vector<Type> elements; int n; int currentIndex;
 >
 > public:
 >
@@ -17709,7 +17709,7 @@ EXERCISES
 
 1.  Use this code to answer each of the questions below:
 
-> \#include "Set.h" int main() { Set&lt;double&gt; db;
+> \#include "Set.h" int main() { Set<double> db;
 >
 > // . . .
 
@@ -17732,11 +17732,11 @@ Programming Tips
 
 > // You only need one template class
 >
-> Plus&lt;int&gt; a(2, 3);
+> Plus<int> a(2, 3);
 >
-> Plus&lt;double&gt; b(2.2, 3.3);
+> Plus<double> b(2.2, 3.3);
 >
-> Plus&lt;string&gt; c("Abe", "Lincoln");
+> Plus<string> c("Abe", "Lincoln");
 >
 > a.show(); // 5
 >
@@ -17745,7 +17745,7 @@ Programming Tips
 > c.show(); // AbeLincoln
 
 1.  Write code that fi nds the range of integers in
-    > Set&lt;int&gt; intSet;. Range is defi ned as the largest integer
+    > Set<int> intSet;. Range is defi ned as the largest integer
     > minus the smallest integer.
 
 PROGRAMMING TIPS
@@ -17781,11 +17781,11 @@ PROGRAMMING TIPS
     > wait line: fi rst in, fi rst out. Th e column on the left shows
     > two fi les and oft-repeated syntax, about 80 words. Th e single .h
     > fi le on the right column is shorter—fewer lines, fewer words, and
-    > fewer symbols such as &lt;, &gt;, and ::.
+    > fewer symbols such as <, >, and ::.
 
 PROGRAMMING PROJECTS
 
-11A class Stack&lt;Type&gt;
+11A class Stack<Type>
 
 > Implement a generic (with templates) Stack. A Stack allows elements to
 > be added and removed in a last-in, fi rst-out (LIFO) manner. Stacks
@@ -17802,26 +17802,26 @@ Programming Projects
 > referenced. Here is a Stack for storing up to 20 integers. Your
 > program must compile and generate the output.
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
 > \#include "Stack.h" using namespace std;
 >
-> int main() { Stack&lt;int&gt; intStack(20); // stack of 20 ints
+> int main() { Stack<int> intStack(20); // stack of 20 ints
 >
 > // Use intStack intStack.push(1); intStack.push(2); intStack.push(3);
 > intStack.push(4);
 >
-> cout &lt;&lt; "4? " &lt;&lt; intStack.peek() &lt;&lt; endl; cout
-> &lt;&lt; "4? " &lt;&lt; intStack.pop() &lt;&lt; endl; cout &lt;&lt;
-> "3? " &lt;&lt; intStack.peek() &lt;&lt; endl;
+> cout << "4? " << intStack.peek() << endl; cout
+> << "4? " << intStack.pop() << endl; cout <<
+> "3? " << intStack.peek() << endl;
 >
-> cout &lt;&lt; "isEmpty 0? " &lt;&lt; intStack.isEmpty() &lt;&lt; endl;
-> cout &lt;&lt; "3 2 1? "; while(! intStack.isEmpty()) { cout &lt;&lt;
-> intStack.pop() &lt;&lt; " ";
+> cout << "isEmpty 0? " << intStack.isEmpty() << endl;
+> cout << "3 2 1? "; while(! intStack.isEmpty()) { cout <<
+> intStack.pop() << " ";
 >
-> } cout &lt;&lt; endl;
+> } cout << endl;
 >
-> cout &lt;&lt; "isEmpty 1? " &lt;&lt; intStack.isEmpty() &lt;&lt; endl;
+> cout << "isEmpty 1? " << intStack.isEmpty() << endl;
 >
 > return 0; }
 >
@@ -17834,26 +17834,26 @@ Programming Projects
 > *Note:* See the beginning of a Queue class in the Programming Tips
 > section of this chapter for a complete class in one .h fi le.
 
-11B PriorityList&lt;Type&gt;
+11B PriorityList<Type>
 
 > Th is project asks you to implement a collection class
-> PriorityList&lt;Type&gt; using a vector data member. Th is new type
+> PriorityList<Type> using a vector data member. Th is new type
 > will store a collection of elements as a zero-based indexed list where
 > the element at index 0 is considered to have higher priority than the
 > element at index 1. Th e element at index size()-1 has the lowest
 > priority. An instance of this collection class will be able to store
-> just one type of element such as &lt;string&gt;. Remember that the
+> just one type of element such as <string>. Remember that the
 > element at index 0 is the top priority; the element at index size()-1
 > is the lowest priority.
 >
-> PriorityList&lt;string&gt; todos;
+> PriorityList<string> todos;
 >
 > todos.insertElementAt(0, "Study for the CS exam");
 > todos.insertElementAt(0, "Get groceries"); todos.insertElementAt(0,
 > "Sleep");
 >
-> for(int priority = 0; priority &lt; todos.size(); priority++) cout
-> &lt;&lt; todos.getElementAt(priority) &lt;&lt; endl;
+> for(int priority = 0; priority < todos.size(); priority++) cout
+> << todos.getElementAt(priority) << endl;
 >
 > Output
 >
@@ -17863,7 +17863,7 @@ Programming Projects
 >
 > Study for the CS exam
 >
-> Complete these methods in PriorityList&lt;Type&gt; so it uses a vector
+> Complete these methods in PriorityList<Type> so it uses a vector
 > to store the elements.
 >
 > // Construct an empty PriorityList with capacity to store 20 elements
@@ -17873,7 +17873,7 @@ Programming Projects
 > // Return the number of elements currently in this PriorityList int
 > size();
 >
-> // Return true if size() == 0 or false if size() &gt; 0 bool
+> // Return true if size() == 0 or false if size() > 0 bool
 > isEmpty();
 >
 > // Insert the element at the given index. If the vector // is too
@@ -17928,75 +17928,75 @@ Programming Projects
 > the list. *Recommended:* implement one method at a time, and write
 > tests to ensure that it works.
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;string&gt; // Needed by Visual Studio
+> \#include <string> // Needed by Visual Studio
 >
 > \#include "PriorityList.h" using namespace std;
 >
 > int main() {
 >
-> PriorityList&lt;string&gt; list; list.insertElementAt(0, "a");
+> PriorityList<string> list; list.insertElementAt(0, "a");
 > list.insertElementAt(1, "b"); list.insertElementAt(2, "c");
 > list.insertElementAt(3, "d");
 >
-> for (int i = 0; i &lt; list.size(); i++) // a b c d cout &lt;&lt;
-> list.getElementAt(i) &lt;&lt; " "; cout &lt;&lt; endl;
+> for (int i = 0; i < list.size(); i++) // a b c d cout <<
+> list.getElementAt(i) << " "; cout << endl;
 >
 > list.insertElementAt(1, "f");
 >
-> for (int i = 0; i &lt; list.size(); i++) // a f b c d cout &lt;&lt;
-> list.getElementAt(i) &lt;&lt; " "; cout &lt;&lt; endl;
+> for (int i = 0; i < list.size(); i++) // a f b c d cout <<
+> list.getElementAt(i) << " "; cout << endl;
 >
 > list.removeElementAt(0);
 >
-> for (int i = 0; i &lt; list.size(); i++) // f b c d cout &lt;&lt;
-> list.getElementAt(i) &lt;&lt; " "; cout &lt;&lt; endl;
+> for (int i = 0; i < list.size(); i++) // f b c d cout <<
+> list.getElementAt(i) << " "; cout << endl;
 >
 > list.lowerPriorityOf(3); // no effect list.lowerPriorityOf(0); // move
 > f right list.lowerPriorityOf(1); // move f right
-> list.lowerPriorityOf(2); // move f right for (int i = 0; i &lt;
-> list.size(); i++) // b c d f cout &lt;&lt; list.getElementAt(i)
-> &lt;&lt; " "; cout &lt;&lt; endl;
+> list.lowerPriorityOf(2); // move f right for (int i = 0; i <
+> list.size(); i++) // b c d f cout << list.getElementAt(i)
+> << " "; cout << endl;
 >
 > list.raisePriorityOf(0); // no effect list.raisePriorityOf(2); // move
-> d left list.raisePriorityOf(1); // move d left for (int i = 0; i &lt;
-> list.size(); i++) // d b c f cout &lt;&lt; list.getElementAt(i)
-> &lt;&lt; " "; cout &lt;&lt; endl;
+> d left list.raisePriorityOf(1); // move d left for (int i = 0; i <
+> list.size(); i++) // d b c f cout << list.getElementAt(i)
+> << " "; cout << endl;
 >
 > list.moveToLast(list.size() - 1); // no effect
 >
 > list.moveToLast(0); // move d from top priority to last priority
 >
-> for (int i = 0; i &lt; list.size(); i++) // b c f d cout &lt;&lt;
-> list.getElementAt(i) &lt;&lt; " "; cout &lt;&lt; endl;
+> for (int i = 0; i < list.size(); i++) // b c f d cout <<
+> list.getElementAt(i) << " "; cout << endl;
 >
 > list.moveToTop(0); // no effect
 >
 > list.moveToTop(2); // move f to top priority again for (int i = 0; i
-> &lt; list.size(); i++) // f b c d cout &lt;&lt; list.getElementAt(i)
-> &lt;&lt; " ";
+> < list.size(); i++) // f b c d cout << list.getElementAt(i)
+> << " ";
 >
 > return 0; }
 
-11C PriorityList&lt;Type&gt; THROWS EXCEPTIONS
+11C PriorityList<Type> THROWS EXCEPTIONS
 
 > *Optional:* Change your code so it throws an exception when the index
 > is out of range. To do this, fi rst add this \#include to
-> PriorityList&lt;Type&gt;:
+> PriorityList<Type>:
 >
-> \#include &lt;stdexcept&gt;
+> \#include <stdexcept>
 >
 > Th en add an if statement to every method that takes index as a
 > parameter. An exception will be thrown if the programmer supplies an
-> incorrect index like -1 or an index &gt; size(), which is a good
+> incorrect index like -1 or an index > size(), which is a good
 > thing:
 >
 > // Insert the element at the given index.
 >
 > // precondition: index is on the range of 0 through size() void
-> insertElementAt(int index, Type element) { if (index &lt; 0 || index
-> &gt; size()) { throw std::invalid\_argument(
+> insertElementAt(int index, Type element) { if (index < 0 || index
+> > size()) { throw std::invalid\_argument(
 >
 > "\\ninsertElementAt: index must be 0..size()");
 >
@@ -18096,8 +18096,8 @@ COMING UP
 > the string class was chosen because there is no way to predict how
 > many characters will be entered by the user at runtime:
 >
-> string name; // Memory allocated during input cout &lt;&lt; "Enter
-> your name: "; cin &gt;&gt; name;
+> string name; // Memory allocated during input cout << "Enter
+> your name: "; cin >> name;
 >
 > Th e string class also allows programmers to assign varying-length
 > strings:
@@ -18247,18 +18247,18 @@ p 123 anInt
 > // Interchange two pointer values. The pointers are switched // to
 > point to the other's original int object.
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() { double\* p1; double\* p2; double\* temp; double n1 =
 > 99.9; double n2 = 88.8;
 >
 > // Let p1 point to n1 and p2 point to n2 p1 = &n1; p2 = &n2;
 >
-> cout &lt;&lt; "\*p1 and \*p2 before switch" &lt;&lt; endl;
+> cout << "\*p1 and \*p2 before switch" << endl;
 >
 > // Get the integers indirectly with the \* operator
 >
-> cout &lt;&lt; (\*p1) &lt;&lt; " " &lt;&lt; (\*p2) &lt;&lt; endl;
+> cout << (\*p1) << " " << (\*p2) << endl;
 >
 > // Swap the pointers by letting p1 point to where p2 is pointing.
 >
@@ -18270,12 +18270,12 @@ p 123 anInt
 >
 > // other's int object. The ints themselves do not move.
 >
-> cout &lt;&lt; "\*p1 and \*p2 after switch" &lt;&lt; endl; cout
-> &lt;&lt; (\*p1) &lt;&lt; " " &lt;&lt; (\*p2) &lt;&lt; endl &lt;&lt;
+> cout << "\*p1 and \*p2 after switch" << endl; cout
+> << (\*p1) << " " << (\*p2) << endl <<
 > endl;
 >
-> cout &lt;&lt; "Actual memory locations in hexadecimal:" &lt;&lt; endl;
-> cout &lt;&lt; p1 &lt;&lt; " " &lt;&lt; p2 &lt;&lt; endl;
+> cout << "Actual memory locations in hexadecimal:" << endl;
+> cout << p1 << " " << p2 << endl;
 >
 > return 0; }
 >
@@ -18320,7 +18320,7 @@ p1p2temp
 > And fi nally, p2 = temp; causes p2 to point to the same double to
 > which p1 was originally pointing.
 >
-> Now that p2 points to n1 and p1 points to n2, cout &lt;&lt; (\*p1)
+> Now that p2 points to n1 and p1 points to n2, cout << (\*p1)
 > displays 88.8 rather than the original 99.9.
 >
 > At fi rst, working with pointers is not easy. It takes a shift from
@@ -18333,8 +18333,8 @@ p1p2temp
 >
 > Also when writing debugging code, the value being pointed to is
 > usually more telling than the address of where that object is located.
-> So debug with \* as in cout &lt;&lt; (\*aPointer); rather than cout
-> &lt;&lt; aPointer;. With this, you see the more useful values of the
+> So debug with \* as in cout << (\*aPointer); rather than cout
+> << aPointer;. With this, you see the more useful values of the
 > objects, not their addresses.
 
 12.1.2 POINTERS TO OBJECTS
@@ -18345,7 +18345,7 @@ p1p2temp
 > dereference operator has a lower priority than a function call, this
 > code will not work:
 >
-> BankAccount anAcct("Functions &gt; Dereference", 123.45);
+> BankAccount anAcct("Functions > Dereference", 123.45);
 >
 > BankAccount\* bp; bp = &anAcct; \*bp.deposit(123.45); // ERROR
 >
@@ -18355,19 +18355,19 @@ p1p2temp
 >
 > (\*bp).deposit(123.45); // OKAY
 >
-> Or you could use the C++ arrow operator -&gt; as a shortcut to denote
+> Or you could use the C++ arrow operator -> as a shortcut to denote
 > that the pointer is pointing to an instance of a true class:
 >
-> bp-&gt;deposit(123.45); // SHORTCUT
+> bp->deposit(123.45); // SHORTCUT
 
 Both techniques are used in the following program:
 
-> \#include &lt;iostream&gt; using namespace std; \#include
+> \#include <iostream> using namespace std; \#include
 > "BankAccount.h"
 >
 > int main() {
 >
-> BankAccount anAcct("both (\*bp) and bp-&gt; work ", 100.00);
+> BankAccount anAcct("both (\*bp) and bp-> work ", 100.00);
 >
 > BankAccount\* bp; bp = &anAcct;
 >
@@ -18377,20 +18377,20 @@ Both techniques are used in the following program:
 >
 > (\*bp).deposit(123.45);
 >
-> cout &lt;&lt; (\*bp).getName() &lt;&lt; (\*bp).getBalance() &lt;&lt;
+> cout << (\*bp).getName() << (\*bp).getBalance() <<
 > endl;
 >
-> // Use -&gt; for pointers to objects other than int or double
-> bp-&gt;withdraw(111.11);
+> // Use -> for pointers to objects other than int or double
+> bp->withdraw(111.11);
 >
-> cout &lt;&lt; bp-&gt;getName() &lt;&lt; bp-&gt;getBalance() &lt;&lt;
+> cout << bp->getName() << bp->getBalance() <<
 > endl;
 >
 > return 0; }
 >
 > Output
 >
-> both (\*bp) and bp-&gt; work 223.45 both (\*bp) and bp-&gt; work
+> both (\*bp) and bp-> work 223.45 both (\*bp) and bp-> work
 > 112.34
 
 SELF-CHECK
@@ -18417,7 +18417,7 @@ d.  Write code to *indirectly* change the value of aDouble from 1.23
 3.  What is the value of s3 after this code runs:
 
 > string s1 = string("one"); string\* p1 = &s1; string s3 =
-> p1-&gt;c\_str(); s3 += p1-&gt;c\_str(); cout &lt;&lt; s3;
+> p1->c\_str(); s3 += p1->c\_str(); cout << s3;
 
 3.  Write an expression that evaluates to the sum of the two BankAccount
     > balances indirectly.
@@ -18432,11 +18432,11 @@ d.  Write code to *indirectly* change the value of aDouble from 1.23
 
 3.  Write the output generated by the following program:
 
-> \#include &lt;iostream&gt; using namespace std; int main() { int\* p;
+> \#include <iostream> using namespace std; int main() { int\* p;
 > int j = 12; p = &j;
 >
-> cout &lt;&lt; ((\*p) + (\*p)) &lt;&lt; " " &lt;&lt; ((\*p) \* (\*p))
-> &lt;&lt; endl; return 0; }
+> cout << ((\*p) + (\*p)) << " " << ((\*p) \* (\*p))
+> << endl; return 0; }
 
 3.  Write statements that store the address of ch, a char object, into a
     > char pointer object named charPtr.
@@ -18454,22 +18454,22 @@ d.  Write code to *indirectly* change the value of aDouble from 1.23
 
 > int p = 111; int\* q = &p; p += 222;
 >
-> cout &lt;&lt; "p? " &lt;&lt; p &lt;&lt; endl; cout &lt;&lt; "q? "
-> &lt;&lt; \*q &lt;&lt; endl;
+> cout << "p? " << p << endl; cout << "q? "
+> << \*q << endl;
 
 3.  Write the output generated by the following code:
 
 > int n1 = 4; int n2 = 8; int\* ptr1; int\* ptr2; ptr1 = &n1; ptr2 =
 > &n2;
 >
-> cout &lt;&lt; (\*ptr1) &lt;&lt; " " &lt;&lt; (\*ptr2) &lt;&lt; endl;
+> cout << (\*ptr1) << " " << (\*ptr2) << endl;
 > 12-12 Write the output generated by the following code:
 >
 > double\* p = new double; double\* q = new double;
 >
 > \*p = 1.23; \*q = 4.56; p = q;
 >
-> cout &lt;&lt; (\*p) &lt;&lt; " " &lt;&lt; (\*q);
+> cout << (\*p) << " " << (\*q);
 >
 > 12-13 In the preceding code of 12-12, is it possible to retrieve the
 > value 1.23 by modifying the last line?
@@ -18546,17 +18546,17 @@ arrays:
   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   > **Diff erence**                                                              vector **Example**                                    **C Array Example**
   ------------------------------------------------------------------------------ ----------------------------------------------------- ----------------------------------------------------
-  > vectors can initialize all vector elements at construction; arrays cannot.   vector &lt;int&gt; x(100, 0); // All elements are 0   int x\[100\]; // Elements are garbage
+  > vectors can initialize all vector elements at construction; arrays cannot.   vector <int> x(100, 0); // All elements are 0   int x\[100\]; // Elements are garbage
 
-  > vectors can be easily resized at runtime; arrays take a lot more work.       int n; cin &gt;&gt; n;                                // See growing an array
+  > vectors can be easily resized at runtime; arrays take a lot more work.       int n; cin >> n;                                // See growing an array
                                                                                                                                        
                                                                                  x.resize(n);                                          // in a later chapter
 
-  > vectors can be made to prevent out-of-range subscripts.                      // You are told                                       // Destroys other variables cin &gt;&gt; x\[100\];
+  > vectors can be made to prevent out-of-range subscripts.                      // You are told                                       // Destroys other variables cin >> x\[100\];
                                                                                                                                        
-                                                                                 // something is wrong cin &gt;&gt; x.at(100);         
+                                                                                 // something is wrong cin >> x.at(100);         
 
-  > vectors require an \#include; primitive, built-in arrays do not.             \#include &lt;vector&gt;                              > // No \#include required
+  > vectors require an \#include; primitive, built-in arrays do not.             \#include <vector>                              > // No \#include required
   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 12.2.2 THE ARRAY / POINTER CONNECTION
@@ -18603,7 +18603,7 @@ arrays:
 >
 > // The & is not required. An array stores an address.
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > void init(int x\[\], int & n) {
 >
@@ -18613,10 +18613,10 @@ arrays:
 > int main() { int n = 5; int anArray\[5\];
 >
 > init(anArray, n); // init will change x and anArray for (int index =
-> 0; index &lt; n; index++) { cout &lt;&lt; anArray\[index\] &lt;&lt; "
+> 0; index < n; index++) { cout << anArray\[index\] << "
 > ";
 >
-> } cout &lt;&lt; endl;
+> } cout << endl;
 >
 > return 0; }
 >
@@ -18690,7 +18690,7 @@ above is an abbreviated form of the following equivalent code:
 >
 > // Illustrate one pointer object and one int object
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 
 12.3: Allocating Memory with new
 
@@ -18707,9 +18707,9 @@ above is an abbreviated form of the following equivalent code:
 >
 > \*intPtr = 123;
 >
-> cout &lt;&lt; "\\n The address stored in the pointer object: "
-> &lt;&lt; intPtr; cout &lt;&lt; "\\nThe value of the int pointed to by
-> intPtr: " &lt;&lt; \*intPtr;
+> cout << "\\n The address stored in the pointer object: "
+> << intPtr; cout << "\\nThe value of the int pointed to by
+> intPtr: " << \*intPtr;
 >
 > return 0; }
 >
@@ -18774,25 +18774,25 @@ above is an abbreviated form of the following equivalent code:
 
 > // This code dynamically (at runtime) "grows" an array
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() { int n = 10;
 >
 > int\* nums = new int\[n\]; // Some C++ compilers can not handle
 > int\[n\] int anInt = 1;
 >
-> // Initialize n array elements with a for loop for (int i = 0; i &lt;
+> // Initialize n array elements with a for loop for (int i = 0; i <
 > n; i++) { nums\[i\] = anInt; anInt += 3; }
 >
-> // Show the lled array for (int i = 0; i &lt; n; i++) { cout &lt;&lt;
-> nums\[i\] &lt;&lt; " "; }
+> // Show the lled array for (int i = 0; i < n; i++) { cout <<
+> nums\[i\] << " "; }
 >
 > // Need more room? Grow the array at runtime
 >
 > int\* temp = new int\[n+5\]; // Some C++ compilers can not handle
 > int\[n+5\]
 >
-> // 2) copy the elements to the temporary array for (int i = 0; i &lt;
+> // 2) copy the elements to the temporary array for (int i = 0; i <
 > n; i++) { temp\[i\] = nums\[i\]; }
 >
 > // Make the original array pointer refer to the "bigger" array nums =
@@ -18803,9 +18803,9 @@ above is an abbreviated form of the following equivalent code:
 > // Add 3 more elements to the bigger array nums\[n++\] = 997;
 > nums\[n++\] = 998; nums\[n++\] = 999;
 >
-> // Print the larger array with the added elements cout &lt;&lt; endl
-> &lt;&lt; "Larger array" &lt;&lt; endl; for (int i = 0; i &lt; n; i++)
-> { cout &lt;&lt; nums\[i\] &lt;&lt; " ";
+> // Print the larger array with the added elements cout << endl
+> << "Larger array" << endl; for (int i = 0; i < n; i++)
+> { cout << nums\[i\] << " ";
 >
 > } return 0; }
 >
@@ -18866,7 +18866,7 @@ SELF-CHECK
 >
 > int\* x = new int\[10\]; x\[0\] = 4; x\[1\] = 8;
 >
-> cout &lt;&lt; x\[0\] + x\[1\] &lt;&lt; endl;
+> cout << x\[0\] + x\[1\] << endl;
 >
 > 12-15 Write one initialization using new to allocate an array that can
 > store 1000 doubles.
@@ -18878,11 +18878,11 @@ SELF-CHECK
 >
 > const int MAX = 6; int\* x = new int\[MAX\];
 >
-> for(int i = 0; i &lt; MAX; i++) { x\[i\] = 2 \* i;
+> for(int i = 0; i < MAX; i++) { x\[i\] = 2 \* i;
 >
 > }
 >
-> for(int i = 0; i &lt; MAX; i++) { cout &lt;&lt; x\[i\] &lt;&lt; " "; }
+> for(int i = 0; i < MAX; i++) { cout << x\[i\] << " "; }
 >
 > 12-18 Primitive arrays can be declared and initialized at the same
 > time with array initializers such as the following:
@@ -18927,7 +18927,7 @@ SELF-CHECK
 >
 > // Allocate and deallocate memory at runtime
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() { int\* p = new int; \*p = 123;
 >
@@ -18949,7 +18949,7 @@ SELF-CHECK
 > notifi cations or errors shown. Instead, we get memory leaks, which
 > means memory no longer needed cannot be recycled later.
 >
-> double\* temp = new double\[n+5\]; for (int i = 0; i &lt; 10; i++) {
+> double\* temp = new double\[n+5\]; for (int i = 0; i < 10; i++) {
 > temp\[i\] = nums\[i\]; } delete\[\] nums; // Avoid a memory leak by
 > freeing up memory
 
@@ -19017,24 +19017,24 @@ LinkedList:
 > \#endif /\* LINKEDLIST\_H\_ \*/
 >
 > Th e following code constructs a new node object pointed to by rst and
-> displays the value using the -&gt; operator, which is necessary for
+> displays the value using the -> operator, which is necessary for
 > dereferencing the public data members of node.
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;string&gt;
+> \#include <string>
 >
 > \#include "LinkedList.h" using namespace std;
 >
 > int main() {
 >
 > // Let nodePointer reference a dynamically allocated node object
-> node\* rst = new node("Kim"); // assert: nodePointer-&gt;next ==
+> node\* rst = new node("Kim"); // assert: nodePointer->next ==
 > nullptr
 >
-> // Display the state of the public data member my\_data cout &lt;&lt;
-> " The value: " &lt;&lt; rst-&gt;data &lt;&lt; endl; cout &lt;&lt;
-> "\#characters: " &lt;&lt; rst-&gt;data.length() &lt;&lt; endl; }
+> // Display the state of the public data member my\_data cout <<
+> " The value: " << rst->data << endl; cout <<
+> "\#characters: " << rst->data.length() << endl; }
 >
 > **Output:**
 >
@@ -19050,15 +19050,15 @@ Here is a representation of what this looks like in memory:
 > such a way that the pointer in the fi rst node object can be used to
 > fi nd the second node. Th e following code constructs three node
 > objects that are linked together. Notice that a reference to the data
-> of the second node is made using the pointer p &gt;next.
+> of the second node is made using the pointer p >next.
 >
 > // Build the rst node node\* p = new node("One");
 >
 > // Construct a second node pointed to by the rst node's next
-> p-&gt;next = new node("Two");
+> p->next = new node("Two");
 >
-> // Build a third node pointed to by p-&gt;next-&gt;next
-> p-&gt;next-&gt;next = new node("Three");
+> // Build a third node pointed to by p->next->next
+> p->next->next = new node("Three");
 
 Here is a representation of what three linked nodes look like in memory:
 
@@ -19069,11 +19069,11 @@ Here is a representation of what three linked nodes look like in memory:
 >
 > // Traverse the nodes until a next eld is nullptr node\* ptr = p; //
 > Don't change p, which is a pointer to the rst node while(ptr !=
-> nullptr) { cout &lt;&lt; ptr-&gt;data &lt;&lt; endl; ptr =
-> ptr-&gt;next; }
+> nullptr) { cout << ptr->data << endl; ptr =
+> ptr->next; }
 >
 > ptr is updated to point to the next node or it is set to nullptr at
-> the end of each loop iteration with the statement ptr = ptr &gt;next.
+> the end of each loop iteration with the statement ptr = ptr >next.
 
 12.5.1 A LIST CLASS USING THE SINGLY-LINKED DATA STRUCTURE
 
@@ -19101,20 +19101,20 @@ Here is a representation of what three linked nodes look like in memory:
 
 > Adding an element to a linked list has diff erent meanings for ordered
 > and unordered lists. An ordered list stores objects in an ascending
-> order based on the meaning of &lt;. Th e linked list developed here is
+> order based on the meaning of <. Th e linked list developed here is
 > not ordered so the elements will not be in alphabetic order. Since
 > this linked list here is unordered, all new elements can be added at
 > the very end of the list. Th is is easy when a dummy headed node is
 > employed to avoid the special case of adding to an empty list or
 > removing an element. Elements are added by creating a new object
-> pointed to by last-&gt;next. Th e member data last must then be
+> pointed to by last->next. Th e member data last must then be
 > updated to point to the last node. Th e current count must also be
 > incremented.
 >
 > void add(const std::string newElement) { // Allocate and initialize a
-> new node last-&gt;next = new node(newElement);
+> new node last->next = new node(newElement);
 >
-> // Update the last pointer last = last-&gt;next;
+> // Update the last pointer last = last->next;
 >
 > // Maintain current size n++; }
 
@@ -19129,14 +19129,14 @@ Th is one adds message results in the pictures of memory shown below:
 > Th e get operation uses a for loop to advance an external pointer ptr
 > to the correct node. Notice that if index is 0, the for loop does not
 > advance ptr, leaving it to point to the fi rst real node— the one
-> pointed to by header-&gt;next, which would be the value " rst".
+> pointed to by header->next, which would be the value " rst".
 >
-> std::string get(int index) { node\* ptr = rst-&gt;next; for (int i =
-> 0; i &lt; index; i++) { ptr = ptr-&gt;next;
+> std::string get(int index) { node\* ptr = rst->next; for (int i =
+> 0; i < index; i++) { ptr = ptr->next;
 >
 > }
 >
-> return ptr-&gt;data; }
+> return ptr->data; }
 
 12.5.4 remove(string removalCandidate)
 
@@ -19157,19 +19157,19 @@ Th is one adds message results in the pictures of memory shown below:
 > node ahead in the search while maintaining a pointer to the node that
 > precedes the node to be removed.
 >
-> A sequential search continues until ptr-&gt;next-&gt;data equals the
+> A sequential search continues until ptr->next->data equals the
 > removalCandidate or there are no more elements to search. Since
-> ptr-&gt;data == removalElement ("First" == "Second") is false, the
+> ptr->data == removalElement ("First" == "Second") is false, the
 > loop advances ptr to the next node in the list.
 >
 > Now the node pointed to by ptr points to the node before the node to
-> be removed: ptr-&gt;next-&gt;data == "Second" is true now. With the
+> be removed: ptr->next->data == "Second" is true now. With the
 > help of the dummy header node, this algorithm is able to peek at the
 > data one node ahead. Th is comes in handy as we need to send a pointer
-> around the node to be deleted with ptr-&gt;next =
-> ptr-&gt;next-&gt;next.
+> around the node to be deleted with ptr->next =
+> ptr->next->next.
 >
-> Now the node pointed to ptr-&gt;next can safely be returned to the
+> Now the node pointed to ptr->next can safely be returned to the
 > free store with delete.
 >
 > bool remove(const std::string removalElement) {
@@ -19181,25 +19181,25 @@ Th is one adds message results in the pictures of memory shown below:
 >
 > // found or the end of the list is found
 >
-> while (ptr-&gt;next != nullptr && ptr-&gt;next-&gt;data !=
-> removalElement) { ptr = ptr-&gt;next; }
+> while (ptr->next != nullptr && ptr->next->data !=
+> removalElement) { ptr = ptr->next; }
 >
 > // Don't delete a nonexistent node
 >
-> if (ptr-&gt;next == nullptr) { // removalElement was not found return
+> if (ptr->next == nullptr) { // removalElement was not found return
 > false;
 >
 > } else {
 >
 > // Check if the last node is being removed so last gets corrected
-> if(ptr-&gt;next == last) { last = ptr;
+> if(ptr->next == last) { last = ptr;
 >
 > }
 >
-> // Send the link around the node to be removed ptr-&gt;next =
-> ptr-&gt;next-&gt;next; if (ptr != header)
+> // Send the link around the node to be removed ptr->next =
+> ptr->next->next; if (ptr != header)
 >
-> delete ptr-&gt;next; // Deallocate memory n--; // Maintain current
+> delete ptr->next; // Deallocate memory n--; // Maintain current
 > size return true; // Report successful removal
 >
 > }
@@ -19242,9 +19242,9 @@ e.  When an element has been removed from a dynamically linked list, the
 > LinkedList. Return false if the list is empty. Th e program should
 > generate the output shown in comments.
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;string&gt;
+> \#include <string>
 >
 > \#include "LinkedList.h" using namespace std;
 >
@@ -19252,15 +19252,15 @@ e.  When an element has been removed from a dynamically linked list, the
 >
 > LinkedList list;
 >
-> cout &lt;&lt; list.removeLast() &lt;&lt; endl; // 0 list.add("A");
+> cout << list.removeLast() << endl; // 0 list.add("A");
 >
-> cout &lt;&lt; list.removeLast() &lt;&lt; endl; // 1 list.add("B");
+> cout << list.removeLast() << endl; // 1 list.add("B");
 > list.add("C"); list.add("D");
 >
-> cout &lt;&lt; list.removeLast() &lt;&lt; endl; // 1 list.add("E");
-> cout &lt;&lt; list.get(0) &lt;&lt; " "; cout &lt;&lt; list.get(1)
-> &lt;&lt; " "; cout &lt;&lt; list.get(2) &lt;&lt; endl; // B C E cout
-> &lt;&lt; list.size() &lt;&lt; endl; // 3 return 0; }
+> cout << list.removeLast() << endl; // 1 list.add("E");
+> cout << list.get(0) << " "; cout << list.get(1)
+> << " "; cout << list.get(2) << endl; // B C E cout
+> << list.size() << endl; // 3 return 0; }
 
 CHAPTER SUMMARY
 
@@ -19376,8 +19376,8 @@ p1 p2 p3
 
 > int \* intPtr; int anInt = 987; intPtr = &anInt;
 >
-> \*intPtr = \*intPtr + 111; cout &lt;&lt; \*intPtr &lt;&lt; " "
-> &lt;&lt; anInt;
+> \*intPtr = \*intPtr + 111; cout << \*intPtr << " "
+> << anInt;
 
 1.  Trace the following program segment by drawing pictures of the
     > modifi ed objects:
@@ -19423,9 +19423,9 @@ Programming Projects
 > from the stack before the fi rst-pushed element can be referenced.
 > Here is a stack program for storing strings:
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;string&gt; // Needed by Visual Studio
+> \#include <string> // Needed by Visual Studio
 >
 > \#include "LinkedStack.h" using namespace std;
 >
@@ -19434,17 +19434,17 @@ Programming Projects
 > // Use intStack stack.push("a"); stack.push("b"); stack.push("c");
 > stack.push("d");
 >
-> cout &lt;&lt; "d? " &lt;&lt; stack.peek() &lt;&lt; endl; cout &lt;&lt;
-> "d? " &lt;&lt; stack.pop() &lt;&lt; endl; cout &lt;&lt; "c? " &lt;&lt;
-> stack.peek() &lt;&lt; endl;
+> cout << "d? " << stack.peek() << endl; cout <<
+> "d? " << stack.pop() << endl; cout << "c? " <<
+> stack.peek() << endl;
 >
-> cout &lt;&lt; "isEmpty 0? " &lt;&lt; stack.isEmpty() &lt;&lt; endl;
-> cout &lt;&lt; "c b a? "; while(! stack.isEmpty()) { cout &lt;&lt;
-> stack.pop() &lt;&lt; " ";
+> cout << "isEmpty 0? " << stack.isEmpty() << endl;
+> cout << "c b a? "; while(! stack.isEmpty()) { cout <<
+> stack.pop() << " ";
 >
-> } cout &lt;&lt; endl;
+> } cout << endl;
 >
-> cout &lt;&lt; "isEmpty 1? " &lt;&lt; stack.isEmpty() &lt;&lt; endl;
+> cout << "isEmpty 1? " << stack.isEmpty() << endl;
 >
 > return 0; }
 >
@@ -19472,7 +19472,7 @@ Programming Projects
 > at index 0 is considered to have higher priority than the element at
 > index 1. Th e element at index size()-1 has the lowest priority. An
 > instance of this collection class will be able to store just one type
-> of element such as &lt;string&gt;.
+> of element such as <string>.
 >
 > Output
 >
@@ -19493,7 +19493,7 @@ Programming Projects
 > // Return the number of elements currently in this LinkedPriorityList
 > int size();
 >
-> // Return true if size() == 0 or false if size() &gt; 0 bool
+> // Return true if size() == 0 or false if size() > 0 bool
 > isEmpty();
 >
 > // Insert the element at the given index.
@@ -19545,7 +19545,7 @@ Programming Projects
 > list. Recommended: implement one member function at a time, and write
 > tests to ensure that it works.
 >
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
 > \#include "LinkedPriorityList.h" using namespace std;
 >
@@ -19555,62 +19555,62 @@ Programming Projects
 > list.insertElementAt(1, "b"); list.insertElementAt(2, "c");
 > list.insertElementAt(3, "d");
 >
-> for (int i = 0; i &lt; list.size(); i++) // a b c d cout &lt;&lt;
-> list.getElementAt(i) &lt;&lt; " "; cout &lt;&lt; endl;
+> for (int i = 0; i < list.size(); i++) // a b c d cout <<
+> list.getElementAt(i) << " "; cout << endl;
 >
 > list.insertElementAt(1, "f");
 >
-> for (int i = 0; i &lt; list.size(); i++) // a f b c d cout &lt;&lt;
-> list.getElementAt(i) &lt;&lt; " "; cout &lt;&lt; endl;
+> for (int i = 0; i < list.size(); i++) // a f b c d cout <<
+> list.getElementAt(i) << " "; cout << endl;
 >
 > list.removeElementAt(0);
 >
-> for (int i = 0; i &lt; list.size(); i++) // f b c d cout &lt;&lt;
-> list.getElementAt(i) &lt;&lt; " "; cout &lt;&lt; endl;
+> for (int i = 0; i < list.size(); i++) // f b c d cout <<
+> list.getElementAt(i) << " "; cout << endl;
 >
 > list.lowerPriorityOf(3); // no effect list.lowerPriorityOf(0); // move
 > f right list.lowerPriorityOf(1); // move f right
-> list.lowerPriorityOf(2); // move f right for (int i = 0; i &lt;
-> list.size(); i++) // b c d f cout &lt;&lt; list.getElementAt(i)
-> &lt;&lt; " "; cout &lt;&lt; endl;
+> list.lowerPriorityOf(2); // move f right for (int i = 0; i <
+> list.size(); i++) // b c d f cout << list.getElementAt(i)
+> << " "; cout << endl;
 >
 > list.raisePriorityOf(0); // no effect list.raisePriorityOf(2); // move
-> d left list.raisePriorityOf(1); // move d left for (int i = 0; i &lt;
-> list.size(); i++) // d b c f cout &lt;&lt; list.getElementAt(i)
-> &lt;&lt; " "; cout &lt;&lt; endl;
+> d left list.raisePriorityOf(1); // move d left for (int i = 0; i <
+> list.size(); i++) // d b c f cout << list.getElementAt(i)
+> << " "; cout << endl;
 >
 > list.moveToLast(list.size() - 1); // no effect
 >
 > list.moveToLast(0); // move d from top priority to last priority for
-> (int i = 0; i &lt; list.size(); i++) // b c f d cout &lt;&lt;
-> list.getElementAt(i) &lt;&lt; " "; cout &lt;&lt; endl;
+> (int i = 0; i < list.size(); i++) // b c f d cout <<
+> list.getElementAt(i) << " "; cout << endl;
 >
 > list.moveToTop(0); // no effect
 >
 > list.moveToTop(2); // move f to top priority again for (int i = 0; i
-> &lt; list.size(); i++) // f b c d cout &lt;&lt; list.getElementAt(i)
-> &lt;&lt; " ";
+> < list.size(); i++) // f b c d cout << list.getElementAt(i)
+> << " ";
 >
 > return 0; }
 
-12D LinkedPriorityList&lt;Type&gt; THROWS EXCEPTIONS
+12D LinkedPriorityList<Type> THROWS EXCEPTIONS
 
 > Change your code so it throws an exception when the index is out of
 > range. To do this, fi rst add this \#include to
-> PriorityList&lt;Type&gt;:
+> PriorityList<Type>:
 >
-> \#include &lt;stdexcept&gt;
+> \#include <stdexcept>
 >
 > Th en add an if statement to every method that takes index as a
 > parameter. An exception will be thrown if the programmer supplies an
-> incorrect index like -1 or an index &gt; size(), which is a good
+> incorrect index like -1 or an index > size(), which is a good
 > thing:
 >
 > // Insert the element at the given index.
 >
 > // precondition: index is on the range of 0 through size() void
-> insertElementAt(int index, Type element) { if (index &lt; 0 || index
-> &gt; size()) { throw std::invalid\_argument(
+> insertElementAt(int index, Type element) { if (index < 0 || index
+> > size()) { throw std::invalid\_argument(
 >
 > "\\ninsertElementAt: index must be 0..size()");
 >
@@ -19650,14 +19650,14 @@ COMING UP
 
 **General Form 13.1** *Constructing a* vector *of* vector*s*
 
-> vector &lt;vector&lt;*type*&gt; &gt; *identi er*(*rows*,
-> vector&lt;*type*&gt; (*cols*, *initialValueoptional*));
+> vector <vector<*type*> > *identi er*(*rows*,
+> vector<*type*> (*cols*, *initialValueoptional*));
 >
 > Th e following are example constructions:
 >
-> vector &lt;vector&lt;double&gt; &gt; table(4, vector&lt;double&gt; (8,
-> 0.0)); // 32 zeros vector &lt;vector&lt;string&gt; &gt; name(5,
-> vector&lt;string&gt; (100, "TBA")); // 500 TBAs
+> vector <vector<double> > table(4, vector<double> (8,
+> 0.0)); // 32 zeros vector <vector<string> > name(5,
+> vector<string> (100, "TBA")); // 500 TBAs
 >
 > 377
 >
@@ -19682,15 +19682,15 @@ COMING UP
 
 *Make sure you have one space here with older versions of C++.*
 
-> vector &lt;vector&lt;int&gt; &gt; nums(3, vector&lt;int&gt; (5));
+> vector <vector<int> > nums(3, vector<int> (5));
 >
 > int count = 1;
 >
-> for(int row = 0; row &lt; nums.size(); row++) {
+> for(int row = 0; row < nums.size(); row++) {
 >
 > // Initialize one row
 >
-> for(int col = 0; col &lt; nums\[row\].size(); col++) {
+> for(int col = 0; col < nums\[row\].size(); col++) {
 > nums\[row\]\[col\] = count; count++; }
 
 SELF-CHECK
@@ -19741,20 +19741,20 @@ vector of vectors?
 >
 > \#ifndef MATRIX\_H\_
 >
-> \#de ne MATRIX\_H\_ \#include &lt;vector&gt; class Matrix { private:
+> \#de ne MATRIX\_H\_ \#include <vector> class Matrix { private:
 >
 > int rows, columns;
 >
-> // Make sure there is a space between &gt; and &gt;
+> // Make sure there is a space between > and >
 >
-> // || std::vector&lt;std::vector&lt;int&gt; &gt; table; public:
+> // || std::vector<std::vector<int> > table; public:
 >
 > // Construct a new Matrix and read data from an input le
 > Matrix(std::string leName);
 >
 > // Construct a new Matrix given a vector of vectors
 >
-> Matrix(const std::vector&lt;std::vector&lt;int&gt; &gt; & vecOfVecs);
+> Matrix(const std::vector<std::vector<int> > & vecOfVecs);
 >
 > // Return a string representation of this object.
 >
@@ -19806,9 +19806,9 @@ vector of vectors?
 >
 > \*/
 >
-> \#include &lt;string&gt;
+> \#include <string>
 >
-> \#include &lt;fstream&gt;
+> \#include <fstream>
 >
 > \#include "Matrix.h" using namespace std;
 >
@@ -19817,17 +19817,17 @@ vector of vectors?
 >
 > Matrix::Matrix(string leName) { rows = columns = 0; // Avoid a warning
 > from one compiler // Make sure the le named lename is stored in the
-> same directory ifstream inFile( leName); inFile &gt;&gt; rows &gt;&gt;
+> same directory ifstream inFile( leName); inFile >> rows >>
 > columns;
 >
 > // Resize the vector of vectors to any capacity at runtime
 > (dynamically).
 >
-> table.resize(rows, vector&lt;int&gt;(columns));
+> table.resize(rows, vector<int>(columns));
 >
 > // Initialize the vector of vectors from le input for (int row = 0;
-> row &lt; rows; row++) { for (int col = 0; col &lt; columns; col++) {
-> inFile &gt;&gt; table\[row\]\[col\];
+> row < rows; row++) { for (int col = 0; col < columns; col++) {
+> inFile >> table\[row\]\[col\];
 >
 > }
 >
@@ -19842,8 +19842,8 @@ vector of vectors?
 >
 > string Matrix::toString() { string result("");
 >
-> // Concatenate all elements into one string for (int i = 0; i &lt;
-> rows; i++) { for (int j = 0; j &lt; columns; j++) {
+> // Concatenate all elements into one string for (int i = 0; i <
+> rows; i++) { for (int j = 0; j < columns; j++) {
 >
 > result = result + std::to\_string((int) table\[i\]\[j\]) + " ";
 >
@@ -19859,11 +19859,11 @@ vector of vectors?
 > Matrix after using fi le input to initialize the individual Matrix
 > elements:
 >
-> \#include "Matrix.h" \#include &lt;iostream&gt; using namespace std;
+> \#include "Matrix.h" \#include <iostream> using namespace std;
 >
 > int main() {
 >
-> Matrix m("matrix.data"); cout &lt;&lt; m.toString();
+> Matrix m("matrix.data"); cout << m.toString();
 >
 > return 0; }
 >
@@ -19886,8 +19886,8 @@ vector of vectors?
 > Th is operation is implemented below as a modifi er that changes the
 > state of the matrix object:
 >
-> void Matrix::scalarMultiply(int val) { for (int i = 0; i &lt; rows;
-> i++) { for (int j = 0; j &lt; columns; j++) { table\[i\]\[j\] \*= val;
+> void Matrix::scalarMultiply(int val) { for (int i = 0; i < rows;
+> i++) { for (int j = 0; j < columns; j++) { table\[i\]\[j\] \*= val;
 >
 > }
 >
@@ -19898,7 +19898,7 @@ vector of vectors?
 Each element is multiplied by the argument, so this code produces the
 output shown:
 
-> m.scalarMultiply(3); cout &lt;&lt; m.toString() &lt;&lt; endl;
+> m.scalarMultiply(3); cout << m.toString() << endl;
 >
 > Output
 >
@@ -19931,7 +19931,7 @@ To allow code like this to return a new Matrix,
 >
 > // Construct a new Matrix object given a vector of vectors
 >
-> Matrix::Matrix(const std::vector&lt;std::vector&lt;int&gt; &gt; &
+> Matrix::Matrix(const std::vector<std::vector<int> > &
 > vecOfVecs) { rows = vecOfVecs.size(); columns = vecOfVecs\[0\].size();
 > table = vecOfVecs; }
 
@@ -19939,9 +19939,9 @@ Th is will be called to construct a new Matrix object returned by add:
 
 > Matrix Matrix::add(Matrix other) {
 >
-> vector&lt;vector&lt;int&gt; &gt; temp(rows,
-> vector&lt;int&gt;(columns)); for (int i = 0; i &lt; rows; i++) { for
-> (int j = 0; j &lt; columns; j++) {
+> vector<vector<int> > temp(rows,
+> vector<int>(columns)); for (int i = 0; i < rows; i++) { for
+> (int j = 0; j < columns; j++) {
 >
 > temp\[i\]\[j\] += table\[i\]\[j\] + other.table\[i\]\[j\];
 >
@@ -19954,10 +19954,10 @@ Th is will be called to construct a new Matrix object returned by add:
 > Using input fi les representing the three matrices above, this code
 > will generate the output shown:
 >
-> cout &lt;&lt; "Matrix a: " &lt;&lt; endl &lt;&lt; a.toString()
-> &lt;&lt; endl; cout &lt;&lt; "Matrix b: " &lt;&lt; endl &lt;&lt;
-> b.toString() &lt;&lt; endl; cout &lt;&lt; "Matrix c: " &lt;&lt; endl
-> &lt;&lt; c.toString() &lt;&lt; endl;
+> cout << "Matrix a: " << endl << a.toString()
+> << endl; cout << "Matrix b: " << endl <<
+> b.toString() << endl; cout << "Matrix c: " << endl
+> << c.toString() << endl;
 >
 > Output
 >
@@ -20021,17 +20021,17 @@ In the next problems, use this 2 × 2 Matrix:
   ------------------------------------------------------------------------------------------------------------------------------------------
                        **vector of vectors**                                                   **Primitive C Array**
   -------------------- ----------------------------------------------------------------------- ---------------------------------------------
-  > **General Form**   vector &lt;vector&lt;*type*&gt; &gt;                                    *type* *identi er* \[*rows*\]\[*columns*\];
+  > **General Form**   vector <vector<*type*> >                                    *type* *identi er* \[*rows*\]\[*columns*\];
                                                                                                
-                       *identi er* (*rows*, vector&lt;*type*&gt;(*columns*));                  
+                       *identi er* (*rows*, vector<*type*>(*columns*));                  
 
-  > **Example**        vector &lt;vector&lt;int&gt; &gt; unitsSold(4, vector&lt;int&gt;(6));   int unitsSold \[4\]\[6\];
+  > **Example**        vector <vector<int> > unitsSold(4, vector<int>(6));   int unitsSold \[4\]\[6\];
 
   > **Range Check**    Yes                                                                     No
 
   > **Resizable**      Yes                                                                     No
 
-  > **\#include**      \#include&lt;vector&gt;                                                 Not needed
+  > **\#include**      \#include<vector>                                                 Not needed
   ------------------------------------------------------------------------------------------------------------------------------------------
 
 > Th e vector of vectors, unitsSold, manages four rows and six columns
@@ -20045,16 +20045,16 @@ In the next problems, use this 2 × 2 Matrix:
 > used with either a vector of vectors or a primitive doubly subscripted
 > C array:
 >
-> int unitsSold\[4\]\[6\]; // vector&lt;vector&lt;int&gt; &gt;
-> unitsSold(4, vector&lt;int&gt;(6));
+> int unitsSold\[4\]\[6\]; // vector<vector<int> >
+> unitsSold(4, vector<int>(6));
 >
-> for (int r = 0; r &lt; 4; r++) { for (int c = 0; c &lt; 6; c++)
+> for (int r = 0; r < 4; r++) { for (int c = 0; c < 6; c++)
 > unitsSold\[r\]\[c\] = r + c; }
 >
-> for (int r = 0; r &lt; 4; r++) { for (int c = 0; c &lt; 6; c++) { cout
-> &lt;&lt; unitsSold\[r\]\[c\] &lt;&lt; " ";
+> for (int r = 0; r < 4; r++) { for (int c = 0; c < 6; c++) { cout
+> << unitsSold\[r\]\[c\] << " ";
 >
-> } cout &lt;&lt; endl;
+> } cout << endl;
 >
 > }
 
@@ -20116,13 +20116,13 @@ SELF-CHECK
 >
 > // could also use a vector of Matrix objects to do the same thing.
 >
-> \#include &lt;iostream&gt; using namespace std;
+> \#include <iostream> using namespace std;
 >
 > int main() { const int courses = 3; const int students = 11; const int
 > quizzes = 6; int q\[courses\]\[students\]\[quizzes\];
 >
-> for (int c = 0; c &lt; courses; c++) { for (int row = 0; row &lt;
-> students; row++) { for (int col = 0; col &lt; quizzes; col++) {
+> for (int c = 0; c < courses; c++) { for (int row = 0; row <
+> students; row++) { for (int col = 0; col < quizzes; col++) {
 >
 > // Give each quiz a value using a meaningless formula
 > q\[c\]\[col\]\[row\] = (col + 1) \* (row + 2) + c + 25;
@@ -20133,18 +20133,18 @@ SELF-CHECK
 >
 > }
 >
-> for (int course = 0; course &lt; courses; course++) { cout &lt;&lt;
+> for (int course = 0; course < courses; course++) { cout <<
 > endl;
 >
-> cout &lt;&lt; "Course \#" &lt;&lt; course &lt;&lt; endl; for (int row
-> = 0; row &lt; students; row++) { cout.width(3); cout &lt;&lt; row
-> &lt;&lt; ": ";
+> cout << "Course \#" << course << endl; for (int row
+> = 0; row < students; row++) { cout.width(3); cout << row
+> << ": ";
 >
-> for (int col = 0; col &lt; quizzes; col++) { cout.width(4);
+> for (int col = 0; col < quizzes; col++) { cout.width(4);
 >
-> cout &lt;&lt; q\[course\]\[col\]\[row\];
+> cout << q\[course\]\[col\]\[row\];
 >
-> } cout &lt;&lt; endl;
+> } cout << endl;
 >
 > }
 >
@@ -20252,10 +20252,10 @@ EXERCISES
 
     b.  Th e value of all elements
 
-> vector&lt;vector&lt;string&gt; &gt; teacher(5, vector&lt;string&gt;(7,
-> "to hire")); vector&lt;vector&lt;double&gt; &gt; quiz(10,
-> vector&lt;double&gt;(32, 0.0)); vector&lt;vector&lt;int&gt; &gt;
-> nums(10, vector&lt;int&gt;(10, -999)); double budget\[6\]\[100\];
+> vector<vector<string> > teacher(5, vector<string>(7,
+> "to hire")); vector<vector<double> > quiz(10,
+> vector<double>(32, 0.0)); vector<vector<int> >
+> nums(10, vector<int>(10, -999)); double budget\[6\]\[100\];
 
 1.  Detect the error(s) in the following attempts to declare a doubly
     > subscripted vector:
@@ -20264,7 +20264,7 @@ EXERCISES
 
     b.  double x\[5,6\];
 
-    c.  vector&lt;vector&lt;int&gt; &gt; x(5, 6);
+    c.  vector<vector<int> > x(5, 6);
 
 2.  Declare a doubly subscripted object identifi ed with three rows and
     > four columns of fl oatingpoint numbers.
@@ -20288,34 +20288,34 @@ EXERCISES
   c.   \# rows? ***4***   f.   \# rows? ***2***
        \# cols? ***4***        \# cols? ***1***
 
-> \#include &lt;iostream&gt;
+> \#include <iostream>
 >
-> \#include &lt;vector&gt; using namespace std;
+> \#include <vector> using namespace std;
 >
-> int main() { int maxRow, maxCol; cout &lt;&lt; "\# rows? "; cin
-> &gt;&gt; maxRow; cout &lt;&lt; "\# cols? "; cin &gt;&gt; maxCol;
+> int main() { int maxRow, maxCol; cout << "\# rows? "; cin
+> >> maxRow; cout << "\# cols? "; cin >> maxCol;
 >
-> vector&lt;vector&lt;int&gt; &gt; aTable(maxRow,
-> vector&lt;int&gt;(maxCol, -999));
+> vector<vector<int> > aTable(maxRow,
+> vector<int>(maxCol, -999));
 >
 > // Initialize Matrix elements
 
 Exercises
 
-> for (int row = 0; row &lt; maxRow; row++) { for (int col = 0; col &lt;
+> for (int row = 0; row < maxRow; row++) { for (int col = 0; col <
 > maxCol; col++) { aTable\[row\]\[col\] = row \* col;
 >
 > }
 >
 > }
 >
-> // Display table elements for (int row = 0; row &lt; maxRow; row++) {
-> for (int col = 0; col &lt; maxCol; col++) { cout.width(5); cout
-> &lt;&lt; aTable\[row\]\[col\];
+> // Display table elements for (int row = 0; row < maxRow; row++) {
+> for (int col = 0; col < maxCol; col++) { cout.width(5); cout
+> << aTable\[row\]\[col\];
 >
 > }
 >
-> cout &lt;&lt; endl;
+> cout << endl;
 >
 > } return 0; }
 >
@@ -20328,7 +20328,7 @@ Exercises
 >
 > int lastRow, lastCol;
 >
-> std::vector &lt;std:vector&lt;int&gt; &gt; m; };
+> std::vector <std:vector<int> > m; };
 >
 > huh::huh(int initLastRow, int initLastColumn) { lastRow = initLastRow;
 > lastCol = initLastColumn; // The vector of vectors must be initialized
@@ -20337,9 +20337,9 @@ Exercises
 > // Use a resize message with two arguments to avoid a loop for each
 > row.
 >
-> m.resize(lastRow, vector&lt;int&gt;(lastCol));
+> m.resize(lastRow, vector<int>(lastCol));
 >
-> for(int row = 0; row &lt; lastRow; row++) { for(int col = 0; col &lt;
+> for(int row = 0; row < lastRow; row++) { for(int col = 0; col <
 > lastCol; col++) { // Give each item a meaningless formula
 > m\[row\]\[col\] = (row + 1) + (col + 1);
 >
@@ -20351,12 +20351,12 @@ Exercises
 >
 > void huh::show() const { int row, col;
 >
-> for(row = 0; row &lt; lastRow; row++) { for(col = 0; col &lt; lastCol;
-> col++) { cout.width(4); cout &lt;&lt; m\[row\]\[col\];
+> for(row = 0; row < lastRow; row++) { for(col = 0; col < lastCol;
+> col++) { cout.width(4); cout << m\[row\]\[col\];
 >
 > }
 >
-> cout &lt;&lt; endl;
+> cout << endl;
 >
 > }
 >
@@ -20378,7 +20378,7 @@ Exercises
     > the elements in a given row. Th e program below must generate the
     > output of 22.
 
-> int main() { huh h(4, 4); cout &lt;&lt; h.rowSum(2); return 0; }
+> int main() { huh h(4, 4); cout << h.rowSum(2); return 0; }
 
 6.  Complete the member function huh::showDiagonal that prints all
     > elements on the diagonal. Assume rows and columns are the same. Th
@@ -20420,10 +20420,10 @@ Exercises
 PROGRAMMING TIPS
 
 1.  When constructing vectors of vectors, be careful not to
-    > write &gt;&gt; in your constructions with some compilers.
+    > write >> in your constructions with some compilers.
 
-> vector&lt;vector&lt;int&gt;&gt; error(10, vector&lt;int&gt; (10, -1));
-> // Error: Need space between &gt; and &gt;
+> vector<vector<int>> error(10, vector<int> (10, -1));
+> // Error: Need space between > and >
 
 1.  When using vectors of vectors, consider using the range-checking
     > member function vector::at, especially when fi rst using
@@ -20431,9 +20431,9 @@ PROGRAMMING TIPS
     > check the subscripts, but it can be made to do so with the
     > vector::at member function.
 
-> vector&lt;vector&lt;int&gt; &gt; aTable(3, vector&lt;int&gt; (3, -1));
+> vector<vector<int> > aTable(3, vector<int> (3, -1));
 > aTable.at(2).at(3) = 23; // Column 3 out of bounds aTable.at(3).at(2)
-> = 32; // Row 3 out of bounds cout &lt;&lt; aTable.at(0).at(0); //
+> = 32; // Row 3 out of bounds cout << aTable.at(0).at(0); //
 > Output: -1
 >
 > It is common to get a subscript variable that is out of bounds. Th e
@@ -20452,10 +20452,10 @@ PROGRAMMING TIPS
         > needs to be copied. However, when a Matrix is passed as a
         > value parameter, every single element gets copied, making the
         > program less effi cient. void function(const
-        > Matrix&lt;double&gt; & m) // Pass by const reference is more
+        > Matrix<double> & m) // Pass by const reference is more
         > effi cient than
 
-> void function(Matrix&lt;double&gt; m)
+> void function(Matrix<double> m)
 
 -   Range checking should be employed while you are learning to
     > manipulate doubly subscript-ed objects.
@@ -20506,10 +20506,10 @@ PROGRAMMING TIPS
 > You will need to resize the vector of vectors instance variable which
 > can be done like this:
 >
-> // An instance variable vector&lt;vector&lt;int&gt; &gt; magic;
+> // An instance variable vector<vector<int> > magic;
 >
 > // Resize the vector to be a size by size vector magic =
-> vector&lt;vector&lt;int&gt; &gt;(size, vector&lt;int&gt;(size));
+> vector<vector<int> >(size, vector<int>(size));
 
 13B GAME OF LIFE
 
@@ -20578,7 +20578,7 @@ PROGRAMMING TIPS
 >
 > GameOfLife society("5by7");
 >
-> for (int updates = 1; updates &lt;= 5; updates++) {
+> for (int updates = 1; updates <= 5; updates++) {
 > society.toString(); society.update();
 >
 > } return 0; }
@@ -20597,9 +20597,9 @@ PROGRAMMING TIPS
 
 \#ifndef GAMEOFLIFE\_H\_ \#de ne GAMEOFLIFE\_H\_
 
-\#include &lt;vector&gt; \#include &lt;string&gt; class GameOfLife {
+\#include <vector> \#include <string> class GameOfLife {
 
-private: std::vector&lt;std::vector&lt;bool&gt; &gt; theSociety; int
+private: std::vector<std::vector<bool> > theSociety; int
 nRows; int nCols;
 
 public: /\*
@@ -20669,7 +20669,7 @@ bool cellAt(int row, int col);
 
 -   society.growCellAt(3, 4);
 
--   cout &lt;&lt; society.toString();
+-   cout << society.toString();
 
 > \*
 
@@ -20751,7 +20751,7 @@ f g h
 > see the form that begins on the right shifted to be on the left due to
 > wraparound.
 
-\#include &lt;iostream&gt;\#include &lt;iostream&gt; using namespace
+\#include <iostream>\#include <iostream> using namespace
 std;using namespace std; \#include "GameOfLife.h"\#include
 "GameOfLife.h"
 
@@ -20761,13 +20761,13 @@ GameOfLife game(3, 8); GameOfLife society(5, 30);
 
 game.growCellAt(1, 2); society.growCellAt(1, 6); game.growCellAt(1, 3);
 society.growCellAt(2, 7); game.growCellAt(1, 4); society.growCellAt(2,
-8); cout &lt;&lt; game.toString(); society.growCellAt(3, 7);
+8); cout << game.toString(); society.growCellAt(3, 7);
 
 > society.growCellAt(3, 6);
 
-for (int t = 1; t &lt;= 5; t++) {
+for (int t = 1; t <= 5; t++) {
 
-game.update(); society.growCellAt(1, 16); cout &lt;&lt; game.toString();
+game.update(); society.growCellAt(1, 16); cout << game.toString();
 society.growCellAt(2, 17);
 
 } society.growCellAt(2, 18); return 0; society.growCellAt(3, 17); }
@@ -20857,16 +20857,16 @@ been omitted).
 >
 > 399
 >
-> 1-13 + - \* (also = output with cout&lt;&lt; and input with
-> cin&gt;&gt;)
+> 1-13 + - \* (also = output with cout<< and input with
+> cin>>)
 >
 > 1-14 Integers—numbers without a decimal point. Th e actual range of
 > integers is system dependent (unfortunately). Most C++ systems
 > implement int to store integers in the range of –2,147,483,648 to
 > 2,147,483,647.
 >
-> 1-15 + - \* (also = output with cout&lt;&lt; and input with
-> cin&gt;&gt; ) 1-16 A collection of characters.
+> 1-15 + - \* (also = output with cout<< and input with
+> cin>> ) 1-16 A collection of characters.
 
 1-17 oat, double, int, bool, char, short, unsigned int, unsigned long
 
@@ -20899,7 +20899,7 @@ k.  VALID
 
     3.  + - other possible answers , : ; ! ( ) = { }
 
-    4.  &lt;&lt; &gt;&gt; other possible answers != == &lt;= &gt;=
+    4.  << >> other possible answers != == <= >=
 
     5.  cin and cout (also string vector width sqrt)
 
@@ -20923,18 +20923,18 @@ e.  char literals: '\\n' 'h'
 
     10. string address;
 
-    11. \#include &lt;iostream&gt; using namespace std; int main() {
-        cout &lt;&lt; "Kim" &lt;&lt; endl; cout &lt;&lt; "Miller"
-        &lt;&lt; endl; return 0;
+    11. \#include <iostream> using namespace std; int main() {
+        cout << "Kim" << endl; cout << "Miller"
+        << endl; return 0;
 
 > }
 >
 > -or-
 >
-> \#include &lt;iostream&gt; int main() {
+> \#include <iostream> int main() {
 >
-> std::cout &lt;&lt; "Kim" &lt;&lt; std::endl; std::cout &lt;&lt;
-> "Miller" &lt;&lt; std::endl; return 0;
+> std::cout << "Kim" << std::endl; std::cout <<
+> "Miller" << std::endl; return 0;
 >
 > }
 
@@ -20981,8 +20981,8 @@ e.  char literals: '\\n' 'h'
 
 19. Th e predicted answer 25 does not match 0.04.
 
-20. change cin &gt;&gt; n to cin &gt;&gt; sum and cin &gt;&gt; sum to
-    > cin &gt;&gt; n.
+20. change cin >> n to cin >> sum and cin >> sum to
+    > cin >> n.
 
 21. a\. intent
 
@@ -21216,7 +21216,7 @@ c.  ostream e. istream
 
     11. . . . . . .
 
-. . &lt; .
+. . < .
 
 . . . . .
 
@@ -21238,7 +21238,7 @@ c.  ostream e. istream
 
     15. \#include "Grid.h"
 
-\#include &lt;iostream&gt; using namespace std; int main() {
+\#include <iostream> using namespace std; int main() {
 
 Grid g(5, 5, 2, 3, east); g.move(1);
 
@@ -21366,11 +21366,11 @@ b\. 40.0 d. 45.25
 
 b\. zero or pos
 
-7-6 if (option == 1) cout &lt;&lt; "My name" &lt;&lt; endl;
+7-6 if (option == 1) cout << "My name" << endl;
 
 else
 
-cout &lt;&lt; "My school" &lt;&lt; endl;
+cout << "My school" << endl;
 
 7-7 a. true e. true
 
@@ -21380,9 +21380,9 @@ c.  true g. true
 
 d.  false h. true
 
-    8.  (score &gt;= 1) && (score &lt;= 10)
+    8.  (score >= 1) && (score <= 10)
 
-    9.  (test &gt; 100) || (score &lt; 0)
+    9.  (test > 100) || (score < 0)
 
     10. President's list (always true because = was used instead of ==).
 
@@ -21440,12 +21440,12 @@ weather(40)); assert("toast" == weather(41)); return 0;
 
 24. Invalid
 
-25. Invalid 7-26 switch(choice) { case 1: cout &lt;&lt; "Favorite music
-    > is Jazz" &lt;&lt; endl; break; case 2: cout &lt;&lt; "Favorite
-    > food is Tacos" &lt;&lt; endl; break; case 3: cout &lt;&lt;
-    > "Favorite teacher is you" &lt;&lt; endl; break; default;
+25. Invalid 7-26 switch(choice) { case 1: cout << "Favorite music
+    > is Jazz" << endl; break; case 2: cout << "Favorite
+    > food is Tacos" << endl; break; case 3: cout <<
+    > "Favorite teacher is you" << endl; break; default;
 
-cout &lt;&lt; "Error" &lt;&lt; endl;
+cout << "Error" << endl;
 
 }
 
@@ -21455,23 +21455,23 @@ CHAPTER 8: REPETITION
 
 > 8-2 No, you can use increments of any amount, including negative
 > increments (or decrements). 8-3 No, consider the example for (int i =
-> 1; i &lt; n; i++) when n==0.
+> 1; i < n; i++) when n==0.
 >
 > 8-4 Consider if the update step does not increment j, or j is
 > decremented as much as it is incremented inside the loop: for (j = 1;
-> j &lt; n; j){ } *or* for (j = 1; j &lt; n; j++){j--;} 8-5 a. 1 2 3 4
+> j < n; j){ } *or* for (j = 1; j < n; j++){j--;} 8-5 a. 1 2 3 4
 > d. 0 1 2 3 4
 
 b.  1 2 3 4 5 e. 5 4 3 2 1
 
 c.  -3 -1 1 3 f. before after
 
-    6.  for (int i = 1; i &lt;= 100; i++) { cout &lt;&lt; i &lt;&lt;
+    6.  for (int i = 1; i <= 100; i++) { cout << i <<
         > endl;
 
 }
 
-6.  for (int i = 10; i &gt;= 1; i--) { cout &lt;&lt; i &lt;&lt; " ";
+6.  for (int i = 10; i >= 1; i--) { cout << i << " ";
 
 }
 
@@ -21517,7 +21517,7 @@ c.  -3 -1 1 3 f. before after
 
 b\. 80.0
 
-> 8-19 a. Observe the location of the second cin&gt;&gt;testScore. Redo
+> 8-19 a. Observe the location of the second cin>>testScore. Redo
 > till you arrive at the preceding answers of 56.3333 for a. and 80.0
 > for b.
 >
@@ -21526,7 +21526,7 @@ b\. 80.0
 >
 > 8-21 zero
 >
-> 8-22 Input another cin &gt;&gt; testscore at the bottom of the loop.
+> 8-22 Input another cin >> testscore at the bottom of the loop.
 >
 > 8-23 A tricky question: remove the ; after ). Th is loop does nothing
 > infi nitely because ; represents the null statement. It is legal code,
@@ -21536,11 +21536,11 @@ b\. 80.0
   ----------------- ------------------------------------------------
   8-25 a. unknown   d\. forever
   b\. forever       e\. 5
-  c\. 0             f\. forever notice the ; after count &gt;= 0);
+  c\. 0             f\. forever notice the ; after count >= 0);
 
 8-26 int sum = 0; int x = 0;
 
-while ( (cin &gt;&gt; x) && (x != 999) ) { sum += x;
+while ( (cin >> x) && (x != 999) ) { sum += x;
 
 }
 
@@ -21555,16 +21555,16 @@ while ( (cin &gt;&gt; x) && (x != 999) ) { sum += x;
 
 do {
 
-cout &lt;&lt; "Enter a number in the range of 1 through 10: "; cin
-&gt;&gt; x;
+cout << "Enter a number in the range of 1 through 10: "; cin
+>> x;
 
-} while ( x &lt; 1 || x &gt; 10);
+} while ( x < 1 || x > 10);
 
 8-29 do {
 
-cout &lt;&lt; "Enter A)dd W)ithdraw Q)uit: ";
+cout << "Enter A)dd W)ithdraw Q)uit: ";
 
-cin &gt;&gt; option; option = toupper(option);
+cin >> option; option = toupper(option);
 
 } while ( option != 'A' && option != 'W' && option != 'Q');
 
@@ -21589,20 +21589,20 @@ CHAPTER 9: FILE STREAMS
 
 9-1 // le name: THISPROG.CPP
 
-\#include &lt;fstream&gt; // for class ifstream
+\#include <fstream> // for class ifstream
 
-\#include &lt;iostream&gt; // for cout \#include &lt;string&gt;
+\#include <iostream> // for cout \#include <string>
 
 using namespace std;
 
 int main() { string aString; ifstream inFile("THISPROG.CPP"); for(int j
-= 1; j &lt;= 4; j++) { inFile &gt;&gt; aString;
+= 1; j <= 4; j++) { inFile >> aString;
 
-cout &lt;&lt; aString &lt;&lt; " ";
+cout << aString << " ";
 
 }
 
-cout &lt;&lt; endl; return 0;
+cout << endl; return 0;
 
 }
 
@@ -21639,12 +21639,12 @@ CHAPTER 10: VECTORS
 >
 > 10-4 0
 
-10-5 x\[0\] = 78; 10-6 int n = 100; for(int j = 0; j &lt; n; j++) {
+10-5 x\[0\] = 78; 10-6 int n = 100; for(int j = 0; j < n; j++) {
 x\[j\] = n-j;
 
 }
 
-10-7 for(j = 0; j &lt; n; j++) { cout &lt;&lt; x\[j\] &lt;&lt; endl;
+10-7 for(j = 0; j < n; j++) { cout << x\[j\] << endl;
 
 }
 
@@ -21677,14 +21677,14 @@ account\[13\] = BankAccount("Cust13", 1313.13);
 
 > 10-19 Th e 21st account on the 21st line of the fi le would not become
 > part of the account database. Th e vector size would not be big enough
-> and the loop would terminate because numberOfAccounts &lt;
+> and the loop would terminate because numberOfAccounts <
 > account.capacity() would be false.
 
-10-20 \#include &lt;iostream&gt;
+10-20 \#include <iostream>
 
-\#include &lt;fstream&gt; using namespace std; int main() {
+\#include <fstream> using namespace std; int main() {
 
-vector &lt;int&gt; vectorOfInts(1000);
+vector <int> vectorOfInts(1000);
 
 // File name will do if it is in the working directory
 
@@ -21692,7 +21692,7 @@ ifstream inFile("int.dat");
 
 int n = 0; int el;
 
-while( (inFile &gt;&gt; el) && (n &lt; vectorOfInts.capacity()) ) {
+while( (inFile >> el) && (n < vectorOfInts.capacity()) ) {
 
 vectorOfInts\[n\] = el; n++;
 
@@ -21704,11 +21704,11 @@ return 0;
 
 > 10-21 n
 
-10-22 cout &lt;&lt; "Number of meaningful ints in vectorOfInts is "
-&lt;&lt; n &lt;&lt; endl;
+10-22 cout << "Number of meaningful ints in vectorOfInts is "
+<< n << endl;
 
-cout &lt;&lt; "Here they are" &lt;&lt; endl; for(int j = 0; j &lt; n;
-j++) { cout &lt;&lt; j &lt;&lt; ". " &lt;&lt; vectorOfInts\[j\] &lt;&lt;
+cout << "Here they are" << endl; for(int j = 0; j < n;
+j++) { cout << j << ". " << vectorOfInts\[j\] <<
 endl;
 
 }
@@ -21730,8 +21730,8 @@ c.  4
         > means three extra assignments, but it is not worth worrying
         > about this special case.
 
-    27. double largest = x\[0\]; for(int j = 1; j &lt; n; j++) { if(
-        > x\[j\] &gt; largest ) largest = x\[j\]; }
+    27. double largest = x\[0\]; for(int j = 1; j < n; j++) { if(
+        > x\[j\] > largest ) largest = x\[j\]; }
 
     28. Th e vector is sorted and the binary search knows whether it is
         > either ascending or descending order.
@@ -21749,18 +21749,18 @@ Th erefore, the largest number of comparisons is 11.
 
 last = mid - 1; and
 
-rst = mid + 1; or change the expression if (searchString &lt; str\[mid\]
+rst = mid + 1; or change the expression if (searchString < str\[mid\]
 
 to
 
-if (str\[mid\] &lt; searchString) but NOT both changes.
+if (str\[mid\] < searchString) but NOT both changes.
 
 CHAPTER 11: GENERIC COLLECTIONS
 
 11-1 Any number can be used as long as the computer has more memory to
 grow the vector.
 
-11-2 cout &lt;&lt; intSet.size() &lt;&lt; endl;
+11-2 cout << intSet.size() << endl;
 
 11-3 intSet.insert(89);
 
@@ -21774,7 +21774,7 @@ b.  40
 
 c.  0
 
-11-7 \#include &lt;iostream&gt; using namespace std;
+11-7 \#include <iostream> using namespace std;
 
 \#include "Set.h" // For a generic Set class
 
@@ -21782,7 +21782,7 @@ c.  0
 
 int main() {
 
-Set&lt;BankAccount&gt; set; // Store a set of 4 BankAccounts
+Set<BankAccount> set; // Store a set of 4 BankAccounts
 set.insert(BankAccount("Chris", 300.00));
 set.insert(BankAccount("Devon", 100.00)); set.insert(BankAccount("Kim",
 444.44)); set.insert(BankAccount("Dakota", 99.99));
@@ -21792,14 +21792,14 @@ double largest = 0.0;
 set. rst(); // Initialize an iteration over all elements
 
 while (set.hasMore()) { double currentBalance =
-set.current().getBalance(); if (currentBalance &gt; largest) largest =
+set.current().getBalance(); if (currentBalance > largest) largest =
 currentBalance;
 
 set.next();
 
 }
 
-cout &lt;&lt; "Max balance is " &lt;&lt; largest &lt;&lt; endl; return
+cout << "Max balance is " << largest << endl; return
 0;
 
 }
@@ -21810,7 +21810,7 @@ CHAPTER 12: POINTERS AND MEMORY MANAGEMENT
 
 12-2 a. doublePtr
 
-b.  Can’t know. One run with cout &lt;&lt; & doublePtr;
+b.  Can’t know. One run with cout << & doublePtr;
     was 0x7fff5b44cc78.
 
 c.  1.23
@@ -21821,7 +21821,7 @@ d.  \*doublePtr += 1.0;
 
     4.  1
 
-    5.  a-&gt;getBalance() + b-&gt;getBalance();
+    5.  a->getBalance() + b->getBalance();
 
 > -or-
 
@@ -21834,7 +21834,7 @@ d.  \*doublePtr += 1.0;
 
 <!-- -->
 
-9.  cout &lt;&lt; \*p1 + \*p2 + \*p3 &lt;&lt;endl
+9.  cout << \*p1 + \*p2 + \*p3 <<endl
 
 10. p? 333
 
@@ -21850,7 +21850,7 @@ q? 333
 
 13. int array\[1000\];
 
-14. for(int i = 0; i &lt; 1000; i++) { array\[i\] = -1;
+14. for(int i = 0; i < 1000; i++) { array\[i\] = -1;
 
 }
 
@@ -21858,8 +21858,8 @@ q? 333
 
 10. **int** min = x\[0\];
 
-**int** max = x\[0\]; **for** (int i = 1; i &lt; n; i++) { **if**
-(x\[i\] &gt; max) max = x\[i\]; **if** (x\[i\] &lt; min) min = x\[i\];
+**int** max = x\[0\]; **for** (int i = 1; i < n; i++) { **if**
+(x\[i\] > max) max = x\[i\]; **if** (x\[i\] < min) min = x\[i\];
 
 }
 
@@ -21890,15 +21890,15 @@ if (n == 0) return false;
 
 // Get ptr to point to the last node
 
-node\* ptr = header; while (ptr-&gt;next != last) {
+node\* ptr = header; while (ptr->next != last) {
 
-ptr = ptr-&gt;next;
+ptr = ptr->next;
 
 }
 
 // Adjust last to the node before it, clean up memory, decrease size
 
-last = ptr; delete ptr-&gt;next;
+last = ptr; delete ptr->next;
 
 n--;
 
@@ -21912,9 +21912,9 @@ CHAPTER 13: VECTOR OF VECTORS
 
 13-2 matrix (or a vector of vectors)
 
-13-3 matrix&lt;double&gt; sales(10, 12);
+13-3 matrix<double> sales(10, 12);
 
-13-4 matrix&lt;double&gt; sales2(12, 10);
+13-4 matrix<double> sales2(12, 10);
 
 13-5 row
 
@@ -21927,8 +21927,8 @@ table\[row\]\[column\];
 
 }
 
-13-8 int Matrix::sum() { int result = 0; for (int i = 0; i &lt; rows;
-i++) { for (int j = 0; j &lt; columns; j++) {
+13-8 int Matrix::sum() { int result = 0; for (int i = 0; i < rows;
+i++) { for (int j = 0; j < columns; j++) {
 
 result += table\[i\]\[j\];
 
@@ -21951,7 +21951,7 @@ return result;
 >
 > 13-13 0 through 3
 
-13-14 for (int row = 0; row &lt; 3; row++) { for(int col = 0; col &lt;
+13-14 for (int row = 0; row < 3; row++) { for(int col = 0; col <
 4; col++) {
 
 a\[row\]\[col\] = 999;
@@ -21960,16 +21960,16 @@ a\[row\]\[col\] = 999;
 
 }
 
-13-15 for (int row = 0; row &lt; 3; row++) { for (int col = 0; col &lt;
+13-15 for (int row = 0; row < 3; row++) { for (int col = 0; col <
 4; col++) {
 
 cout.width(8);
 
-cout &lt;&lt; a\[row\]\[col\];
+cout << a\[row\]\[col\];
 
 }
 
-cout &lt;&lt; endl;
+cout << endl;
 
 }
 
@@ -21991,7 +21991,7 @@ cout &lt;&lt; endl;
 >
 > \#include directive, 119 % remainder operator, 32
 
-&gt; &lt; &lt;= &gt;= == != operators, 178
+> < <= >= == != operators, 178
 
 **A**
 
@@ -22046,8 +22046,8 @@ cout &lt;&lt; endl;
 >
 > BankAccount, 112 defi nition, 141, 143 diagram, 109
 >
-> Grid, 121 ifstream, 263 iostream, 18 List&lt;Type&gt;, 364 Matrix, 379
-> ofstream, 274 string, 112 Set&lt;Type&gt;, 330 vector&lt;Type&gt;, 279
+> Grid, 121 ifstream, 263 iostream, 18 List<Type>, 364 Matrix, 379
+> ofstream, 274 string, 112 Set<Type>, 330 vector<Type>, 279
 > why use classes?, 128
 >
 > cmath functions, 55 cohesion, 159 collections, 325 comments, 22
@@ -22263,7 +22263,7 @@ Index
 >
 > sequential search, 288
 >
-> Set&lt;Type&gt; class, 330 short circuit Boolean evaluation, 191
+> Set<Type> class, 330 short circuit Boolean evaluation, 191
 > singly-linked structure, 362 sorting, 297 sqrt function, 55 stack
 > project, 338 state of objects, 11, 12, 154 state object pattern, 154
 > statements
@@ -22278,7 +22278,7 @@ Index
 
 > streams, fi le, 263 string, 113
 >
-> &lt;&lt; + &gt;&gt; \[\], 115 methods, 113 operators, 114 project with
+> << + >> \[\], 115 methods, 113 operators, 114 project with
 > 10 string functions, 127
 >
 > struct, 362 structured programming, 129 Student class project, 216
